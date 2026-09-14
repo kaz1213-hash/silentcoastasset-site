@@ -1,0 +1,66 @@
+name: MC48 Relay Deploy Preview probe
+
+on:
+  push:
+    branches: [tanuki-site-relay-mc48-preview]
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      BASE_URL: https://deploy-preview-3--inquisitive-clafoutis-525f7c.netlify.app
+    steps:
+      - name: Wait for current preview root
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p probe
+          ok=0
+          for i in $(seq 1 30); do
+            code=$(curl -L -sS -o probe/root.txt -w '%{http_code}' "$BASE_URL/" || true)
+            if [ "$code" = "200" ] && grep -q 'Tanuki Site Relay' probe/root.txt; then
+              echo "root_http=$code" | tee probe/root-status.txt
+              ok=1
+              break
+            fi
+            sleep 2
+          done
+          if [ "$ok" != "1" ]; then
+            echo 'Preview root did not become current.' >&2
+            cat probe/root.txt || true
+            exit 1
+          fi
+
+      - name: Probe relay endpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          probe_get() {
+            name="$1"; path="$2"
+            code=$(curl -L -sS -o "probe/${name}.txt" -w '%{http_code}' "$BASE_URL$path" || true)
+            printf '%s_http=%s\n' "$name" "$code" | tee "probe/${name}-status.txt"
+            printf '%s_body=' "$name"
+            cat "probe/${name}.txt" || true
+            printf '\n'
+          }
+          probe_get health /healthz
+          probe_get ready /readyz
+          probe_get oauth_server /.well-known/oauth-authorization-server
+          probe_get oauth_resource /.well-known/oauth-protected-resource
+          code=$(curl -L -sS -o probe/mcp.txt -w '%{http_code}' \
+            -X POST -H 'content-type: application/json' \
+            --data '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' \
+            "$BASE_URL/mcp" || true)
+          printf 'mcp_http=%s\n' "$code" | tee probe/mcp-status.txt
+          printf 'mcp_body='; cat probe/mcp.txt || true; printf '\n'
+
+      - name: Upload probe evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mc48-relay-preview-probe
+          path: probe
+          if-no-files-found: error
+          retention-days: 7
