@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Privacy Policy Draft | Silent Coast Asset</title>
+<style>
+:root{--bg:#1E2427;--panel:#283035;--text:#F7F6F0;--muted:#BEC5C5;--accent:#DDE5E3;--line:rgba(255,255,255,.16);--warn:#f0c98a}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans JP","Yu Gothic",sans-serif;line-height:1.8}.wrap{max-width:860px;margin:auto;padding:0 24px}.hero{padding:72px 0 44px;background:linear-gradient(135deg,#2b7081 0%,#194b60 48%,#102d3b 100%)}h1{font-size:clamp(34px,6vw,56px);line-height:1.2;margin:8px 0 16px}.eyebrow{font-size:12px;letter-spacing:.16em;font-weight:700}.draft{display:inline-block;margin-top:10px;padding:6px 10px;border:1px solid var(--warn);color:var(--warn);font-weight:700}section{padding:34px 0;border-bottom:1px solid var(--line)}h2{font-size:25px;margin:0 0 10px}.muted{color:var(--muted)}.box{background:var(--panel);border:1px solid var(--line);padding:20px;margin-top:16px}a{color:inherit}footer{padding:28px 0;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap"><div class="eyebrow">SILENT COAST ASSET / TANUKI SITE</div><h1>Privacy Policy / プライバシーポリシー</h1><div class="draft">DRAFT — DO NOT PUBLISH YET</div></div></header>
+<main>
+<section><div class="wrap"><h2>1. 運営者 / Operator</h2><p>Tanuki Site は Silent Coast Asset株式会社（以下「当社」）が提供するソフトウェアです。お問い合わせは <a href="mailto:support@silentcoastasset.com">support@silentcoastasset.com</a> までお願いします。</p></div></section>
+<section><div class="wrap"><h2>2. 基本設計 / Local-first design</h2><p>Tanuki Site は、ChatGPT上の自然な会話を限定されたサイト作成・変更・Undo指示に変換し、ユーザー端末上のTanuki Siteが再検証してローカルで処理する設計です。サイトの正本データ、履歴、Undo、検証、プレビュー、保存および公開状態は原則としてユーザー端末側が管理します。</p><p class="muted">The SCA Relay is transport/authentication infrastructure, not a permanent database for the user's website content.</p></div></section>
+<section><div class="wrap"><h2>3. Relayが取り扱う情報 / Data handled by the Relay</h2><p>接続・認証・指示配送・不正利用防止のため、必要最小限の情報を処理します。</p><ul><li>匿名化・仮名化されたtenant/project識別子</li><li>短い構造化create/revise/Undo指示</li><li>revision ID、ACK、重複防止メタデータ</li><li>OAuth / pairing / session情報</li><li>購入資格・ライセンス確認に必要なentitlement情報</li><li>レート制限等に必要な接続元情報</li><li>MCPのRPC種別、tool名、HTTP status、成功/失敗、処理時間</li></ul><p>運用ログには、briefやtool引数、ChatGPT会話全文、Bearer token、購入キー、tenant/project ID、レスポンス本文、内部エラー本文を記録しない設計です。</p></div></section>
+<section><div class="wrap"><h2>4. ChatGPT会話 / ChatGPT conversations</h2><p>当社RelayはChatGPT会話全文を保存することを目的としていません。OpenAI上で入力した情報は、ユーザーとOpenAIとの関係およびOpenAIの規約・プライバシーポリシーにも従います。</p></div></section>
+<section><div class="wrap"><h2>5. 購入・ライセンス / Purchase and licensing</h2><p>初回有効化時、購入・ライセンスキーはRelayを経由してライセンス提供事業者へ送信されます。通常運用では生の購入キーを永続保存せず、ユーザー端末にはRelayが暗号化したopaque refresh credentialを保存する設計です。</p><p>refresh時および「この端末のライセンスを解除」実行時には、Relayがそのcredentialを一時的に復号し、ライセンス提供事業者へ必要な検証・deactivation要求を行います。生の購入キーをログ、MCP出力、URL、メールへ出さない設計です。deactivation成功後にのみ端末側資格情報を削除します。</p><p class="muted">At release, the final policy must name the actual payment/licensing provider and match its live configuration.</p></div></section>
+<section><div class="wrap"><h2>6. 保持期間 / Retention</h2><p>現行実装では、コマンド、OAuth/pairing状態、短命token等を必要最小限の期間だけ保持する設計です。ACK済みまたは期限切れコマンドは有効キューから除外されます。</p><div class="box"><strong>PUBLICATION BLOCKER:</strong> 本番Netlify環境の構造化運用ログ保持期間は未確定です。公開前に実際の保持設定を確認してこの項目を確定します。</div></div></section>
+<section><div class="wrap"><h2>7. 外部サービス / Service providers</h2><p>本番構成では、実際に採用した範囲で OpenAI / ChatGPT、Netlify、Lemon Squeezy 等を利用する予定です。公開版では実際に使う事業者だけを記載します。</p></div></section>
+<section><div class="wrap"><h2>8. 利用目的 / Purposes</h2><p>ChatGPTとの接続、購入資格確認、サイト作成・変更・Undo指示の配送、重複実行や不正利用の防止、セキュリティ維持、障害調査、サービス改善、問い合わせ対応、法令上必要な対応のために処理します。</p></div></section>
+<section><div class="wrap"><h2>9. ユーザーのコントロール / User controls</h2><p>ユーザーはChatGPT連携を利用しないことができます。PC移行時は製品内の「この端末のライセンスを解除」により当該activationを自己解除できる設計です。旧端末が利用不能な場合など、自己解除できないケースのみサポート窓口へお問い合わせください。</p></div></section>
+<section><div class="wrap"><h2>10. セキュリティ / Security</h2><p>データ最小化、短時間token、PKCE、resource/audience binding、one-time code、暗号化credential、レート制限等を実装します。ただしインターネット上の通信・保存について完全な安全性を保証するものではありません。</p></div></section>
+<section><div class="wrap"><h2>11. 公開前の未確定事項 / Release blockers</h2><ul><li>本番運用ログ保持期間</li><li>最終の決済・ライセンス事業者と設定</li><li>最終の公開日・改定日</li><li>必要な法務確認</li></ul><p><strong>これらが確定するまで本ページを公開しません。</strong></p></div></section>
+</main>
+<footer><div class="wrap">© Silent Coast Asset株式会社 / Project Tanuki — Draft</div></footer>
+</body>
+</html>
