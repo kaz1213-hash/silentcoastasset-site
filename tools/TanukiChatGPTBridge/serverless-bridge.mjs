@@ -4,7 +4,7 @@ import { McpOAuthBroker, WRITE_SCOPE } from './mcp-oauth.mjs';
 import { handleMcpMessage } from './mcp-adapter.mjs';
 import { CasBridgeState, persistBridgeStateCAS, restoreBridgeStateCAS } from './cas-state.mjs';
 import { FixedWindowRateLimiter } from './rate-limit.mjs';
-import { assertProductionReady } from './production-config.mjs';
+import { evaluateRelayReadiness } from './production-config.mjs';
 
 const CORS_HEADERS=Object.freeze({
   'access-control-allow-origin':'*',
@@ -80,15 +80,16 @@ export function createServerlessBridge({ stateStore, env=process.env, fetchImpl=
   const productIds=parseIdList(env.TANUKI_SITE_PRODUCT_IDS);
   const variantIds=parseIdList(env.TANUKI_SITE_VARIANT_IDS);
   const allowedOrigins=new Set(String(env.TANUKI_MCP_ALLOWED_ORIGINS||'').split(',').map(x=>x.trim()).filter(Boolean));
-  const readiness=assertProductionReady({
+  const readiness=evaluateRelayReadiness({
     mode:'production',sessionSecret:secret,publicUrl,durableState:Boolean(stateStore),allowDevToken:false,
     productIds,variantIds,
   });
-  const persistence=new CasBridgeState({store:stateStore,key:String(env.TANUKI_RELAY_STATE_KEY||'tanuki-site-relay/state-v1')});
+  const persistence=stateStore ? new CasBridgeState({store:stateStore,key:String(env.TANUKI_RELAY_STATE_KEY||'tanuki-site-relay/state-v1')}) : null;
   const limiter=new FixedWindowRateLimiter({windowMs:60_000,maxEntries:5000});
-  const licenseAuth=new LicenseAuth({secret,allowedProductIds:productIds,allowedVariantIds:variantIds,fetchImpl});
+  const licenseAuth=readiness.ready ? new LicenseAuth({secret,allowedProductIds:productIds,allowedVariantIds:variantIds,fetchImpl}) : null;
 
   function newState() {
+    if (!readiness.ready) throw new Error(`PRODUCTION_NOT_READY:${readiness.blockers.join(',')}`);
     return {
       relay:new RelayStore(),
       oauth:new McpOAuthBroker({secret,publicBaseUrl:publicUrl}),
@@ -133,8 +134,9 @@ export function createServerlessBridge({ stateStore, env=process.env, fetchImpl=
     const url=new URL(req.url);
     const ip=requestIp(req,context);
     if (req.method==='OPTIONS') return response(null,204);
-    if (url.pathname==='/healthz') return response({ok:true,service:'tanuki-site-relay',runtime:'serverless-cas',durable_state:'configured'});
-    if (url.pathname==='/readyz') return response({ok:true,ready:readiness.ready,checks:readiness.checks});
+    if (url.pathname==='/healthz') return response({ok:true,service:'tanuki-site-relay',runtime:'serverless-cas',durable_state:stateStore?'configured':'missing'});
+    if (url.pathname==='/readyz') return response({ok:readiness.ready,ready:readiness.ready,checks:readiness.checks,blockers:readiness.blockers},readiness.ready?200:503);
+    if (!readiness.ready) return response({error:'PRODUCTION_NOT_READY',blockers:readiness.blockers},503);
 
     try {
       if (req.method==='GET' && (url.pathname==='/.well-known/oauth-protected-resource' || url.pathname==='/.well-known/oauth-protected-resource/mcp')) {
