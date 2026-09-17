@@ -1,0 +1,66 @@
+{
+  "schema_version": "tanuki-commerce-products-0.1",
+  "storefront_owner": "Silent Coast Asset Co., Ltd.",
+  "merchant_of_record_note": "Checkout may be processed by a third-party Merchant of Record. Product discovery and product presentation remain on the SCA/Tanuki storefront.",
+  "products": [
+    {
+      "id": "project-vault",
+      "name": "Project Vault",
+      "tagline_ja": "ChatGPTの会話やProjectを、手元に残す。",
+      "tagline_en": "Keep the ChatGPT conversations you built up.",
+      "price_label_ja": "US$10・買い切り",
+      "price_label_en": "US$10 one-time",
+      "detail_url": "/project-vault.html",
+      "commerce_state": "EXTERNAL_STORE",
+      "checkout_provider": "CHROME_WEB_STORE",
+      "checkout_url": "https://chromewebstore.google.com/detail/project-vault-for-chatgpt/lnndbebmjnklgammhjmgpdaijdcmighl",
+      "delivery": "chrome_extension",
+      "enabled": true
+    },
+    {
+      "id": "tanuki-chronicle-jp",
+      "name": "Tanuki Chronicle Japanese v1.0",
+      "tagline_ja": "過去のAIチャットを、読み返したくなる自分の物語へ。",
+      "tagline_en": "Turn long AI conversation archives into a story worth reading again.",
+      "price_label_ja": "US$14.99・買い切り",
+      "price_label_en": "US$14.99 one-time",
+      "detail_url": "/tanuki-chronicle.html",
+      "commerce_state": "CHECKOUT_PENDING",
+      "checkout_provider": "POLAR_CANDIDATE",
+      "checkout_url": null,
+      "delivery": "download_zip",
+      "enabled": false,
+      "release_gate": "POLAR_FIELD_PASS"
+    },
+    {
+      "id": "tanuki-chronicle-en",
+      "name": "Tanuki Chronicle English v1.0",
+      "tagline_ja": "英語で自然に読み返せるChronicle。",
+      "tagline_en": "A natural-English Chronicle that preserves the person behind the archive.",
+      "price_label_ja": "US$14.99・買い切り",
+      "price_label_en": "US$14.99 one-time",
+      "detail_url": "/tanuki-chronicle.html",
+      "commerce_state": "WAIT_FOR_JP_RAIL",
+      "checkout_provider": "POLAR_CANDIDATE",
+      "checkout_url": null,
+      "delivery": "download_zip",
+      "enabled": false,
+      "release_gate": "AFTER_CHRONICLE_JP_POLAR_FIELD_PASS"
+    },
+    {
+      "id": "tanuki-fortune",
+      "name": "Tanuki Fortune / タヌキ占い",
+      "tagline_ja": "過去ログを掘って、今日の札を一枚。",
+      "tagline_en": "Dig through your old logs. Draw one oddly personal fortune.",
+      "price_label_ja": "500円・買い切り予定",
+      "price_label_en": "US$4.99 one-time planned",
+      "detail_url": "/tanuki-fortune.html",
+      "commerce_state": "WAIT_FOR_SHARED_RAIL",
+      "checkout_provider": "POLAR_CANDIDATE",
+      "checkout_url": null,
+      "delivery": "download_zip",
+      "enabled": false,
+      "release_gate": "AFTER_SHARED_POLAR_RAIL_PASS"
+    }
+  ]
+}
