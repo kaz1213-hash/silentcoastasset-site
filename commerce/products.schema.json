@@ -40,8 +40,13 @@
         },
         "allOf": [
           {
-            "if": {"properties": {"enabled": {"const": true}}},
-            "then": {"required": ["checkout_url"]}
+            "if": {"properties": {"enabled": {"const": true}}, "required": ["enabled"]},
+            "then": {
+              "required": ["checkout_url"],
+              "properties": {
+                "checkout_url": {"type": "string", "format": "uri", "pattern": "^https://"}
+              }
+            }
           }
         ],
         "additionalProperties": false
