@@ -11,6 +11,7 @@ This architecture is intentionally different from sending customers to a generic
 ## v0.1 files
 
 - `../tanuki-store.html` — first-party storefront
+- `../tanuki-purchase-complete.html` — first-party post-checkout confirmation/support surface
 - `products.json` — canonical public commerce registry
 - `commerce.js` — fail-closed renderer for Store/product CTAs
 
@@ -61,11 +62,13 @@ Chronicle English, Fortune and other download products should reuse the same rai
 
 For each verified product Checkout Link:
 
-- `success_url`: return to an SCA/Tanuki confirmation surface once that surface is finalized
+- `success_url`: SCA first-party confirmation surface `/tanuki-purchase-complete.html`
 - `return_url`: the corresponding SCA product page
 - product fulfillment: Polar File Download benefit when appropriate
 - no SCA-hosted card handling
 - no customer-usage cloud runtime paid by SCA
+
+The confirmation page intentionally does **not** claim to independently verify payment. It tells the buyer where to retrieve the receipt/product and how to get support without exposing license keys or card data.
 
 ## Legal/trust boundary
 
