@@ -2,7 +2,7 @@
 
 ## Ownership
 
-- **Silent Coast Asset site** owns storefront UI, product pages and the public commerce registry.
+- **Silent Coast Asset site** owns storefront UI, product pages, the post-checkout confirmation surface and the public commerce registry.
 - **Tanuki Growth** owns product registration, checkout verification, launch copy, funnel measurement and post-launch conversion improvements.
 - **Product teams** own the delivered artifact and product-specific first-run acceptance.
 - **Director** only performs unavoidable identity/KYC/bank/login/final public-release actions.
@@ -33,6 +33,15 @@ When these pass, Growth may request a single registry change:
 - set `enabled=true`
 
 The storefront code then exposes the Buy CTA automatically.
+
+## Checkout return surfaces
+
+For Polar downloadable products:
+
+- `success_url` target: `/tanuki-purchase-complete.html`
+- `return_url` target: the corresponding SCA product page
+
+The success page is deliberately informational and fail-safe. It must not claim that SCA independently verified payment. It tells buyers to use the provider receipt/customer portal for delivery and routes unresolved delivery problems to `support@silentcoastasset.com` without asking for card data or license keys.
 
 ## Rollback
 
