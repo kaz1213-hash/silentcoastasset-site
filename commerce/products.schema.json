@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://silentcoastasset.com/commerce/products.schema.json",
+  "title": "Tanuki Commerce Product Registry",
+  "type": "object",
+  "required": ["schema_version", "storefront_owner", "products"],
+  "properties": {
+    "schema_version": {"const": "tanuki-commerce-products-0.1"},
+    "storefront_owner": {"type": "string", "minLength": 1},
+    "merchant_of_record_note": {"type": "string"},
+    "products": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "detail_url", "commerce_state", "checkout_provider", "delivery", "enabled"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "name": {"type": "string", "minLength": 1},
+          "tagline_ja": {"type": "string"},
+          "tagline_en": {"type": "string"},
+          "price_label_ja": {"type": "string"},
+          "price_label_en": {"type": "string"},
+          "detail_url": {"type": "string", "pattern": "^/"},
+          "commerce_state": {
+            "enum": ["EXTERNAL_STORE", "CHECKOUT_PENDING", "WAIT_FOR_JP_RAIL", "WAIT_FOR_SHARED_RAIL", "AVAILABLE", "PAUSED"]
+          },
+          "checkout_provider": {
+            "enum": ["CHROME_WEB_STORE", "POLAR_CANDIDATE", "POLAR", "NONE"]
+          },
+          "checkout_url": {
+            "oneOf": [
+              {"type": "null"},
+              {"type": "string", "format": "uri", "pattern": "^https://"}
+            ]
+          },
+          "delivery": {"enum": ["chrome_extension", "download_zip", "windows_store", "other"]},
+          "enabled": {"type": "boolean"},
+          "release_gate": {"type": "string"}
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"enabled": {"const": true}}, "required": ["enabled"]},
+            "then": {
+              "required": ["checkout_url"],
+              "properties": {
+                "checkout_url": {"type": "string", "format": "uri", "pattern": "^https://"}
+              }
+            }
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
