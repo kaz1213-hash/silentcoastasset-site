@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Project Tanuki purchase confirmation and next-step page from Silent Coast Asset.">
+<meta name="theme-color" content="#1E2427">
+<title>Purchase complete | Tanuki Store</title>
+<style>
+:root{--bg:#1E2427;--panel:#283035;--text:#F7F6F0;--muted:#BEC5C5;--accent:#DDE5E3;--line:rgba(255,255,255,.16);--warm:#e8d8b6}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans JP","Yu Gothic",sans-serif;line-height:1.8}.wrap{max-width:820px;margin:auto;padding:0 28px}nav{padding:24px 0;border-bottom:1px solid var(--line)}.navin{display:flex;justify-content:space-between;gap:18px;align-items:center}.brand a{font-weight:800;text-decoration:none}.lang-switch-input{position:absolute;width:1px;height:1px;opacity:0}.lang-button{background:var(--accent);color:#17191b;border:0;padding:9px 14px;font-weight:700;cursor:pointer}.hero{padding:82px 0 52px;background:linear-gradient(135deg,#6d5134 0%,#443829 50%,#242722 100%)}.eyebrow{font-size:12px;letter-spacing:.18em;font-weight:800;color:#f1e7d4}.hero h1{font-size:clamp(38px,7vw,66px);line-height:1.15;margin:12px 0 18px}.hero p{font-size:clamp(17px,2vw,20px);color:#f1e7d4;max-width:38em}main{padding:48px 0 72px}.panel{background:var(--panel);border:1px solid var(--line);padding:28px;margin-bottom:18px}.panel h2{margin:0 0 12px;font-size:24px}.panel p{margin:8px 0;color:var(--muted)}.steps{margin:16px 0 0;padding-left:1.4em}.steps li{margin:10px 0}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-block;text-decoration:none;padding:11px 16px;font-weight:800;font-size:13px}.btn-primary{background:var(--accent);color:#17191b;border:1px solid var(--accent)}.btn-secondary{border:1px solid var(--line);color:var(--text)}.note{font-size:13px;color:var(--muted)}.lang{display:none}.lang-ja{display:block}#langSwitch:checked + .page .lang{display:none}#langSwitch:checked + .page .lang-en{display:block}.switch-to-primary{display:none}#langSwitch:checked + .page .switch-to-secondary{display:none}#langSwitch:checked + .page .switch-to-primary{display:inline}footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}a{color:inherit}
+</style>
+</head>
+<body>
+<input class="lang-switch-input" id="langSwitch" type="checkbox" aria-label="Switch language">
+<div class="page">
+<nav><div class="wrap navin"><div class="brand"><a href="/tanuki-store.html">← Tanuki Store</a></div><label class="lang-button" for="langSwitch"><span class="switch-to-secondary">English</span><span class="switch-to-primary">日本語</span></label></div></nav>
+<header class="hero"><div class="wrap">
+<div class="lang lang-ja"><div class="eyebrow">PROJECT TANUKI / PURCHASE</div><h1>ありがとうございます。</h1><p>決済画面からここへ戻ってきた場合、購入手続きは完了段階です。商品の受け取りは決済事業者のレシートまたは購入者ページから行います。</p></div>
+<div class="lang lang-en"><div class="eyebrow">PROJECT TANUKI / PURCHASE</div><h1>Thank you.</h1><p>If checkout returned you here, your purchase flow has reached its completion stage. Your receipt and product access are provided by the payment provider.</p></div>
+</div></header>
+<main><div class="wrap">
+<div class="panel lang lang-ja"><h2>次にすること</h2><ol class="steps"><li>決済事業者から届くレシートまたは購入者ページを開く。</li><li>表示されたダウンロード／利用開始ボタンから商品を受け取る。</li><li>商品を開いて、最初の画面まで進む。</li></ol><p class="note">このページ自体は支払い完了を独自に判定しません。レシートや購入履歴が確認できない場合は、決済事業者側の購入履歴をご確認ください。</p></div>
+<div class="panel lang lang-en"><h2>What to do next</h2><ol class="steps"><li>Open the receipt or buyer portal provided by the payment provider.</li><li>Use the download or access button shown there to receive the product.</li><li>Open the product and reach its first screen.</li></ol><p class="note">This page does not independently verify payment status. If you cannot find a receipt or purchase record, check your buyer history with the payment provider.</p></div>
+<div class="panel lang lang-ja"><h2>困ったとき</h2><p>購入済みなのに商品を受け取れない場合は、購入時のメールアドレスと商品名だけを添えてSupportへご連絡ください。ライセンスキーやカード情報は送らないでください。</p><div class="actions"><a class="btn btn-primary" href="mailto:support@silentcoastasset.com">Supportへ連絡</a><a class="btn btn-secondary" href="/tanuki-store.html">Tanuki Storeへ戻る</a></div></div>
+<div class="panel lang lang-en"><h2>If something is wrong</h2><p>If you paid but cannot access the product, contact Support with only the product name and the email address used for purchase. Do not send license keys or card details.</p><div class="actions"><a class="btn btn-primary" href="mailto:support@silentcoastasset.com">Contact Support</a><a class="btn btn-secondary" href="/tanuki-store.html">Back to Tanuki Store</a></div></div>
+</div></main>
+<footer><div class="wrap">Silent Coast Asset株式会社 / Project Tanuki · support@silentcoastasset.com</div></footer>
+</div>
+</body>
+</html>
