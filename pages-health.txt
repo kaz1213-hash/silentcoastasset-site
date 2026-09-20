@@ -1,1 +1,1 @@
-GitHub Pages branch-deploy trigger: 2026-09-20 14:40 JST
+GitHub Pages branch-deploy trigger after unpublish reset: 2026-09-20 15:05 JST
