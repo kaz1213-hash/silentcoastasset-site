@@ -4,23 +4,70 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Project Vault for ChatGPT — ChatGPTの会話やProjectをローカルに保存・整理するためのChrome拡張。">
+<meta name="theme-color" content="#1E2427">
 <title>Project Vault for ChatGPT | Silent Coast Asset</title>
 <style>
-:root{--bg:#1E2427;--panel:#283035;--text:#F7F6F0;--muted:#BEC5C5;--accent:#DDE5E3;--line:rgba(255,255,255,.16)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans JP","Yu Gothic",sans-serif;line-height:1.8}.wrap{max-width:900px;margin:auto;padding:0 24px}.hero{padding:92px 0 64px;background:linear-gradient(135deg,#2b7081 0%,#194b60 48%,#102d3b 100%)}.eyebrow{font-size:12px;letter-spacing:.16em;font-weight:700;color:#EDF0EC}.hero h1{font-size:clamp(40px,7vw,68px);line-height:1.15;margin:12px 0 22px}.hero p{font-size:clamp(18px,2.5vw,22px);max-width:32em;color:#EDF0EC}.cta{display:inline-block;margin-top:18px;background:var(--accent);color:#17191b;text-decoration:none;padding:12px 18px;font-weight:700}.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.fact{border:1px solid rgba(255,255,255,.28);padding:7px 10px;font-size:13px}section{padding:58px 0;border-bottom:1px solid var(--line)}h2{font-size:clamp(28px,4vw,40px);margin:0 0 16px}.lead{color:var(--muted);max-width:38em}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}.card{background:var(--panel);padding:22px;border:1px solid var(--line)}.card h3{margin-top:0}.small{font-size:13px;color:var(--muted)}footer{padding:28px 0;color:var(--muted);font-size:12px}@media(max-width:720px){.grid{grid-template-columns:1fr}.hero{padding-top:70px}}
+:root{--bg:#1E2427;--panel:#283035;--text:#F7F6F0;--muted:#BEC5C5;--accent:#DDE5E3;--line:rgba(255,255,255,.16)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans JP","Yu Gothic",sans-serif;line-height:1.8}.page{min-height:100vh}.wrap{max-width:900px;margin:auto;padding:0 24px}
+nav{padding:22px 0;background:#171d20;border-bottom:1px solid var(--line)}.navin{display:flex;justify-content:space-between;align-items:center;gap:18px}.brand a{text-decoration:none;font-weight:800;color:var(--text)}
+.lang-switch-input{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}.lang-button{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:9px 14px;font-weight:700;cursor:pointer}.switch-to-primary{display:none}
+.hero{padding:82px 0 64px;background:linear-gradient(135deg,#2b7081 0%,#194b60 48%,#102d3b 100%)}.eyebrow{font-size:12px;letter-spacing:.16em;font-weight:700;color:#EDF0EC}.hero h1{font-size:clamp(40px,7vw,68px);line-height:1.15;margin:12px 0 22px}.hero p{font-size:clamp(18px,2.5vw,22px);max-width:32em;color:#EDF0EC}
+.cta{display:inline-block;margin-top:18px;background:var(--accent);color:#17191b;text-decoration:none;padding:12px 18px;font-weight:700}.cta.secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.fact{border:1px solid rgba(255,255,255,.28);padding:7px 10px;font-size:13px}
+section{padding:58px 0;border-bottom:1px solid var(--line)}h2{font-size:clamp(28px,4vw,40px);margin:0 0 16px}.lead{color:var(--muted);max-width:38em}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}.card{background:var(--panel);padding:22px;border:1px solid var(--line)}.card h3{margin-top:0}.card p{color:var(--muted)}.small{font-size:13px;color:var(--muted)}
+.lang{display:none}.lang-ja{display:block}span.lang-ja{display:inline}
+#langSwitch:checked + .page .lang{display:none}#langSwitch:checked + .page .lang-en{display:block}#langSwitch:checked + .page span.lang-en{display:inline}#langSwitch:checked + .page .switch-to-secondary{display:none}#langSwitch:checked + .page .switch-to-primary{display:inline}
+footer{padding:28px 0;color:var(--muted);font-size:12px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.hero{padding-top:64px}.wrap{padding:0 20px}}
 </style>
 </head>
 <body>
+<input class="lang-switch-input" id="langSwitch" type="checkbox" aria-label="Switch language">
+<div class="page">
+<nav><div class="wrap navin"><div class="brand"><a href="index.html">← Silent Coast Asset</a></div><label class="lang-button" for="langSwitch"><span class="switch-to-secondary">English</span><span class="switch-to-primary">日本語</span></label></div></nav>
 <header class="hero"><div class="wrap">
+<div class="lang lang-ja">
 <div class="eyebrow">PROJECT TANUKI / PROJECT VAULT</div>
 <h1>ChatGPTで積み上げた会話を、<br>自分の手元に残す。</h1>
 <p>Project Vault for ChatGPTは、ChatGPTの会話やProjectをローカルに保存・整理するためのChrome拡張です。</p>
 <div class="facts"><span class="fact">Local-first</span><span class="fact">US$10 one-time</span><span class="fact">No subscription</span><span class="fact">Chrome extension</span></div>
 <a class="cta" href="https://chromewebstore.google.com/detail/project-vault-for-chatgpt/lnndbebmjnklgammhjmgpdaijdcmighl" target="_blank" rel="noopener noreferrer">Chrome Web StoreでProject Vaultを見る</a>
+</div>
+<div class="lang lang-en">
+<div class="eyebrow">PROJECT TANUKI / PROJECT VAULT</div>
+<h1>Keep the ChatGPT conversations you built up.</h1>
+<p>Project Vault for ChatGPT is a local-first Chrome extension for saving and organizing ChatGPT conversations and Projects.</p>
+<div class="facts"><span class="fact">Local-first</span><span class="fact">US$10 one-time</span><span class="fact">No subscription</span><span class="fact">Chrome extension</span></div>
+<a class="cta" href="https://chromewebstore.google.com/detail/project-vault-for-chatgpt/lnndbebmjnklgammhjmgpdaijdcmighl" target="_blank" rel="noopener noreferrer">View Project Vault in the Chrome Web Store</a>
+</div>
 </div></header>
-<section><div class="wrap"><h2>必要なときに、過去の会話へ戻れるように。</h2><p class="lead">AIとの会話が増えるほど、あとで見返したい内容も増えていきます。Project Vaultは、その会話やProjectをローカル側で保存・整理するための道具です。</p><div class="grid"><div class="card"><h3>ローカル中心</h3><p>保存・整理の中心を手元に置く、local-firstの設計です。</p></div><div class="card"><h3>買い切り</h3><p>US$10のone-time purchase。サブスクリプションではありません。</p></div><div class="card"><h3>Chromeから導入</h3><p>Chrome Web Storeで配布されているChrome拡張です。</p></div></div></div></section>
-<section><div class="wrap"><div class="eyebrow">FROM ARCHIVE TO STORY</div><h2>保存した会話を、次は物語へ。</h2><p class="lead">Project Vaultは会話を残す道具。Tanuki Chronicleは、その大量の会話の中から、自分でも忘れていた物語を見つけて読み物にする道具です。Chronicleは単体でも利用できます。</p><a class="cta" href="tanuki-chronicle.html">Tanuki Chronicleを見る</a></div></section>
-<section><div class="wrap"><div class="eyebrow">ENGLISH</div><h2>Keep the ChatGPT conversations you built up.</h2><p class="lead">Project Vault for ChatGPT is a local-first Chrome extension for saving and organizing ChatGPT conversations and Projects. It is distributed through the Chrome Web Store for a US$10 one-time purchase, with no subscription.</p><a class="cta" href="https://chromewebstore.google.com/detail/project-vault-for-chatgpt/lnndbebmjnklgammhjmgpdaijdcmighl" target="_blank" rel="noopener noreferrer">View Project Vault in the Chrome Web Store</a></div></section>
-<section><div class="wrap"><div class="eyebrow">NEXT: TANUKI CHRONICLE</div><h2>Save your conversations. Then turn them into a story.</h2><p class="lead">Project Vault keeps the archive. Tanuki Chronicle turns that archive into a story-shaped Chronicle worth reading again. Chronicle also works on its own with supported archive formats.</p><a class="cta" href="tanuki-chronicle.html">Learn more about Tanuki Chronicle</a></div></section>
-<footer><div class="wrap">Silent Coast Asset株式会社 / Project Tanuki</div></footer>
+<section><div class="wrap">
+<div class="lang lang-ja">
+<h2>必要なときに、過去の会話へ戻れるように。</h2>
+<p class="lead">AIとの会話が増えるほど、あとで見返したい内容も増えていきます。Project Vaultは、その会話やProjectをローカル側で保存・整理するための道具です。</p>
+<div class="grid"><div class="card"><h3>ローカル中心</h3><p>保存・整理の中心を手元に置く、local-firstの設計です。</p></div><div class="card"><h3>買い切り</h3><p>US$10のone-time purchase。サブスクリプションではありません。</p></div><div class="card"><h3>Chromeから導入</h3><p>Chrome Web Storeで配布されているChrome拡張です。</p></div></div>
+</div>
+<div class="lang lang-en">
+<h2>Return to old conversations when you need them.</h2>
+<p class="lead">The more you use AI, the more useful conversations you may want to revisit later. Project Vault keeps those conversations and Projects organized on your own computer.</p>
+<div class="grid"><div class="card"><h3>Local-first</h3><p>Saving and organization are centered on your own computer.</p></div><div class="card"><h3>Buy once</h3><p>US$10 one-time purchase. No subscription.</p></div><div class="card"><h3>Install from Chrome</h3><p>Project Vault is distributed through the Chrome Web Store.</p></div></div>
+</div>
+</div></section>
+<section><div class="wrap">
+<div class="lang lang-ja">
+<div class="eyebrow">FROM ARCHIVE TO STORY</div>
+<h2>保存した会話を、次は物語へ。</h2>
+<p class="lead">Project Vaultは会話を残す道具。Tanuki Chronicleは、その大量の会話の中から、自分でも忘れていた物語を見つけて読み物にする道具です。Chronicleは単体でも利用できます。</p>
+<a class="cta secondary" href="tanuki-chronicle.html">Tanuki Chronicleを見る</a>
+</div>
+<div class="lang lang-en">
+<div class="eyebrow">FROM ARCHIVE TO STORY</div>
+<h2>Save your conversations. Then turn them into a story.</h2>
+<p class="lead">Project Vault keeps the archive. Tanuki Chronicle turns that archive into a story-shaped Chronicle worth reading again. Chronicle also works on its own with supported archive formats.</p>
+<a class="cta secondary" href="tanuki-chronicle.html">Learn more about Tanuki Chronicle</a>
+</div>
+</div></section>
+<footer><div class="wrap"><span class="lang lang-ja">Silent Coast Asset株式会社 / Project Tanuki</span><span class="lang lang-en">Silent Coast Asset Co., Ltd. / Project Tanuki</span></div></footer>
+</div>
 </body>
 </html>
