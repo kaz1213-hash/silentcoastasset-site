@@ -1,0 +1,143 @@
+{
+  "schema_version": "tanuki-commerce-products-0.2",
+  "storefront_owner": "Silent Coast Asset Co., Ltd.",
+  "updated_at": "2026-09-26",
+  "products": [
+    {
+      "id": "project-vault",
+      "group": "available",
+      "name": "Project Vault for ChatGPT",
+      "tagline_ja": "ChatGPTの会話やProjectを、手元に残す。",
+      "tagline_en": "Keep the ChatGPT conversations you built up.",
+      "price_label_ja": "US$10・買い切り",
+      "price_label_en": "US$10 one-time",
+      "detail_url": "/project-vault.html",
+      "checkout_provider": "CHROME_WEB_STORE",
+      "checkout_url_ja": "https://chromewebstore.google.com/detail/project-vault-for-chatgpt/lnndbebmjnklgammhjmgpdaijdcmighl",
+      "checkout_url_en": "https://chromewebstore.google.com/detail/project-vault-for-chatgpt/lnndbebmjnklgammhjmgpdaijdcmighl",
+      "cta_ja": "Chrome Web Storeで見る",
+      "cta_en": "View in Chrome Web Store",
+      "enabled": true
+    },
+    {
+      "id": "tanuki-chronicle-jp",
+      "group": "available",
+      "name": "Tanuki Chronicle Japanese v1.0",
+      "tagline_ja": "過去のAIチャットを、読み返したくなる自分の物語へ。",
+      "tagline_en": "Turn long AI conversation archives into a story worth reading again.",
+      "price_label_ja": "US$14.99・買い切り",
+      "price_label_en": "US$14.99 one-time",
+      "detail_url": "/tanuki-chronicle.html",
+      "checkout_provider": "POLAR",
+      "checkout_url_ja": "https://buy.polar.sh/polar_cl_BCBDw2b3T18LSJxVdXOppj7Dv4lDtJzC1n7BC2pt3Tz",
+      "checkout_url_en": "https://buy.polar.sh/polar_cl_BCBDw2b3T18LSJxVdXOppj7Dv4lDtJzC1n7BC2pt3Tz",
+      "cta_ja": "購入する",
+      "cta_en": "Buy now",
+      "enabled": true
+    },
+    {
+      "id": "fx-university",
+      "group": "available",
+      "name": "FX大学 / FX University",
+      "tagline_ja": "コード0行の院長とChatGPTから、なぜか教授6人の大学が生まれた。",
+      "tagline_en": "A zero-code doctor, ChatGPT, six professors — and somehow, a university.",
+      "price_label_ja": "Kindle版",
+      "price_label_en": "Kindle edition",
+      "detail_url": "/fx-university.html",
+      "checkout_provider": "AMAZON",
+      "checkout_url_ja": "https://www.amazon.co.jp/dp/B0H1M3VY6B",
+      "checkout_url_en": "https://www.amazon.com/dp/B0HKW58V84",
+      "cta_ja": "Amazon Kindleで読む",
+      "cta_en": "Read on Amazon Kindle",
+      "enabled": true
+    },
+    {
+      "id": "tanuki-chronicle-en",
+      "group": "coming",
+      "name": "Tanuki Chronicle English v1.0",
+      "tagline_ja": "英語で自然に読み返せるChronicle。製品本体はFINAL。",
+      "tagline_en": "A natural-English Chronicle that preserves the person behind the archive.",
+      "price_label_ja": "US$14.99・買い切り予定",
+      "price_label_en": "US$14.99 one-time planned",
+      "detail_url": "/tanuki-chronicle.html",
+      "enabled": false
+    },
+    {
+      "id": "tanuki-fortune",
+      "group": "coming",
+      "name": "Tanuki Fortune / タヌキ占い",
+      "tagline_ja": "過去ログを掘って、今日の札を一枚。",
+      "tagline_en": "Dig through your old logs. Draw one oddly personal fortune.",
+      "price_label_ja": "500円・買い切り予定",
+      "price_label_en": "US$4.99 one-time planned",
+      "detail_url": "/tanuki-fortune.html",
+      "enabled": false
+    },
+    {
+      "id": "tanuki-progress",
+      "group": "coming",
+      "name": "Tanuki Progress",
+      "tagline_ja": "止まって見えるPC作業を、狸が見張る。",
+      "tagline_en": "Tanuki watches PC tasks that look frozen.",
+      "price_label_ja": "買い切り予定",
+      "price_label_en": "Buy-once planned",
+      "detail_url": null,
+      "enabled": false
+    },
+    {
+      "id": "tanuki-security",
+      "group": "coming",
+      "name": "Tanuki Security",
+      "tagline_ja": "Windowsの安心を、むずかしくしない。",
+      "tagline_en": "Windows security, without the security-software homework.",
+      "price_label_ja": "買い切り予定",
+      "price_label_en": "Buy-once planned",
+      "detail_url": null,
+      "enabled": false
+    },
+    {
+      "id": "tanuki-site",
+      "group": "development",
+      "name": "Tanuki Site",
+      "tagline_ja": "ホームページが必要。でも、ホームページを作りたくない。",
+      "tagline_en": "Need a website. Don't want to build one.",
+      "price_label_ja": "開発中",
+      "price_label_en": "In development",
+      "detail_url": null,
+      "enabled": false
+    },
+    {
+      "id": "tanuki-fish",
+      "group": "development",
+      "name": "Tanuki Fish",
+      "tagline_ja": "魚の行動を、うちの魚らしい言葉にする。",
+      "tagline_en": "Give your fish a voice.",
+      "price_label_ja": "スマホ版 開発中",
+      "price_label_en": "Mobile app in development",
+      "detail_url": null,
+      "enabled": false
+    },
+    {
+      "id": "tanuki-comic",
+      "group": "development",
+      "name": "Tanuki Comic",
+      "tagline_ja": "人生の中に、すでにあった4コマを見つける。",
+      "tagline_en": "Find the four-panel comic that was already hiding in your life.",
+      "price_label_ja": "開発中",
+      "price_label_en": "In development",
+      "detail_url": null,
+      "enabled": false
+    },
+    {
+      "id": "tanuki-butler",
+      "group": "development",
+      "name": "Tanuki Butler",
+      "tagline_ja": "言うだけで、仕事が片付く。",
+      "tagline_en": "Say what you need. Butler owns the work.",
+      "price_label_ja": "開発中",
+      "price_label_en": "In development",
+      "detail_url": null,
+      "enabled": false
+    }
+  ]
+}

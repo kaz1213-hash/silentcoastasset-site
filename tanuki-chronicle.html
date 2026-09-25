@@ -136,36 +136,6 @@ footer{padding:28px 0;color:var(--muted);font-size:12px}
 
 <footer><div class="wrap"><span class="lang lang-ja">Silent Coast Asset株式会社 / Project Tanuki</span><span class="lang lang-en">Silent Coast Asset Co., Ltd. / Project Tanuki</span></div></footer>
 </div>
-<script>
-(() => {
-  const checkbox = document.getElementById('langSwitch');
-  const params = new URLSearchParams(location.search);
-  const requested = params.get('lang');
-  let stored = null;
-  try { stored = localStorage.getItem('sca-lang'); } catch {}
-  const initial = requested === 'en' || requested === 'ja' ? requested : (stored === 'en' ? 'en' : 'ja');
-
-  function applyLanguage(lang, updateUrl = false) {
-    checkbox.checked = lang === 'en';
-    document.documentElement.lang = lang;
-    try { localStorage.setItem('sca-lang', lang); } catch {}
-    document.querySelectorAll('a[data-lang-link]').forEach(link => {
-      const raw = link.getAttribute('href');
-      if (!raw) return;
-      const url = new URL(raw, location.href);
-      url.searchParams.set('lang', lang);
-      link.href = url.pathname + url.search + url.hash;
-    });
-    if (updateUrl) {
-      const url = new URL(location.href);
-      url.searchParams.set('lang', lang);
-      history.replaceState(null, '', url.pathname + url.search + url.hash);
-    }
-  }
-
-  applyLanguage(initial, false);
-  checkbox.addEventListener('change', () => applyLanguage(checkbox.checked ? 'en' : 'ja', true));
-})();
-</script>
+<script src="/assets/sca-lang.js"></script>
 </body>
 </html>
