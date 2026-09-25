@@ -13,7 +13,7 @@
     'amazon.com'
   ]);
 
-  const GROUPS = ['available', 'coming', 'development'];
+  const GROUPS = ['free', 'available', 'coming', 'development'];
 
   function getLang() {
     const switcher = document.getElementById('langSwitch');
@@ -22,6 +22,7 @@
 
   function groupLabel(group, lang) {
     const labels = {
+      free: { ja: '無料ツール', en: 'Free tools' },
       available: { ja: '今買える', en: 'Available now' },
       coming: { ja: '近日', en: 'Coming soon' },
       development: { ja: '開発中', en: 'In development' }
@@ -31,6 +32,7 @@
 
   function statusLabel(group, lang) {
     const labels = {
+      free: { ja: '無料', en: 'Free' },
       available: { ja: '販売中', en: 'Available' },
       coming: { ja: '近日公開', en: 'Coming soon' },
       development: { ja: '開発中', en: 'In development' }
