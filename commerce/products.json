@@ -1,8 +1,19 @@
 {
-  "schema_version": "tanuki-commerce-products-0.2",
+  "schema_version": "tanuki-commerce-products-0.3",
   "storefront_owner": "Silent Coast Asset Co., Ltd.",
   "updated_at": "2026-09-26",
   "products": [
+    {
+      "id": "tanuki-duns",
+      "group": "free",
+      "name": "Tanuki D-U-N-S",
+      "tagline_ja": "DUNS番号、まず無料で確認。Apple公式ルートへ迷わず進む。",
+      "tagline_en": "Check your D-U-N-S number before paying anyone.",
+      "price_label_ja": "無料",
+      "price_label_en": "Free",
+      "detail_url": "/duns-number-free.html",
+      "enabled": false
+    },
     {
       "id": "project-vault",
       "group": "available",
