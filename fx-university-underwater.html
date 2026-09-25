@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Drawdown Is Depth. Underwater Is Time. | FX University</title>
+<meta name="description" content="A long backtest can survive a modest drawdown and still take years to recover. FX University's QuickShift research produced a roughly 14.9-year underwater period. Here is why that distinction matters.">
+<link rel="canonical" href="https://silentcoastasset.com/fx-university-underwater.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Silent Coast Asset">
+<meta property="og:title" content="Drawdown Is Depth. Underwater Is Time.">
+<meta property="og:description" content="What a roughly 14.9-year underwater period taught FX University about evaluating algorithmic trading strategies.">
+<meta property="og:url" content="https://silentcoastasset.com/fx-university-underwater.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#161b1f">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Drawdown Is Depth. Underwater Is Time.",
+  "description":"What a roughly 14.9-year underwater period taught FX University about evaluating algorithmic trading strategies.",
+  "author":{"@type":"Person","name":"Kazutaka"},
+  "publisher":{"@type":"Organization","name":"Silent Coast Asset"},
+  "datePublished":"2026-09-26",
+  "dateModified":"2026-09-26",
+  "mainEntityOfPage":"https://silentcoastasset.com/fx-university-underwater.html"
+}
+</script>
+<style>
+:root{--bg:#161b1f;--panel:#222a30;--text:#f7f6f0;--muted:#b9c2c5;--line:rgba(255,255,255,.14);--gold:#d6c18e}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#14191d,#1b2227);color:var(--text);font-family:Arial,"Noto Sans",sans-serif;line-height:1.78}.wrap{max-width:850px;margin:auto;padding:0 28px}nav{padding:22px 0;border-bottom:1px solid var(--line)}nav a{color:var(--text);text-decoration:none;font-weight:800}.hero{padding:82px 0 58px;border-bottom:1px solid var(--line)}.eyebrow{font-size:12px;letter-spacing:.18em;color:var(--gold);font-weight:800}.hero h1{font-size:clamp(42px,7vw,68px);line-height:1.08;margin:14px 0 20px}.dek{font-size:20px;color:#e2e6e4;max-width:38em}.metric{font-size:clamp(54px,10vw,92px);font-weight:900;color:var(--gold);line-height:1;margin:38px 0 6px}.caption{color:var(--muted);font-size:14px}article{padding:58px 0}h2{font-size:32px;line-height:1.25;margin:52px 0 16px}p{font-size:18px}.box{background:var(--panel);border:1px solid var(--line);padding:24px;margin:30px 0}.quote{border-left:3px solid var(--gold);padding:12px 20px;font-size:24px;margin:34px 0}.cta{margin-top:48px;padding:30px;background:var(--panel);border:1px solid var(--line)}.button{display:inline-block;margin-top:12px;padding:11px 16px;background:#e3e7df;color:#17191b;text-decoration:none;font-weight:800}.small{font-size:13px;color:var(--muted)}footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:12px}@media(max-width:700px){.wrap{padding:0 20px}.hero{padding-top:58px}p{font-size:17px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a href="fx-university.html">← FX University</a></div></nav>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">FX UNIVERSITY / RESEARCH NOTE 01</div>
+<h1>Drawdown Is Depth.<br>Underwater Is Time.</h1>
+<p class="dek">A trading strategy can suffer a drawdown that looks manageable and still fail a very different test: how long you have to wait before seeing a new high.</p>
+<div class="metric">~14.9 years</div>
+<div class="caption">The underwater period observed in the QuickShift long-run research simulation.</div>
+</div></header>
+<article><div class="wrap">
+<p>One of the most important moments in <em>FX University</em> arrived when a strategy that looked increasingly promising was tested over a much longer window.</p>
+<p>The maximum drawdown in that research simulation was about 11%. On its own, that number did not look catastrophic. The problem was not the depth of the decline.</p>
+<p>The problem was the time.</p>
+
+<h2>Two questions that sound similar, but are not</h2>
+<div class="box">
+<strong>Maximum drawdown</strong><br>
+How far did the strategy fall from a previous high?
+<br><br>
+<strong>Underwater period</strong><br>
+How long did the strategy remain below that previous high before recovering?
+</div>
+<p>A strategy can answer the first question reasonably well and still fail the second one badly. In the QuickShift long-run test, the MTM equity curve reached a high on September 22, 2011 and had not made a new high by the end of July 2026.</p>
+<p>That is 5,426 days—roughly 14.9 years.</p>
+
+<div class="quote">The strategy had not sunk especially deep. It had simply decided to live underwater.</div>
+
+<h2>Why time changes the decision</h2>
+<p>Drawdown is usually discussed as a risk number. But time is a human constraint.</p>
+<p>If a system takes fifteen years to recover, the question is no longer only whether the account survives. The question becomes whether the person operating it can still believe in it, keep allocating capital to it, resist changing it, and wait.</p>
+<p>That is especially relevant when the original reason for building the system was to create more freedom now—not decades later.</p>
+
+<h2>What changed in FX University</h2>
+<p>This result helped change the research question from:</p>
+<div class="box"><strong>“Can we build one excellent automated FX strategy?”</strong></div>
+<p>to something closer to:</p>
+<div class="box"><strong>“Can we build a portfolio of strategies with different sources of return and different ways of failing?”</strong></div>
+<p>That is where the “professors” stop being just a joke. A university with multiple professors is harder to kill than a university built around one star.</p>
+
+<h2>The larger lesson</h2>
+<p>Backtesting is not only a search for attractive metrics. It is a search for ways your idea can disappoint you before real money has to do the teaching.</p>
+<p>AI can make it much cheaper for a non-programmer to implement hypotheses and run experiments. That does not make skepticism less important. It makes skepticism more important, because producing another plausible strategy becomes easier.</p>
+
+<div class="cta">
+<div class="eyebrow">THE FULL CHRONICLE</div>
+<h2 style="margin-top:10px">FX University — Book One</h2>
+<p><em>A Chronicle of Failure, Research, and Rebuild in Algorithmic FX Trading.</em> The book follows the project from one forgotten automated strategy to six “professors,” a graveyard of rejected candidates, audits, rules—and a president who keeps asking when he can finally put real money in.</p>
+<a class="button" href="https://www.amazon.com/dp/B0HKW58V84" target="_blank" rel="noopener noreferrer">Read on Amazon Kindle</a>
+<p class="small">Also available in Japanese: <a href="https://www.amazon.co.jp/dp/B0H1M3VY6B" style="color:inherit">FX大学 — 第一部 開校前夜</a>.</p>
+</div>
+
+<p class="small" style="margin-top:44px">Research note: the 2005–2026 long-run test discussed here used Dukascopy-derived H1 data obtained through QDM and does not perfectly reproduce two decades of any single broker's trading conditions. Historical backtests, OOS tests, forward tests and demo results do not guarantee future returns. This article is educational material, not investment advice.</p>
+</div></article>
+<footer><div class="wrap">Silent Coast Asset Co., Ltd. / Project Tanuki · <a href="fx-university.html" style="color:inherit">FX University</a></div></footer>
+</body>
+</html>
