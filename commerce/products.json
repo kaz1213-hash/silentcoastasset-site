@@ -80,14 +80,19 @@
     },
     {
       "id": "tanuki-fortune",
-      "group": "coming",
+      "group": "available",
       "name": "Tanuki Fortune / タヌキ占い",
       "tagline_ja": "過去ログを掘って、今日の札を一枚。",
       "tagline_en": "Dig through your old logs. Draw one oddly personal fortune.",
-      "price_label_ja": "500円・買い切り予定",
-      "price_label_en": "US$4.99 one-time planned",
+      "price_label_ja": "500円・買い切り",
+      "price_label_en": "US$4.99 one-time",
       "detail_url": "/tanuki-fortune.html",
-      "enabled": false
+      "enabled": true,
+      "checkout_provider": "POLAR",
+      "checkout_url_ja": "https://buy.polar.sh/polar_cl_QKkNeGmVjWGLqK1dAX5IG04EH1548xbqVgBfo0mFRbW",
+      "checkout_url_en": "https://buy.polar.sh/polar_cl_QKkNeGmVjWGLqK1dAX5IG04EH1548xbqVgBfo0mFRbW",
+      "cta_ja": "購入する",
+      "cta_en": "Buy now"
     },
     {
       "id": "tanuki-progress",
