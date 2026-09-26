@@ -64,14 +64,19 @@
     },
     {
       "id": "tanuki-chronicle-en",
-      "group": "coming",
+      "group": "available",
       "name": "Tanuki Chronicle English v1.0",
       "tagline_ja": "英語で自然に読み返せるChronicle。製品本体はFINAL。",
       "tagline_en": "A natural-English Chronicle that preserves the person behind the archive.",
-      "price_label_ja": "US$14.99・買い切り予定",
-      "price_label_en": "US$14.99 one-time planned",
+      "price_label_ja": "US$14.99・買い切り",
+      "price_label_en": "US$14.99 one-time",
       "detail_url": "/tanuki-chronicle.html",
-      "enabled": false
+      "enabled": true,
+      "checkout_provider": "POLAR",
+      "checkout_url_ja": "https://buy.polar.sh/polar_cl_eS3zPNVrHzeXxhLAK7GHCjW6zDE0Z2sVd5S951a3U98",
+      "checkout_url_en": "https://buy.polar.sh/polar_cl_eS3zPNVrHzeXxhLAK7GHCjW6zDE0Z2sVd5S951a3U98",
+      "cta_ja": "英語版を購入",
+      "cta_en": "Buy now"
     },
     {
       "id": "tanuki-fortune",
