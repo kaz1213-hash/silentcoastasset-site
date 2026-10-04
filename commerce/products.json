@@ -1,7 +1,7 @@
 {
   "schema_version": "tanuki-commerce-products-0.3",
   "storefront_owner": "Silent Coast Asset Co., Ltd.",
-  "updated_at": "2026-09-26",
+  "updated_at": "2026-10-04",
   "products": [
     {
       "id": "tanuki-duns",
@@ -118,13 +118,13 @@
     },
     {
       "id": "tanuki-site",
-      "group": "development",
+      "group": "coming",
       "name": "Tanuki Site",
       "tagline_ja": "ホームページが必要。でも、ホームページを作りたくない。",
       "tagline_en": "Need a website. Don't want to build one.",
-      "price_label_ja": "開発中",
-      "price_label_en": "In development",
-      "detail_url": null,
+      "price_label_ja": "買い切り・価格確定前",
+      "price_label_en": "Buy once · price pending",
+      "detail_url": "/tanuki-site.html",
       "enabled": false
     },
     {
