@@ -1,0 +1,140 @@
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="AIに仕事を任せつつ、外部公開だけは人間が一回判断する。実際の失敗から「承認ゲート」を作ったProject Tanukiの実験記。">
+<link rel="canonical" href="https://silentcoastasset.com/blog/approval-gate.html">
+<meta property="og:type" content="article"><meta property="og:title" content="AIエージェントを『勝手に動くbot』にしない。承認ゲートを入れた理由">
+<meta property="og:description" content="AIに仕事を任せつつ、外部公開だけは人間が一回判断する。実際の失敗から「承認ゲート」を作ったProject Tanukiの実験記。"><meta property="og:url" content="https://silentcoastasset.com/blog/approval-gate.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "AIエージェントを『勝手に動くbot』にしない。承認ゲートを入れた理由", "description": "AIに仕事を任せつつ、外部公開だけは人間が一回判断する。実際の失敗から「承認ゲート」を作ったProject Tanukiの実験記。", "datePublished": "2026-10-05", "dateModified": "2026-10-05", "mainEntityOfPage": "https://silentcoastasset.com/blog/approval-gate.html", "publisher": {"@type": "Organization", "name": "Silent Coast Asset"}}</script>
+<title>AIエージェントを『勝手に動くbot』にしない。承認ゲートを入れた理由 | Silent Coast Asset</title>
+<style>
+:root{--bg:#1E2427;--panel:#283035;--text:#F7F6F0;--muted:#BEC5C5;--accent:#DDE5E3;--line:rgba(255,255,255,.16)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans JP","Yu Gothic",sans-serif;line-height:1.9}
+.wrap{max-width:860px;margin:auto;padding:0 24px}nav{padding:20px 0;background:#171d20;border-bottom:1px solid var(--line)}a{color:inherit}
+.brand{text-decoration:none;font-weight:800}header{padding:66px 0 40px;background:linear-gradient(135deg,#2b7081,#194b60 52%,#102d3b)}
+h1{font-size:clamp(36px,6vw,58px);line-height:1.22;margin:0}main{padding:42px 0 72px}h2{font-size:30px;margin-top:48px;line-height:1.4}
+h3{font-size:23px;margin-top:34px}p,li{color:#e5e8e6}ul,ol{padding-left:1.4em}blockquote{margin:20px 0;padding:14px 18px;border-left:4px solid rgba(255,255,255,.35);background:rgba(255,255,255,.05)}blockquote p{margin:0;color:#fff}hr{border:0;border-top:1px solid var(--line);margin:42px 0}footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:12px}
+.meta{color:#edf0ec;margin-top:14px;font-size:14px}
+</style></head><body>
+<nav><div class="wrap"><a class="brand" href="/">← Silent Coast Asset</a></div></nav>
+<header><div class="wrap"><h1>AIエージェントを『勝手に動くbot』にしない。承認ゲートを入れた理由</h1><div class="meta">2026-10-05 · Project Tanuki</div></div></header>
+<main><div class="wrap"><p>ある日、AIがブログの記事候補を持ってきた。</p>
+<p>タイトルがある。要約もある。今日これを出したいらしい。</p>
+<p>そして最後に、いつものように聞いてきた。</p>
+<p>「これ出してええ？」</p>
+<p>一見、かなり理想に近い。</p>
+<p>ネタ探しも、候補選びも、記事作りもAI。人間は最後にYesかNoを言うだけ。私がずっと目指していた「所長は判断する。タヌキが片付ける」に近づいている。</p>
+<p>ただし、一つだけ問題があった。</p>
+<p><strong>本文が見えない。</strong></p>
+<p>私は言った。</p>
+<p><strong>ワイ</strong></p>
+<blockquote><p>せやからブログへの投稿原稿が見られへんと、、、Tanuki Browserはもっと賢くなるんか？</p></blockquote>
+<p><strong>ChatGPT</strong></p>
+<blockquote><p>せやねん。「これ出してええ？」の前に、ブログ本文そのものがここで読めなあかん。タイトルと要約だけ出されても判断できへん。</p></blockquote>
+<p>正論である。</p>
+<p>いや、正論を言う側はお前やない。</p>
+<p>承認を求めてきたAIが、承認に必要な資料を持ってきていなかった。</p>
+<p>会社で言えば、部下が稟議書の表紙だけ持ってきて、</p>
+<p>「社長、ハンコお願いします」</p>
+<p>と言っているようなものだ。</p>
+<p>しかもその部下は、稟議書の本文を自分で作っている。</p>
+<p><strong>持っとるやろ。見せろ。</strong></p>
+<p>これが、私がAIエージェントの「承認ゲート」をかなり真面目に考えるようになった事件の一つだった。</p>
+<h2>最初は、ただ営業から逃げたかった</h2>
+<p>そもそもの始まりは、もっとしょうもない。</p>
+<p>私は何かを作るのは好きなのだが、作ったものを毎日SNSで宣伝するのはあまり好きではない。</p>
+<p>しかも外部サービスでX連携を増やそうとしたら、追加料金がかかる話まで出てきた。</p>
+<p>そのときの私は、だいぶ雑だった。</p>
+<p><strong>ワイ</strong></p>
+<blockquote><p>バカにしやがって、、、タヌキXを作製して投稿係に任命できないのかなぁ</p></blockquote>
+<p><strong>ChatGPT</strong></p>
+<blockquote><p>できる。しかも、こっちの方がタヌキ思想に合っとる。</p></blockquote>
+<p>こうして、月額料金を一つ増やしたくなかっただけなのに、SNS担当が一匹増えた。</p>
+<p>Tanuki Xである。</p>
+<p>ここまでは良かった。</p>
+<p>過去のログからネタを探す。投稿案を作る。候補を絞る。人間に見せる。</p>
+<p>人間が毎朝Xに張り付き、「今日は何を書こう」とゼロから考えるより、ずっと楽だ。</p>
+<p>ところが、AIに仕事を渡すほど、別の問題が見えてきた。</p>
+<p>AIは速い。</p>
+<p>そして速いまま、普通に間違える。</p>
+<p>ある朝、英語のLLMコミュニティへ出す投稿案を確認していたときのこと。</p>
+<p>私は画面を見て、こう言った。</p>
+<p><strong>ワイ</strong></p>
+<blockquote><p>Xのコミュニティは英語やで？ブログの記事の中身は確認できるの？</p></blockquote>
+<p><strong>ChatGPT</strong></p>
+<blockquote><p>せやった、コミュニティは英語や。そこは私のミス。X案は英語前提で出し直す。</p></blockquote>
+<p>営業担当AI、投稿先の言語を人間に教わる。</p>
+<p>投稿案そのものは作れる。</p>
+<p>文章も作れる。</p>
+<p>でも、今いる場所が英語コミュニティだという文脈を一回外した。</p>
+<p>このとき、私は「もっと賢いAIにすれば全部解決する」とはあまり思わなかった。</p>
+<p>モデルが賢くなっても、文脈の取り違え、古い状態の参照、公開先の勘違いはゼロにはならない。</p>
+<p>だったら設計で受け止めた方がいい。</p>
+<p>そこで、公開の直前に人間を一人だけ残すことにした。</p>
+<h2>人間を消すのではなく、ツッコミ役まで減らす</h2>
+<p>AI自動化というと、「人間を完全に外せるか」が分かりやすい目標になりやすい。</p>
+<p>私も最初はそっちへ寄りかけた。</p>
+<p>でも実際に使ってみると、完全自動化よりしっくり来たのは別の形だった。</p>
+<p><strong>準備は全部AI。最後の不可逆な一手だけ人間。</strong></p>
+<p>たとえばXなら、</p>
+<p>ネタを掘る。 過去投稿との重複を見る。 280字以内に整える。 投稿先に合う言語へ直す。 候補を一つに絞る。</p>
+<p>ここまではタヌキ側でやる。</p>
+<p>そのうえで、人間へ本文をそのまま見せる。</p>
+<p>「これ投稿してええ？」</p>
+<p>人間がYesと言ったら、その一件だけを出す。</p>
+<p>ブログも同じだ。</p>
+<p>候補を探す。 公開してよいSceneだけを使う。 本文を書く。 タイトル、本文、必要なら商品への導線まで揃える。</p>
+<p>そこまで終えて初めて、</p>
+<p>「これ出してええ？」</p>
+<p>と聞く。</p>
+<p>この最後の一言だけなら、人間の負担は小さい。</p>
+<p>そしてAIが変な方向へ走ったときも、</p>
+<p>「そこ英語やで？」</p>
+<p>「本文見せて」</p>
+<p>くらいの短いツッコミで止められる。</p>
+<p>結果として、人間は作業者ではなくなった。</p>
+<p><strong>ツッコミ役になった。</strong></p>
+<p>私はこれが、今のAIエージェントのかなり現実的な姿だと思っている。</p>
+<h2>承認ゲートは「確認ダイアログ」では足りない</h2>
+<p>ここで一つ分かったのは、承認ボタンを付ければ安全になるわけではない、ということだった。</p>
+<p>本文を見せずに「公開しますか？」と聞くAIは、確かに承認を取っている。</p>
+<p>でも、それでは人間が判断できない。</p>
+<p>つまり必要なのは、ボタンではなく<strong>判断可能な状態</strong>だ。</p>
+<p>私の中では、承認ゲートに三つ条件を置くようになった。</p>
+<p>一つ目は、<strong>承認する対象そのものが見えること。</strong></p>
+<p>投稿なら投稿全文。 ブログなら本文。 外部へ送る文章なら送信内容。</p>
+<p>「何かいい感じにやります」への承認ではなく、この一件への承認にする。</p>
+<p>二つ目は、<strong>承認の範囲を狭くすること。</strong></p>
+<p>今日の投稿一件を承認したからといって、明日の投稿まで許可したことにはしない。</p>
+<p>「SNS投稿を全部許可」ではなく、</p>
+<p><strong>この文章を、この場所へ、一回だけ。</strong></p>
+<p>くらいまで細くする。</p>
+<p>三つ目は、<strong>断っても仕事が壊れないこと。</strong></p>
+<p>候補が弱ければ今日は出さない。</p>
+<p>本文がおもんなければ書き直す。</p>
+<p>ログインが切れていたら、勝手に別の投稿先へ逃げない。</p>
+<p>ここは地味だがかなり大事だった。</p>
+<p>自動化は「何があっても最後まで実行すること」ではない。</p>
+<p><strong>間違った完走をしないことも自動化の一部</strong>なのだと思う。</p>
+<h2>「勝手に動く」が偉いわけではなかった</h2>
+<p>AIエージェントを作り始めた頃は、「どこまで人間なしで動けるか」にワクワクしていた。</p>
+<p>今も、それ自体は面白い。</p>
+<p>ただ、毎日使う道具としては少し評価軸が変わった。</p>
+<p>本当に欲しいのは、勝手に動くAIではない。</p>
+<p><strong>人間がやらなくていい部分を勝手に片付けて、大事なところだけ持ってくるAI</strong>だった。</p>
+<p>この差は意外と大きい。</p>
+<p>前者は、仕事を丸ごと渡そうとする。</p>
+<p>後者は、人間の判断コストを減らそうとする。</p>
+<p>私の場合、目標はだんだん後者になった。</p>
+<p>資料を探すのもタヌキ。 下書きを作るのもタヌキ。 重複を確認するのもタヌキ。 公開後の確認もタヌキ。</p>
+<p>所長は最後に見る。</p>
+<p>そして必要なら一言だけ言う。</p>
+<p>「英語やで？」</p>
+<p>「本文見せて」</p>
+<p>たぶんAIに仕事を奪われたというより、私は<strong>ツッコミ担当へ昇進した</strong>のだと思う。</p>
+<p>最初の目的は、営業や細かい作業から逃げることだった。</p>
+<p>気づけば、AIが勝手に暴走しないように「どこで人間を残すか」を設計している。</p>
+<p>逃げた仕事の代わりに、承認ゲートを作る仕事が生えた。</p>
+<p>まあ、タヌキ研究所なのでだいたいこうなる。</p>
+<hr></div></main>
+<footer><div class="wrap">Silent Coast Asset株式会社 / Project Tanuki</div></footer>
+</body></html>

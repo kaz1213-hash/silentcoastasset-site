@@ -1,0 +1,142 @@
+<!doctype html><html lang="ja"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="X営業が苦手なので、過去ログ発掘・文章化・選別・投稿をAIへ分業。実際の失敗と会話から、人間に判断だけ残す自動化を考えた話。">
+<link rel="canonical" href="https://silentcoastasset.com/blog/mine-producer-publisher.html">
+<meta property="og:type" content="article"><meta property="og:title" content="X営業が嫌すぎて、AIで「営業するタヌキ」を作った">
+<meta property="og:description" content="X営業が苦手なので、過去ログ発掘・文章化・選別・投稿をAIへ分業。実際の失敗と会話から、人間に判断だけ残す自動化を考えた話。"><meta property="og:url" content="https://silentcoastasset.com/blog/mine-producer-publisher.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "X営業が嫌すぎて、AIで「営業するタヌキ」を作った", "description": "X営業が苦手なので、過去ログ発掘・文章化・選別・投稿をAIへ分業。実際の失敗と会話から、人間に判断だけ残す自動化を考えた話。", "datePublished": "2026-10-01", "dateModified": "2026-10-01", "mainEntityOfPage": "https://silentcoastasset.com/blog/mine-producer-publisher.html", "publisher": {"@type": "Organization", "name": "Silent Coast Asset"}}</script>
+<title>X営業が嫌すぎて、AIで「営業するタヌキ」を作った | Silent Coast Asset</title>
+<style>
+:root{--bg:#1E2427;--panel:#283035;--text:#F7F6F0;--muted:#BEC5C5;--accent:#DDE5E3;--line:rgba(255,255,255,.16)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans JP","Yu Gothic",sans-serif;line-height:1.9}
+.wrap{max-width:860px;margin:auto;padding:0 24px}nav{padding:20px 0;background:#171d20;border-bottom:1px solid var(--line)}a{color:inherit}
+.brand{text-decoration:none;font-weight:800}header{padding:66px 0 40px;background:linear-gradient(135deg,#2b7081,#194b60 52%,#102d3b)}
+h1{font-size:clamp(36px,6vw,58px);line-height:1.22;margin:0}main{padding:42px 0 72px}h2{font-size:30px;margin-top:48px;line-height:1.4}
+h3{font-size:23px;margin-top:34px}p,li{color:#e5e8e6}ul,ol{padding-left:1.4em}blockquote{margin:20px 0;padding:14px 18px;border-left:4px solid rgba(255,255,255,.35);background:rgba(255,255,255,.05)}blockquote p{margin:0;color:#fff}hr{border:0;border-top:1px solid var(--line);margin:42px 0}footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:12px}
+.meta{color:#edf0ec;margin-top:14px;font-size:14px}
+</style></head><body>
+<nav><div class="wrap"><a class="brand" href="/">← Silent Coast Asset</a></div></nav>
+<header><div class="wrap"><h1>X営業が嫌すぎて、AIで「営業するタヌキ」を作った</h1><div class="meta">2026-10-01 · Project Tanuki</div></div></header>
+<main><div class="wrap"><p>私は開発が好きである。</p>
+<p>思いついたものをChatGPTに投げ、作って、壊して、直して、「なんでやねん」と言いながら少しずつ動くようにしていく。これは楽しい。</p>
+<p>問題は、完成した後だった。</p>
+<p>作ったものは、黙っていても誰にも知られない。</p>
+<p>つまり営業が要る。</p>
+<p>そして私は、営業があまり得意ではない。</p>
+<p>ある日のチャットで、ついにこう言った。</p>
+<p><strong>ワイ</strong></p>
+<blockquote><p>バカにしやがって、、、タヌキXを作製して投稿係に任命できないのかなぁ</p></blockquote>
+<p><strong>ChatGPT</strong></p>
+<blockquote><p>できる。しかも、こっちの方がタヌキ思想に合っとる。</p></blockquote>
+<p>普通ならここで「SNS運用を勉強しましょう」となるのかもしれない。</p>
+<p>なぜか私たちは、<strong>投稿係そのものを作り始めた。</strong></p>
+<p>数分後にはTanuki Xを正式な投稿係として立ち上げ、その数分後には実装まで進んだ。</p>
+<p>営業が嫌だと言っただけなのに、社員が一匹増えた。</p>
+<h2>「営業を頑張る」をやめて、工程を分けた</h2>
+<p>あとから整理すると、やったこと自体は意外と真面目だった。</p>
+<p>SNS営業には、少なくとも次の仕事がある。</p>
+<ol>
+<li>過去の出来事からネタを探す</li>
+<li>読める文章にする</li>
+<li>今日出すものを選ぶ</li>
+<li>実際に投稿する</li>
+<li>投稿後の反応を見て次へつなげる</li>
+</ol>
+<p>人間が毎日これを全部やると、「何を書こう」で止まる。</p>
+<p>そこで、作業を</p>
+<p><strong>掘る → 書く → 選ぶ → 公開する</strong></p>
+<p>に分解した。</p>
+<p>過去ログを掘る役、文章にする役、候補を絞る役、投稿する役。</p>
+<p>役名まで付け始めると若干ふざけて見えるが、分業そのものには意味がある。</p>
+<p>どこか一つが壊れても、全部を止めなくていいからだ。</p>
+<p>文章生成がおかしければ公開だけ止める。 投稿経路が止まってもネタ集めは続ける。 候補が弱ければ、その日は出さない。</p>
+<p>AIを一匹の万能生物にするより、<strong>役割を小さく分けた方が故障箇所が分かりやすい。</strong></p>
+<h2>もちろん、タヌキは普通に間違える</h2>
+<p>ここで「AIが全部やってくれて最高でした」で終われば、いかにもAIブログっぽい。</p>
+<p>現実はもう少し雑である。</p>
+<p>今日、Xの投稿案を作ってもらった。</p>
+<p>私は画面を見て言った。</p>
+<p><strong>ワイ</strong></p>
+<blockquote><p>Xのコミュニティは英語やで？ブログの記事の中身は確認できるの？</p></blockquote>
+<p><strong>ChatGPT</strong></p>
+<blockquote><p>せやった、コミュニティは英語や。そこは私のミス。X案は英語前提で出し直す。</p></blockquote>
+<p>営業自動化システム、<strong>投稿先の言語を人間に指摘される。</strong></p>
+<p>この一件だけでも、「全部自動にする」より「最後の判断を人間に残す」方がいい理由が分かる。</p>
+<p>AIは速い。</p>
+<p>候補を何本も作れる。 過去ログも掘れる。 文章も整えられる。</p>
+<p>しかし、今その場で見えている文脈を一発で外すこともある。</p>
+<p>だから現在の設計では、公開前に一度止まる。</p>
+<p>AIが準備を終えたあと、人間に聞く。</p>
+<p><strong>「これ出してええ？」</strong></p>
+<p>人間の仕事をゼロにはしない。</p>
+<p><strong>人間の仕事を、最後の判断だけにする。</strong></p>
+<p>これが今のところ一番しっくりきている。</p>
+<h2>ところが「判断だけ残す」にも罠があった</h2>
+<p>ブログ側でも似たことが起きた。</p>
+<p>AIが記事候補を選び、</p>
+<p>「今日の本命はこれです」</p>
+<p>とタイトルと要約を出してきた。</p>
+<p>私は言った。</p>
+<p><strong>ワイ</strong></p>
+<blockquote><p>せやからブログへの投稿原稿が見られへんと、、、Tanuki Browserはもっと賢くなるんか？</p></blockquote>
+<p><strong>ChatGPT</strong></p>
+<blockquote><p>せやねん。「これ出してええ？」の前に、ブログ本文そのものがここで読めなあかん。タイトルと要約だけ出されても判断できへん。</p></blockquote>
+<p>その通りである。</p>
+<p>いや、<strong>最初からそうしてくれ。</strong></p>
+<p>ここで一つ設計を直した。</p>
+<p>人間に「判断だけ」を残すなら、判断材料までAI側で揃えなければ意味がない。</p>
+<p>「承認してください」と言われて、そこから本人がファイルを探し、本文を開き、安全性を確認するなら、それは判断だけではない。</p>
+<p><strong>準備作業が人間へ戻ってきている。</strong></p>
+<p>そこでブログは、</p>
+<p>候補を選ぶ → 本文を作る → 公開してよい情報だけか確認する → 本文をそのまま人間に見せる → 「これ出してええ？」</p>
+<p>までを一続きにした。</p>
+<h2>さらに問題があった。正しいけど、おもんない</h2>
+<p>そして出来上がった記事を読んだ。</p>
+<p>内容は正しい。 構成も正しい。 役にも立つ。</p>
+<p>でも、何か違う。</p>
+<p>また私は言った。</p>
+<p><strong>ワイ</strong></p>
+<blockquote><p>内容的には素晴らしいと思うねん。でもな、読み物として楽しいかどうかは別やねん。</p></blockquote>
+<p><strong>ChatGPT</strong></p>
+<blockquote><p>そう、それや。今のC案は「内容は正しい・役に立つ」けど、説明記事に寄りすぎてる。</p></blockquote>
+<p>ここでBlog Factoryをもう一度作り直すことになった。</p>
+<p>今度は、記事を書く前に<strong>実際の会話のSceneを探す。</strong></p>
+<p>単なる名言ではない。</p>
+<p>人間が何か変なことを言う。 ChatGPTがツッコむ。 その直後、本当に何かが作られたり、方針が変わったりする。</p>
+<p>そういう場面を優先する。</p>
+<p>FX大学の記録がおもしろかったのも、結局ここだった。</p>
+<p>出来事を後から綺麗に説明したからではない。</p>
+<p><strong>当時の人間とAIが、その場で本気でやり取りしているログが残っていた。</strong></p>
+<h2>真似するなら、最小構成はこれでいい</h2>
+<p>ここからは真面目な話。</p>
+<p>同じように「発信は必要だけど毎日SNSに張り付きたくない」という人なら、大きなAIエージェントを作らなくてもいい。</p>
+<p>最初は5つで十分だと思う。</p>
+<ol>
+<li>日々の出来事をログとして残す</li>
+<li>AIに公開可能な出来事だけを拾わせる</li>
+<li>実際の会話や失敗があるSceneを優先する</li>
+<li>投稿案を数本作り、人間が一つ選ぶ</li>
+<li>公開済みの記録を残して二重投稿を防ぐ</li>
+</ol>
+<p>ポイントは、生成量を増やすことではない。</p>
+<p>AIを使えば文章はいくらでも作れる。</p>
+<p>だからむしろ大事になるのは、<strong>何を出さないか</strong>だ。</p>
+<p>弱いネタは捨てる。 根拠のない成功談は作らない。 プライベートな話は候補から落とす。 内部事情だけで他人に意味がないものも出さない。</p>
+<p>そのうえで、残った実話をちゃんと読み物にする。</p>
+<p>AI時代のコンテンツ作りは、「大量生成」より「編集」の方が重要になる気がしている。</p>
+<h2>結局、人間は何をするのか</h2>
+<p>最初は、自分がXに張り付かなくて済むようにしたかっただけだった。</p>
+<p>それが、</p>
+<p>ログを掘るAIができ、 文章を書くAIができ、 候補を選ぶAIができ、 投稿するAIができ、 今度はブログから面白い実ログを探すAIまで増えた。</p>
+<p>営業から逃げようとした結果、<strong>営業部ができた。</strong></p>
+<p>しかも部員はだいたいタヌキである。</p>
+<p>ただ、一つだけ人間側に残した仕事がある。</p>
+<p>「それ、ほんまに出してええんか？」</p>
+<p>を決めること。</p>
+<p>営業が苦手なら、営業を好きになる必要はない。</p>
+<p>営業するタヌキを作ればいい。</p>
+<p>ただしタヌキは、ときどき英語コミュニティへ日本語を持っていこうとする。</p>
+<p><strong>最後に一人、人間を置いておいた方がいい。</strong></p>
+<hr></div></main>
+<footer><div class="wrap">Silent Coast Asset株式会社 / Project Tanuki</div></footer>
+</body></html>
