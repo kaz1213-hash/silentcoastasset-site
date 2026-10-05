@@ -1,7 +1,7 @@
 {
   "schema_version": "tanuki-commerce-products-0.3",
   "storefront_owner": "Silent Coast Asset Co., Ltd.",
-  "updated_at": "2026-09-26",
+  "updated_at": "2026-10-06",
   "products": [
     {
       "id": "tanuki-duns",
@@ -157,6 +157,17 @@
       "tagline_en": "Say what you need. Butler owns the work.",
       "price_label_ja": "開発中",
       "price_label_en": "In development",
+      "detail_url": null,
+      "enabled": false
+    },
+    {
+      "id": "tanuki-calculator",
+      "group": "coming",
+      "name": "Tanuki Calculator / 狸の皮算用",
+      "tagline_ja": "獲らぬ狸を、見える化する。前提を動かして未来の景色を見るローカルWhat-if電卓。",
+      "tagline_en": "A local what-if calculator for exploring what-if scenarios.",
+      "price_label_ja": "US$4.99・買い切り",
+      "price_label_en": "US$4.99 one-time",
       "detail_url": null,
       "enabled": false
     }
