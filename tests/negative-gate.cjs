@@ -6,6 +6,10 @@ function run(stage,success){const r=cp.spawnSync(process.execPath,[gate,'verify'
 try{
  fs.cpSync(base,tmp,{recursive:true});
  run(tmp,true);
+ for(const name of ['media/index.html','index.html','project-vault.html']){
+  const f=path.join(tmp,name);fs.writeFileSync(f,fs.readFileSync(f,'utf8').replace(/\r\n/g,'\n'));
+ }
+ run(tmp,true); // Linux LF and Windows CRLF must validate identically
  fs.appendFileSync(path.join(tmp,'blog','index.html'),'<!-- approved blog-only edit -->');run(tmp,true);
  fs.appendFileSync(path.join(tmp,'media','index.html'),'<!-- unauthorized edit -->');run(tmp,false);
  fs.copyFileSync(path.join(base,'media','index.html'),path.join(tmp,'media','index.html'));

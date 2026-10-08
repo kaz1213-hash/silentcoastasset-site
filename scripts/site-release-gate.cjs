@@ -8,6 +8,7 @@ const allowedDirs=['assets','blog','commerce','core-proof','media'];
 const rootFiles=new Set(['.nojekyll','index.html','robots.txt','sitemap.xml','pages-health.txt']);
 function publicName(s){return rootFiles.has(s)||allowedDirs.includes(s)||/\.(html|txt|xml|webmanifest)$/.test(s)&&!s.startsWith('WORK_');}
 function fileHash(buf){return crypto.createHash('sha256').update(buf).digest('hex')}
+function normalized(rel,buf){return (/\.(html|txt|xml|js|css|json|md|webmanifest)$/i.test(rel)||rel==='.nojekyll')?Buffer.from(buf.toString('utf8').replace(/\r\n?/g,'\n'),'utf8'):buf}
 function files(base,rel=''){
  let out=[];
  for(const item of fs.readdirSync(path.join(base,rel),{withFileTypes:true})){
@@ -19,7 +20,7 @@ function files(base,rel=''){
  return out.sort();
 }
 function protect(p){return !(p==='sitemap.xml'||p.startsWith('blog/'))}
-function hashes(base){const result={};for(const f of files(base).filter(protect))result[f]=fileHash(fs.readFileSync(path.join(base,f)));return result}
+function hashes(base){const result={};for(const f of files(base).filter(protect))result[f]=fileHash(normalized(f,fs.readFileSync(path.join(base,f))));return result}
 function fail(msg){console.error('BLOCKED: '+msg);process.exitCode=1;throw Error(msg)}
 function validate(base){
  const required=['index.html','media/index.html','media/story-0001/index.html','media/story-0002/index.html','media/story-0003/index.html',
