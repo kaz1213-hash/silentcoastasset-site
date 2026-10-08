@@ -1,0 +1,31 @@
+name: Tanuki release scope lock
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+jobs:
+  protect-published-media:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify source identity and immutable assets
+        run: node scripts/site-release-gate.cjs build
+      - name: HTTP regression including original pages and images
+        run: node tests/site-http-smoke.cjs
+      - name: Negative gate tests
+        run: node tests/negative-gate.cjs
+      - name: Reject blog edits mixed with outside changes
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            node scripts/check-blog-only-diff.cjs "origin/${{ github.base_ref }}" HEAD
+          else
+            node scripts/check-blog-only-diff.cjs HEAD^ HEAD
+          fi

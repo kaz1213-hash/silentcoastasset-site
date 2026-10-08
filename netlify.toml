@@ -1,0 +1,6 @@
+[build]
+  command = "node scripts/site-release-gate.cjs build"
+  publish = "public-build"
+
+[build.environment]
+  NODE_VERSION = "22"
