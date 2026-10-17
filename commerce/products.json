@@ -1,7 +1,7 @@
 {
   "schema_version": "tanuki-commerce-products-0.3",
   "storefront_owner": "Silent Coast Asset Co., Ltd.",
-  "updated_at": "2026-09-26",
+  "updated_at": "2026-10-17",
   "products": [
     {
       "id": "tanuki-duns",
@@ -107,14 +107,18 @@
     },
     {
       "id": "tanuki-security",
-      "group": "coming",
+      "group": "available",
       "name": "Tanuki Security",
       "tagline_ja": "Windowsの安心を、むずかしくしない。",
       "tagline_en": "Windows security, without the security-software homework.",
-      "price_label_ja": "買い切り予定",
-      "price_label_en": "Buy-once planned",
+      "price_label_ja": "日本 ¥500・買い切り",
+      "price_label_en": "US $3.99 · one-time",
+      "checkout_url_ja": "https://apps.microsoft.com/detail/9NHDT5BNC31K",
+      "checkout_url_en": "https://apps.microsoft.com/detail/9NHDT5BNC31K",
+      "cta_ja": "Microsoft Storeで見る",
+      "cta_en": "View on Microsoft Store",
       "detail_url": null,
-      "enabled": false
+      "enabled": true
     },
     {
       "id": "tanuki-site",
