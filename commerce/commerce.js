@@ -4,6 +4,7 @@
   const REGISTRY_URL = '/commerce/products.json';
   const SAFE_CHECKOUT_HOSTS = new Set([
     'chromewebstore.google.com',
+    'apps.microsoft.com',
     'buy.polar.sh',
     'polar.sh',
     'www.polar.sh',
