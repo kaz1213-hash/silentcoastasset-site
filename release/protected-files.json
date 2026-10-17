@@ -7,14 +7,14 @@
     "chatgpt-archive-story-ja.html": "80a9be1acd3655cacc88e2c838d98f9103ba3cc9cd7c58795e6ef08336cc0b59",
     "chatgpt-conversation-archive-story.html": "05fe95b099d0de4ef69d170637ab975769aa37fd9a93577972dbefd14634b398",
     "commerce/commerce.js": "74ec3edc03bc56c85f61a36cc8fad549dcc57b2177bd7ad19d36776e306a7d9c",
-    "commerce/products.json": "90e11cae9da29142f3eb34b466f6a07a03fab3c8d36f8673d1e48b5cb20e1e9f",
+    "commerce/products.json": "387fd8f7615c2f19f3b9dba50a390138e3fc51fd3ea4d3c138cf01ecd9a45467",
     "core-proof/project-vault.html": "dcb37756939df94ff17b4a70d5a202f22bd60276554db32239a9f3122ee94604",
     "duns-number-free.html": "67db97a6448639f7f2f447827b9e4938c0dcdf08ffbe740e71c5e6f81585cb03",
     "fx-university-underwater-ja.html": "e405310d82b8a742e4d060fdf3d744de46004d3b54503064aa166235ab36e61f",
     "fx-university-underwater.html": "3ba983f055c755bfdabdd72202e6ff4b7dbefbea510c19d517b0064b05f2896e",
     "fx-university.html": "aad1e7c7aae92ce367385bebddd9720a6596be09b5347bf8c49b8f5cc89c3453",
     "google98ca9d5d4009a529.html": "c4a8fb1134358fc8e6dc94ad80683b97321d3587550785dbac98d62f5089784e",
-    "index.html": "15b088202f9cd922d8f6db527aac3eb07122ace453bf8bf29c02293410a88e4a",
+    "index.html": "c2cb0de439debbc8e322b335471812bc931482ce109f1b2e96ade958393e3c8b",
     "media/assets/aquarium-plants.png": "e331408cb5047a8f48489ae8ffeead5641517abdd583006f344e0f3ad76eba0c",
     "media/assets/bots-447.png": "b540ce9627f4bf215750812ac52bfb3e15a8edac12cb5dadaacca6128730863e",
     "media/assets/newsletter-2043.png": "4e6b6f895dc0c54b1242b9ec8be63aefece03f91d0e1c57c4f8a3419ab7b4c37",
@@ -31,7 +31,7 @@
     "project-vault.html": "fc261036544d74c88cadc7199996c56554db43a2eb000ffea0963e4bfbf2817e",
     "robots.txt": "1ec91e3b98e72e71bafb3b13967cf9f622a0b785a46e1b45d9c8d029710815c1",
     "tanuki-chronicle.html": "8be9f72b0c87373319941c071fa9becfb6a62e2c2f96cb9f680fe79662b16352",
-    "tanuki-fortune.html": "6fdfc87b0a7086e04016e432f31b0f54c45fd20ecb26441970099d919408586c",
+    "tanuki-fortune.html": "a9c288a133224d38cb083480120d4ffbbc88fa5e231a895c088dd89bdf119c1b",
     "tanuki-store.html": "0243e3dd25a4315029ac6406f5c6ea1a609b7e8d0b4a829d4bca950d52f89333"
   }
 }
