@@ -4,3 +4,10 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# Privacy-friendly click-through hop: count requests in Netlify Observability, no browser analytics.
+[[redirects]]
+  from = "/go/project-vault"
+  to = "https://chromewebstore.google.com/detail/project-vault-for-chatgpt/lnndbebmjnklgammhjmgpdaijdcmighl"
+  status = 302
+  force = true
