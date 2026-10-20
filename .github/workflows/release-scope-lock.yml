@@ -20,6 +20,8 @@ jobs:
         run: node scripts/site-release-gate.cjs build
       - name: HTTP regression including original pages and images
         run: node tests/site-http-smoke.cjs
+      - name: Validate Project Vault CTA tracking route
+        run: node tests/project-vault-cta-tracking.cjs
       - name: Negative gate tests
         run: node tests/negative-gate.cjs
       - name: Reject blog edits mixed with outside changes
