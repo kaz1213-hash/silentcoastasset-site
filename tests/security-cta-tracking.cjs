@@ -1,0 +1,31 @@
+'use strict';
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const root = path.resolve(__dirname, '..');
+const security = fs.readFileSync(path.join(root,'tanuki-security.html'),'utf8');
+const shelf = fs.readFileSync(path.join(root,'tanuki-store.html'),'utf8');
+const toml = fs.readFileSync(path.join(root,'netlify.toml'),'utf8');
+const lock = JSON.parse(fs.readFileSync(path.join(root,'release','protected-files.json'),'utf8'));
+const destination = 'https://apps.microsoft.com/detail/9NHDT5BNC31K';
+const hop = '/go/tanuki-security';
+const count = (s, needle) => s.split(needle).length - 1;
+assert.equal(count(security, 'href="' + hop + '"'), 4, 'Keep all JP/EN security guide CTAs');
+assert.equal(count(shelf, 'href="' + hop + '"'), 2, 'Keep both JP/EN shelf CTAs');
+assert.equal(count(security, 'href="' + destination + '"'), 0, 'Guide CTA must be measured');
+assert.equal(count(shelf, 'href="' + destination + '"'), 0, 'Shelf CTA must be measured');
+assert.ok(security.includes('"downloadUrl":"' + destination + '"'), 'Keep official destination in JSON-LD');
+assert.ok(security.includes('"price":"500"'), 'Keep Japan price unchanged');
+assert.ok(security.includes('"price":"3.99"'), 'Keep US price unchanged');
+const sections = toml.split('[[redirects]]').slice(1);
+const matches = sections.filter(s => s.includes('from = "' + hop + '"'));
+assert.equal(matches.length, 1, 'Exactly one security hop');
+assert.ok(matches[0].includes('to = "' + destination + '"'), 'Official Store destination only');
+assert.ok(matches[0].includes('status = 302'), 'Use temporary redirect');
+assert.ok(matches[0].includes('force = true'), 'Avoid static shadowing');
+for (const [f, body] of [['tanuki-security.html',security], ['tanuki-store.html',shelf]]) {
+  const digest = crypto.createHash('sha256').update(body.replace(/\r\n?/g,'\n')).digest('hex');
+  assert.equal(digest, lock.protected[f], 'Protected hash must match: '+f);
+}
+console.log('SECURITY_CTA_TRACKING_PASS 6/6 CTA links, Netlify 302, official Store, JPY/USD price & two protected hashes');
