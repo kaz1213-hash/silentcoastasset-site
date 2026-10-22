@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AIでFX自動売買を作って分かった、バックテストで疑うべき5つのこと | Silent Coast Asset</title>
+<meta name="description" content="ChatGPTでFX自動売買のコードを作れても、利益の保証にはならない。過剰最適化、OOS、スプレッド、最大ドローダウンとUnderwater、分散と運用停止ルールを、実際の研究の失敗から整理。">
+<link rel="canonical" href="https://silentcoastasset.com/blog/fx-ai-backtest-checklist.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Silent Coast Asset">
+<meta property="og:title" content="AIでFX自動売買を作って分かった、バックテストで疑うべき5つのこと">
+<meta property="og:description" content="ChatGPTでFX自動売買のコードを作れても、利益の保証にはならない。過剰最適化、OOS、スプレッド、最大ドローダウンとUnderwater、分散と運用停止ルールを、実際の研究の失敗から整理。">
+<meta property="og:url" content="https://silentcoastasset.com/blog/fx-ai-backtest-checklist.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1e2427">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"AIでFX自動売買を作って分かった、バックテストで疑うべき5つのこと","description":"ChatGPTでFX自動売買のコードを作れても、利益の保証にはならない。過剰最適化、OOS、スプレッド、最大ドローダウンとUnderwater、分散と運用停止ルールを、実際の研究の失敗から整理。","datePublished":"2026-10-22","dateModified":"2026-10-22","author":{"@type":"Person","name":"Kazutaka"},"publisher":{"@type":"Organization","name":"Silent Coast Asset"},"mainEntityOfPage":"https://silentcoastasset.com/blog/fx-ai-backtest-checklist.html"}</script>
+<style>
+:root{--bg:#1e2427;--panel:#293238;--text:#f7f6f0;--muted:#c5cccc;--accent:#d7e3de;--line:rgba(255,255,255,.16)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans JP","Yu Gothic",sans-serif;line-height:1.92}
+a{color:#e5efec;text-underline-offset:3px}
+a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.wrap{max-width:850px;margin:auto;padding:0 24px}
+nav{background:#181e21;border-bottom:1px solid var(--line);padding:20px 0}
+nav a{text-decoration:none;font-weight:700}
+header{padding:72px 0 45px;background:linear-gradient(135deg,#254a54,#1e2427 70%)}
+.kicker{color:#d2e4df;font-size:13px;letter-spacing:.12em;font-weight:700}
+h1{font-size:clamp(32px,5.5vw,51px);line-height:1.32;margin:16px 0 22px;max-width:19em}
+.lead{font-size:19px;color:#ecf2ef;max-width:39em}
+.meta{font-size:13px;color:var(--muted)}
+main{padding:42px 0 80px}
+h2{font-size:clamp(24px,3vw,31px);line-height:1.48;margin:50px 0 16px}
+p{margin:17px 0;font-size:17px}
+aside,.note{border:1px solid var(--line);background:var(--panel);padding:23px 25px;margin:30px 0}
+.note strong{color:#e5f0eb}
+.cta{border:1px solid var(--line);background:var(--panel);padding:28px;margin-top:46px}
+.cta h2{margin:0 0 14px;font-size:26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.btns a{background:#d7e5e1;color:#163238;padding:11px 17px;border-radius:7px;text-decoration:none;font-weight:700;display:inline-block;line-height:1.5}
+.btns a:hover{background:#fff}
+.small{font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:28px 0;font-size:13px;color:var(--muted)}
+@media(max-width:640px){.wrap{padding:0 19px}header{padding:53px 0 36px}p{font-size:16px}.cta{padding:22px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a href="/blog/">← Silent Coast Asset Blog</a></div></nav>
+<header><div class="wrap">
+<div class="kicker">FX大学 / 研究から得たチェックリスト</div>
+<h1>AIでFX自動売買を作って分かった、バックテストで疑うべき5つのこと</h1>
+<p class="lead">AIはコードを形にしてくれる。でも「動くこと」と「自分のお金を任せられること」の間には、思ったより深い溝がある。</p>
+<p class="meta">2026年10月22日 · Silent Coast Asset / FX大学</p>
+</div></header>
+<main><article class="wrap">
+<p>10年前に使っていたFXの自動売買を、ChatGPTで作り直せないだろうか。</p>
+<p>そんな軽い始まりから、気づけば戦略ごとに「教授」が6人いる研究所になった。コードを書かない私にとって、動くプログラムができること自体は大きな進歩だった。</p>
+<p>しかし、いざ長い期間で検証すると、喜ぶより先に疑うべきことが次々と出てきた。これは「勝てるEA」の紹介ではなく、<strong>AIでEAを作った後に、私たちが確認したい5つの問い</strong>のメモだ。</p>
+
+<h2>1. 過去の結果に、合わせすぎていないか</h2>
+<p>パラメーターを少し変えただけで利益曲線がきれいになると、ついその数字を採用したくなる。けれど、過去のデータに合わせ込んだだけなら、将来には通用しないかもしれない。</p>
+<p>開発時に調整した期間（インサンプル）と、調整に使っていない期間（アウトオブサンプル、OOS）を分ける。OOSでもうまく見えるからといって合格ではないが、少なくとも同じデータで何度も答え合わせするよりは厳しい。</p>
+
+<h2>2. バックテストの「利益」は何を差し引いているか</h2>
+<p>スプレッド、取引手数料、スリッページ、約定拒否。現実の注文では無視できないものが、検証設定によっては小さく扱われている。</p>
+<p>短い時間軸で回数が多い戦略ほど、わずかなコストの違いが結果を大きく変える可能性がある。「どの価格で、どんな前提で約定した数字か」を記録せずに、利益だけを比べない。</p>
+
+<h2>3. 最大ドローダウンだけで安心していないか</h2>
+<p>私たちのQuickShiftの長期研究シミュレーションでは、最大ドローダウン約11%という数字に対し、過去の高値を取り戻せない期間（Underwater）が約14.9年に及んだ。<strong>下落の深さと、戻るまでの時間は別物</strong>だった。</p>
+<p>たとえ損失率が小さめに見えても、15年近く新高値を更新できないなら、その戦略を続ける理由を考え直す必要がある。数値の詳細は<a href="/fx-university-underwater-ja.html">「ドローダウンは深さ。Underwaterは時間。」</a>にまとめた。</p>
+
+<div class="note"><strong>数字の読み方</strong>
+<p>この約14.9年は特定の過去データを用いた研究シミュレーションの観測結果で、実口座の成績でも将来の予測でもない。「長く待てば儲かる」という意味でもない。</p></div>
+
+<h2>4. 戦略を増やすだけで、分散できたと思っていないか</h2>
+<p>6人の教授がいても、同じ相場で同じ方向に負けるなら、名前が6つに増えただけだ。売買タイミング、損益を生む相場環境、苦手な局面の違いを調べる。</p>
+<p>「別々のEAだから独立している」ではなく、<strong>同時に崩れる場面がないか</strong>を見る。分散は戦略の数よりも、失敗の重なり方が大切だ。</p>
+
+<h2>5. どんな結果が出たら、採用しないと決めているか</h2>
+<p>検証結果を見てから合格ラインを動かすと、いつまでも都合のよい理由が生まれる。検証前に、使う期間、許容するドローダウン、想定コスト、稼働を止める条件を決めておく。</p>
+<p>採用した戦略だけでなく、<strong>不採用にした理由も残す</strong>。AIで候補を量産できる時代には、作る能力と同じくらい「捨てる判断」が重要になる。</p>
+
+<h2>AIが賢くなるほど、疑う仕事は減らない</h2>
+<p>「動いた」は開発の区切りであって、研究のゴールではない。答えのない部分を見つけるほど、かつての単独EAの復活計画は、教授6人がいるFX大学へ変わっていった。</p>
+<p>同じようにChatGPTで何かを作っている人なら、<a href="/blog/fx-university-to-tanuki-lab.html">「眼科医がFX大学の学長になり、タヌキ研究所の所長になるまで」</a>の寄り道も、たぶん他人事ではない。</p>
+
+<div class="cta">
+<h2>失敗も含めた研究の過程を、Kindleにしました。</h2>
+<p>『FX大学』は、AIで簡単に稼ぐ手順書ではありません。眼科医がコード0行から自動売買を作り直そうとし、検証と判断の難しさにぶつかった実録です。日本語版と英語版を公開しています。</p>
+<div class="btns">
+<a href="https://www.amazon.co.jp/dp/B0H1M3VY6B" target="_blank" rel="noopener noreferrer">FX大学 日本語版（Amazon）</a>
+<a href="https://www.amazon.com/dp/B0HKW58V84" target="_blank" rel="noopener noreferrer" lang="en">FX University (English)</a>
+</div>
+<p class="small">売買助言ではありません。市場には損失リスクがあり、記載した研究数値は将来の成績を保証しません。書籍の概要は<a href="/fx-university.html">FX大学の紹介ページ</a>でも確認できます。</p>
+</div>
+</article></main>
+<footer><div class="wrap">Silent Coast Asset / Project Tanuki · <a href="/blog/">ブログ一覧</a></div></footer>
+</body></html>
