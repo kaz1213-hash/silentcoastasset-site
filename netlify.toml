@@ -11,3 +11,10 @@
   to = "https://chromewebstore.google.com/detail/project-vault-for-chatgpt/lnndbebmjnklgammhjmgpdaijdcmighl"
   status = 302
   force = true
+
+# Optional Tanuki Security Store click-through measurement; no browser identifiers.
+[[redirects]]
+  from = "/go/tanuki-security"
+  to = "https://apps.microsoft.com/detail/9NHDT5BNC31K"
+  status = 302
+  force = true
