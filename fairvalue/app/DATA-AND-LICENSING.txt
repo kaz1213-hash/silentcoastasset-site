@@ -1,0 +1,18 @@
+TANUKI FairValue (research beta) - static distribution candidate.
+Public transaction price data source: Ministry of Land, Infrastructure, Transport and Tourism,
+'Real Estate Information Library' (不動産情報ライブラリ, 不動産取引価格情報).
+Edited and restructured by Silent Coast Asset株式会社 / Project Tanuki.
+https://www.reinfolib.mlit.go.jp/help/termsOfUse/
+MLIT National Land Numerical Information (N03 administrative boundaries), 2026,
+simplified via a third-party GeoJSON distribution; use original conditions for map data.
+https://nlftp.mlit.go.jp/ksj/other/agreement.html
+Digital Agency Address Base Registry town reference positions: source and terms
+https://dataset.address-br.digital.go.jp/
+Offline OpenStreetMap street extracts (data/street_context.json):
+(c) OpenStreetMap contributors; Open Database License (ODbL) 1.0.
+https://www.openstreetmap.org/copyright
+https://opendatacommons.org/licenses/odbl/1-0/
+Online GSI tile imagery is fetched ONLY after a deliberate user action;
+it is not bundled with this package. GSI data terms apply.
+https://maps.gsi.go.jp/development/ichiran.html
+The pricing model is NOT a formal appraisal or a guarantee of sale value.

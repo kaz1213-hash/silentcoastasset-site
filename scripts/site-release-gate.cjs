@@ -4,7 +4,7 @@
 // Usage: node scripts/site-release-gate.cjs seal|build|verify [STAGE_PATH]
 const fs=require('fs'),path=require('path'),crypto=require('crypto');
 const root=path.resolve(__dirname,'..'),manifestFile=path.join(root,'release','protected-files.json');
-const allowedDirs=['assets','blog','commerce','core-proof','media'];
+const allowedDirs=['assets','blog','commerce','core-proof','media','fairvalue'];
 const rootFiles=new Set(['.nojekyll','index.html','robots.txt','sitemap.xml','pages-health.txt']);
 function publicName(s){return rootFiles.has(s)||allowedDirs.includes(s)||/\.(html|txt|xml|webmanifest)$/.test(s)&&!s.startsWith('WORK_');}
 function fileHash(buf){return crypto.createHash('sha256').update(buf).digest('hex')}
@@ -28,6 +28,26 @@ function validate(base){
  'media/comics/aquarium-plants/index.html','media/assets/surfing-company.png','media/assets/bots-447.png',
  'blog/447-visits-bots.html','blog/got-it-x-spam-label.html','project-vault.html','tanuki-store.html'];
  for(const r of required)if(!fs.existsSync(path.join(base,r)))fail('Missing '+r);
+ for(const r of ['fairvalue/index.html','fairvalue/app/index.html',
+   'fairvalue/app/app.mjs','fairvalue/app/seller_proceeds.mjs','fairvalue/app/area_map_ui.mjs',
+   'fairvalue/app/data/transactions.json','fairvalue/app/data/validation.json',
+   'fairvalue/app/data/geography.json','fairvalue/app/data/national_catalog.json',
+   'fairvalue/app/DATA-AND-LICENSING.txt','fairvalue/PACKAGE_MANIFEST.json'])
+   if(!fs.existsSync(path.join(base,r)))fail('Missing FairValue integration '+r);
+ const fairLanding=fs.readFileSync(path.join(base,'fairvalue/index.html'),'utf8');
+ const fairApp=fs.readFileSync(path.join(base,'fairvalue/app/index.html'),'utf8');
+ const fairManifest=JSON.parse(fs.readFileSync(path.join(base,'fairvalue/PACKAGE_MANIFEST.json'),'utf8'));
+ if(!fairLanding.includes('name="robots" content="noindex,nofollow"')||
+    !fairApp.includes('name="robots" content="noindex,nofollow"'))
+   fail('Prelaunch FairValue must not accidentally be indexed');
+ if(fairManifest.status!=='NONPRODUCTION_PRELAUNCH_REVIEW_REQUIRED'||
+    fairManifest.hasPublicLaunchApproval!==false)
+   fail('Release candidate status was changed without launch approval');
+ if(fairManifest.transactionCount!==17156||fairManifest.priceCityCount!==15)
+   fail('FairValue price scope changed; re-review required');
+ if(!fs.readFileSync(path.join(base,'index.html'),'utf8').includes('href="/fairvalue/"'))
+   fail('SCA homepage has no entry to free FairValue research tool');
+
  const read=r=>fs.readFileSync(path.join(base,r),'utf8');
  const home=read('index.html'),media=read('media/index.html'),surf=read('media/comics/surfing-company/index.html');
  const bot=read('media/comics/bots-447/index.html'),story=read('media/story-0003/index.html');
