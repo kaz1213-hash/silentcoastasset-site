@@ -43,6 +43,20 @@
   - Netlify Deploy Previewコンテキスト：https://docs.netlify.com/deploy/deploy-overview/
   - Google検索用JavaScript/静的HTML：https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics
 
+## GitHub→Netlify自動プレビューの接続ブロッカー（2026-10-30）
+
+- GitHubのDraft PR **#34**：`https://github.com/kaz1213-hash/silentcoastasset-site/pull/34`。本番のSCAサイトは変更していない。
+- NetlifyのSCAサイト`inquisitive-clafoutis-525f7c`へのDeploy Preview #34（デプロイID`6ae40fd4f0dccd1f4f382214`）は、`Failed during stage 'preparing repo'`、GitHubプライベートリポジトリ`kaz1213-hash/silentcoastasset-site`に対して`Repository not found`（git exit128）で失敗。
+- **2026-10-28のSCA productionデプロイでも同じ原因で失敗**しており、FairValueのSCA統合コードや今回のtar展開コードが原因ではない。SCA既存の最後の正常なproduction deployは`6ae194b96576c9b2404e1290`のまま。
+- Netlify Project configuration → Developer settings → Continuous deployment → Repository → Manage repository → Link to a different repository、同じprivate GitHub repoを再選択して**Netlify GitHub Appのリポジトリアクセスを再承認**する必要がある可能性。連携解除・OAuth再接続は所有者の判断が必要なので未実行。
+- Netlify公式ヘルプ：`https://docs.netlify.com/build/configure-builds/troubleshooting-tips/`、`https://docs.netlify.com/build/git-workflows/repo-permissions-linking/`。
+- 認証が復旧したらPR #34を**Draftのまま**再ビルドし、`deploy-preview`環境のnoindex・SSO・ブラウザ動作を本番と区別して確認。**本番公開の許可ではない**。
+
+## クロスプラットフォーム保護
+
+- WindowsのGit checkout（CRLF）とNetlify/Linuxのcheckout（LF）でテキストのバイトが異なる可能性を実際の隔離試験で検出。SCA紹介ページ**のみ**改行をLFに正規化してハッシュ比較する。ZIP/JSON/APIデータ、静的アプリ、取引データは引き続きバイト単位の厳格SHA検査。
+- 本番解放を模擬するテストも**分離した一時worktree**でのみ実施し、元のDraft PRに`generalPublicReleaseApproved=true`を保存しない。
+
 ## 公開後の流入測定方針
 
 - SCAの既存サイトではFairValueの一般公開導線はまだ存在しない。SCA公開時に初めて検索エンジンのクロール対象となる。

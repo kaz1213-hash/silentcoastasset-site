@@ -58,10 +58,16 @@ function checkManifest(){
   names.includes('data/transactions.json') &&
   names.every(safeName),'Unrecognized static asset allowlist');
  const landing=path.join(ROOT,'fairvalue','index.html');
- requireThat(fs.existsSync(landing) &&
-  m.landingSourceBytes===fs.statSync(landing).size &&
-  m.landingSourceSha256===hex(fs.readFileSync(landing)),
-  'SCA launch landing source SHA changed after review');
+ requireThat(fs.existsSync(landing),'SCA launch landing missing');
+ // Git on Windows may checkout CRLF, whereas Netlify/Linux uses LF.
+ // Use canonical UTF-8 LF for EXACTLY this text source, as the SCA
+ // protected-files manifest already does. JSON/ZIP/data remain byte-hashed.
+ const normalizedLanding=Buffer.from(
+  fs.readFileSync(landing,'utf8').replace(/\r\n?/g,'\n'),'utf8');
+ requireThat(
+  m.landingSourceBytes===normalizedLanding.length &&
+  m.landingSourceSha256===hex(normalizedLanding),
+  'SCA launch landing normalized SHA changed after review');
  const packageBytes=fs.readFileSync(archivePath);
  requireThat(packageBytes.length===m.archiveBytes &&
   m.archiveSha256===hex(packageBytes) &&
@@ -124,7 +130,8 @@ function parseTarGzip({manifest,packageBytes}){
  return result;
 }
 function checkLanding(landing,publicApproved,expectedDigest){
- requireThat(hex(landing)===expectedDigest,'SCA launch landing no longer signed');
+ const normalized=Buffer.from(landing.toString('utf8').replace(/\r\n?/g,'\n'),'utf8');
+ requireThat(hex(normalized)===expectedDigest,'SCA launch landing no longer signed');
  const html=landing.toString('utf8');
  requireThat(html.includes('href="/fairvalue/app/"') &&
   html.includes('Silent Coast Asset') &&
