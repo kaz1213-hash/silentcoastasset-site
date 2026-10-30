@@ -4,7 +4,7 @@
 // Usage: node scripts/site-release-gate.cjs seal|build|verify [STAGE_PATH]
 const fs=require('fs'),path=require('path'),crypto=require('crypto');
 const root=path.resolve(__dirname,'..'),manifestFile=path.join(root,'release','protected-files.json');
-const allowedDirs=['assets','blog','commerce','core-proof','media'];
+const allowedDirs=['assets','blog','commerce','core-proof','media','fairvalue'];
 const rootFiles=new Set(['.nojekyll','index.html','robots.txt','sitemap.xml','pages-health.txt']);
 function publicName(s){return rootFiles.has(s)||allowedDirs.includes(s)||/\.(html|txt|xml|webmanifest)$/.test(s)&&!s.startsWith('WORK_');}
 function fileHash(buf){return crypto.createHash('sha256').update(buf).digest('hex')}
@@ -19,7 +19,7 @@ function files(base,rel=''){
  }
  return out.sort();
 }
-function protect(p){return !(p==='sitemap.xml'||p.startsWith('blog/'))}
+function protect(p){return !(p==='sitemap.xml'||p.startsWith('blog/')||p.startsWith('fairvalue/'))}
 function hashes(base){const result={};for(const f of files(base).filter(protect))result[f]=fileHash(normalized(f,fs.readFileSync(path.join(base,f))));return result}
 function fail(msg){console.error('BLOCKED: '+msg);process.exitCode=1;throw Error(msg)}
 function validate(base){
@@ -28,6 +28,14 @@ function validate(base){
  'media/comics/aquarium-plants/index.html','media/assets/surfing-company.png','media/assets/bots-447.png',
  'blog/447-visits-bots.html','blog/got-it-x-spam-label.html','project-vault.html','tanuki-store.html'];
  for(const r of required)if(!fs.existsSync(path.join(base,r)))fail('Missing '+r);
+ if(!fs.existsSync(path.join(base,'fairvalue/index.html')))fail('Missing new SCA FairValue landing');
+ const homeForFairValue=fs.readFileSync(path.join(base,'index.html'),'utf8');
+ const landingForFairValue=fs.readFileSync(path.join(base,'fairvalue/index.html'),'utf8');
+ if(!homeForFairValue.includes('href="/fairvalue/"')||
+    !landingForFairValue.includes('href="/fairvalue/app/"')||
+    !landingForFairValue.includes('21市区')||
+    !landingForFairValue.includes('173,322件'))
+    fail('SCA FairValue visitor path or honest data scope missing');
  const read=r=>fs.readFileSync(path.join(base,r),'utf8');
  const home=read('index.html'),media=read('media/index.html'),surf=read('media/comics/surfing-company/index.html');
  const bot=read('media/comics/bots-447/index.html'),story=read('media/story-0003/index.html');
@@ -47,7 +55,11 @@ function verify(base){
  const saved=JSON.parse(fs.readFileSync(manifestFile,'utf8'));const actual=hashes(base);
  const union=new Set([...Object.keys(saved.protected),...Object.keys(actual)]);
  for(const key of [...union].sort())if(saved.protected[key]!==actual[key])fail('Protected file mismatch: '+key);
- validate(base);console.log('SCOPE_PASS protected='+Object.keys(actual).length+' blog/sitemap only may change');
+ validate(base);
+ require('./stage-fairvalue-v080.cjs').checkManifest();
+ if(fs.existsSync(path.join(base,'fairvalue','app','index.html')))
+  require('./stage-fairvalue-v080.cjs').verifyFairValueSite(base);
+ console.log('SCOPE_PASS protected='+Object.keys(actual).length+' + pinned FairValue public-ready archive');
 }
 function stage(){
  const out=path.join(root,'public-build');
@@ -55,6 +67,7 @@ function stage(){
  for(const f of files(root)){
   const target=path.join(out,f);fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(path.join(root,f),target);
  }
+ require('./stage-fairvalue-v080.cjs').stageFairValue(out);
  return out;
 }
 try{
