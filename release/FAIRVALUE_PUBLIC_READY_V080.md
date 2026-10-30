@@ -55,7 +55,8 @@
 ## クロスプラットフォーム保護
 
 - WindowsのGit checkout（CRLF）とNetlify/Linuxのcheckout（LF）でテキストのバイトが異なる可能性を実際の隔離試験で検出。SCA紹介ページ**のみ**改行をLFに正規化してハッシュ比較する。ZIP/JSON/APIデータ、静的アプリ、取引データは引き続きバイト単位の厳格SHA検査。
-- 本番解放を模擬するテストも**分離した一時worktree**でのみ実施し、元のDraft PRに`generalPublicReleaseApproved=true`を保存しない。
+- **模擬本番ビルドに合格（2026-10-30 12:41 JST頃）**。ARKの使い捨てdetached worktreeに限り仮の承認フラグを設定して`CONTEXT=production node scripts/site-release-gate.cjs build`を実行。展開ファイル218件の全SHA、`/fairvalue/`・`/fairvalue/app/`の`index,follow`とcanonical、既存旧167,559件／Q2新5,763件／価格モデル凍結を確認し`BUILD_PASS`。作業後、一時worktreeは削除済み。
+- 模擬試験の証拠：`C:\TanukiFactory\Ops\SCA_FairValue_V080_PRODUCTION_DRYRUN.json`。コミット`c96e3dfe81037afabae50a256b32930bde39cf7d`で確認。**実際のNetlify productionは一切変更せず、PRの`generalPublicReleaseApproved=false`を維持したまま**。
 
 ## 公開後の流入測定方針
 
