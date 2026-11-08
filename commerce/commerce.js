@@ -1,6 +1,18 @@
 (() => {
   'use strict';
 
+  const TANUKI_SITE_STORE = 'ms-windows-store://pdp/?productid=9P26MTW83HBW';
+  const isWindows = () => /Windows/i.test(navigator.userAgent);
+  function wireTanukiSiteLinks() {
+    document.querySelectorAll('[data-tanuki-site-store]').forEach(link => {
+      if (!isWindows()) return;
+      link.href = TANUKI_SITE_STORE;
+      link.textContent = link.dataset.tanukiSiteStore === 'en'
+        ? 'Open in Windows Microsoft Store'
+        : 'WindowsのStoreアプリで開く · 日本 ¥7,480・買い切り';
+    });
+  }
+
   const REGISTRY_URL = '/commerce/products.json';
   const SAFE_CHECKOUT_HOSTS = new Set([
     'chromewebstore.google.com',
@@ -45,7 +57,7 @@
     if (!value) return false;
     try {
       const url = new URL(value);
-      return url.protocol === 'https:' && SAFE_CHECKOUT_HOSTS.has(url.hostname);
+      return url.protocol === 'https:' && (SAFE_CHECKOUT_HOSTS.has(url.hostname) || (url.hostname === 'silentcoastasset.com' && url.pathname === '/tanuki-site-support.html'));
     } catch (_) {
       return false;
     }
@@ -74,10 +86,12 @@
       if (isSafeCheckoutUrl(checkout)) {
         const buy = document.createElement('a');
         buy.className = 'commerce-cta';
-        buy.href = checkout;
-        buy.target = '_blank';
+        const nativeSite = product.id === 'tanuki-site' && isWindows();
+        buy.href = nativeSite ? TANUKI_SITE_STORE : checkout;
+        if (!nativeSite) buy.target = '_blank';
         buy.rel = 'noopener noreferrer';
         buy.textContent = lang === 'en' ? product.cta_en : product.cta_ja;
+        if (nativeSite) buy.textContent = lang === 'en' ? 'Open in Windows Microsoft Store' : 'WindowsのStoreアプリで開く';
         actions.appendChild(buy);
       }
     }
@@ -179,6 +193,7 @@
     }
   }
 
+  document.addEventListener('DOMContentLoaded', wireTanukiSiteLinks);
   document.addEventListener('DOMContentLoaded', load);
   document.addEventListener('sca-language-change', load);
 })();

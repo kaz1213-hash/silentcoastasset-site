@@ -130,10 +130,10 @@
       "price_label_en": "One-time purchase · see Store for local pricing",
       "detail_url": "/tanuki-site-support.html",
       "enabled": true,
-      "checkout_url_ja": "https://apps.microsoft.com/detail/9P26MTW83HBW?hl=ja-JP&gl=JP",
-      "checkout_url_en": "https://apps.microsoft.com/detail/9P26MTW83HBW?hl=en-US",
-      "cta_ja": "Microsoft Storeで見る",
-      "cta_en": "View on Microsoft Store"
+      "checkout_url_ja": "https://silentcoastasset.com/tanuki-site-support.html#store-ja",
+      "checkout_url_en": "https://silentcoastasset.com/tanuki-site-support.html#store-en",
+      "cta_ja": "Windowsでの購入方法",
+      "cta_en": "How to buy on Windows"
     },
     {
       "id": "tanuki-fish",
