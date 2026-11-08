@@ -1,7 +1,7 @@
 {
   "schema_version": "tanuki-commerce-products-0.3",
   "storefront_owner": "Silent Coast Asset Co., Ltd.",
-  "updated_at": "2026-10-17",
+  "updated_at": "2026-11-08",
   "products": [
     {
       "id": "tanuki-duns",
@@ -122,14 +122,18 @@
     },
     {
       "id": "tanuki-site",
-      "group": "development",
+      "group": "available",
       "name": "Tanuki Site",
       "tagline_ja": "ホームページが必要。でも、ホームページを作りたくない。",
       "tagline_en": "Need a website. Don't want to build one.",
-      "price_label_ja": "開発中",
-      "price_label_en": "In development",
-      "detail_url": null,
-      "enabled": false
+      "price_label_ja": "日本 ¥7,480・買い切り",
+      "price_label_en": "One-time purchase · see Store for local pricing",
+      "detail_url": "/tanuki-site-support.html",
+      "enabled": true,
+      "checkout_url_ja": "https://apps.microsoft.com/detail/9P26MTW83HBW?hl=ja-JP&gl=JP",
+      "checkout_url_en": "https://apps.microsoft.com/detail/9P26MTW83HBW?hl=en-US",
+      "cta_ja": "Microsoft Storeで見る",
+      "cta_en": "View on Microsoft Store"
     },
     {
       "id": "tanuki-fish",
