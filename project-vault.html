@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="ChatGPTのProjectと会話をPCにローカル保存。差分バックアップ、保存したVaultの検索、OpenAI公式エクスポートとの比較に対応する、買い切り型Chrome拡張機能。">
+<link rel="canonical" href="https://silentcoastasset.com/project-vault">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ChatGPTのProjectをPCにバックアップ | Project Vault">
+<meta property="og:description" content="Project単位で保存・差分バックアップ・Vault検索。月額なし、US$10買い切りのChrome拡張。">
+<meta property="og:url" content="https://silentcoastasset.com/project-vault">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Project Vault for ChatGPT","applicationCategory":"BrowserApplication","url":"https://silentcoastasset.com/project-vault","description":"Chrome extension for local ChatGPT Project backups, incremental archives, Vault search, and export comparison.","publisher":{"@type":"Organization","name":"Silent Coast Asset"},"offers":{"@type":"Offer","price":"10.00","priceCurrency":"USD","description":"One-time license; activate after Chrome Web Store installation"}}</script>
 <meta name="theme-color" content="#1E2427">
 <title>ChatGPTのProjectをローカル保存・バックアップ | Project Vault</title>
 <style>
@@ -52,6 +58,54 @@ footer{padding:28px 0;color:var(--muted);font-size:12px}
 <h2>Return to old conversations when you need them.</h2>
 <p class="lead">The more you use AI, the more useful conversations you may want to revisit later. Project Vault keeps those conversations and Projects organized on your own computer.</p>
 <div class="grid"><div class="card"><h3>Local-first</h3><p>Saving and organization are centered on your own computer.</p></div><div class="card"><h3>Buy once</h3><p>US$10 one-time purchase. No subscription.</p></div><div class="card"><h3>Install from Chrome</h3><p>Project Vault is distributed through the Chrome Web Store.</p></div></div>
+</div>
+</div></section>
+<section><div class="wrap">
+<div class="lang lang-ja">
+<h2>具体的に、何を保存できる？</h2>
+<p class="lead">Project Vaultは、長く続くChatGPT Projectの作業記録を、PCにも保存しておきたい人向けです。</p>
+<div class="grid">
+<div class="card"><h3>Project全体のVault</h3><p>現在開いているProjectの会話、JSON、添付ファイルをローカル保存。単体チャットをMarkdownやHTMLなどで保存する機能もあります。</p></div>
+<div class="card"><h3>Full → Delta差分バックアップ</h3><p>Full Vaultを基準に、新規・更新されたチャットをDelta ZIPで保存。対応するFull Vaultがあれば新しい添付ファイルも差分追跡できます。</p></div>
+<div class="card"><h3>保存済みVaultの検索</h3><p>PC上のFull Vault・Delta ZIPを読み込み、複数Projectや保存世代を横断して検索。OpenAI公式エクスポートZIPとの照合や自己診断にも対応します。</p></div>
+</div>
+</div>
+<div class="lang lang-en">
+<h2>What can Project Vault save?</h2>
+<p class="lead">Keep a local record of the ChatGPT Projects you use for long-running work.</p>
+<div class="grid">
+<div class="card"><h3>Full Project Vault</h3><p>Save chats, JSON and attachments from the open Project locally. Individual chats can also be saved in formats including Markdown and HTML.</p></div>
+<div class="card"><h3>Full → Delta backups</h3><p>Save new and changed conversations in Delta ZIP archives based on a Full Vault. With a matching Full Vault, newly added attachments can be tracked too.</p></div>
+<div class="card"><h3>Search across archives</h3><p>Load Full Vault and Delta ZIP files on your PC, search across Projects and backup generations, compare with an official OpenAI export ZIP, and run diagnostics.</p></div>
+</div>
+</div>
+</div></section>
+<section><div class="wrap">
+<div class="lang lang-ja">
+<h2>使い始めるまでの3ステップ</h2>
+<div class="grid">
+<div class="card"><h3>1. Chromeに追加</h3><p>Chrome Web Storeから拡張機能をインストールします。</p></div>
+<div class="card"><h3>2. ライセンス有効化</h3><p>US$10の買い切りライセンスキーを有効化。インストールだけで有料機能が使えるわけではありません。</p></div>
+<div class="card"><h3>3. Projectを保存</h3><p>ChatGPTで対象Projectを開いてFull Vaultを作成。後日、差分をバックアップします。</p></div>
+</div>
+<h2>無料の公式エクスポートと、どう違う？</h2>
+<p>アカウントのデータをまとめて控えるだけなら、まずOpenAI公式の無料エクスポートを確認してください。Project VaultはProject単位で繰り返し保存し、変更分を管理したい人向けの追加の選択肢です。削除済み会話の復元を保証するものではありません。</p>
+<p><a href="/blog/chatgpt-project-backup-guide.html">ChatGPT Projectのバックアップ方法を比較する（無料の方法から解説）</a></p>
+<h3>プライバシーと利用条件</h3>
+<p>会話本文・添付ファイル・Vault内容をProject Vaultのサーバーへアップロードする仕組みはありません。ライセンスの有効化・確認にはHTTPS経由でPolarを使いますが、会話内容は送信しません。保存先PCの保護・別途バックアップは必要です。Silent Coast Asset製の独立した拡張機能であり、OpenAI公式製品ではありません。</p>
+</div>
+<div class="lang lang-en">
+<h2>Get started in three steps</h2>
+<div class="grid">
+<div class="card"><h3>1. Install in Chrome</h3><p>Install the extension from the Chrome Web Store.</p></div>
+<div class="card"><h3>2. Activate your license</h3><p>Activate the US$10 one-time license key. Installing alone does not unlock paid features.</p></div>
+<div class="card"><h3>3. Back up a Project</h3><p>Open a ChatGPT Project and create a Full Vault; save incremental changes later.</p></div>
+</div>
+<h2>How is this different from the free official export?</h2>
+<p>If you only need an account-data copy, try OpenAI's free official export first. Project Vault adds repeated Project-level saving, incremental changes and local Vault search. It does not guarantee restoration of deleted chats.</p>
+<p><a href="/blog/chatgpt-project-backup-guide.html">Compare backup methods (guide in Japanese)</a></p>
+<h3>Privacy and requirements</h3>
+<p>Project Vault does not upload conversation contents, attachments or Vault data to its server. License activation and validation use HTTPS with Polar, without sending conversation contents. Secure and back up your own PC separately. This is an independent Silent Coast Asset extension, not an official OpenAI product.</p>
 </div>
 </div></section>
 <section><div class="wrap">
