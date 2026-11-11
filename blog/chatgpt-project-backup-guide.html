@@ -12,7 +12,7 @@
 <meta property="og:title" content="ChatGPTのProjectをバックアップする方法｜公式機能とローカル保存の使い分け">
 <meta property="og:description" content="無料の標準機能と、Project単位の差分バックアップを目的別に整理。">
 <meta property="og:url" content="https://silentcoastasset.com/blog/chatgpt-project-backup-guide.html">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"ChatGPTのProjectをバックアップする方法｜公式エクスポートとローカル保存の違い","description":"ChatGPTのProjectと会話を手元に残す方法を、標準検索・公式エクスポート・Project単位のローカル保存に分けて説明します。","datePublished":"2026-10-28","dateModified":"2026-10-28","mainEntityOfPage":"https://silentcoastasset.com/blog/chatgpt-project-backup-guide.html","publisher":{"@type":"Organization","name":"Silent Coast Asset"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"ChatGPTのProjectをバックアップする方法｜公式エクスポートとローカル保存の違い","description":"ChatGPTのProjectと会話を手元に残す方法を、標準検索・公式エクスポート・Project単位のローカル保存に分けて説明します。","datePublished":"2026-10-28","dateModified":"2026-11-11","mainEntityOfPage":"https://silentcoastasset.com/blog/chatgpt-project-backup-guide.html","publisher":{"@type":"Organization","name":"Silent Coast Asset"}}</script>
 <style>
 :root{--bg:#1E2427;--panel:#283035;--text:#F7F6F0;--muted:#BEC5C5;--accent:#DDE5E3;--line:rgba(255,255,255,.16)}
 *{box-sizing:border-box}
@@ -41,6 +41,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <main><article class="wrap">
 <p>ChatGPTのProjectに会話やファイルが増えてくると、「あとで探せるか」だけでなく「手元にも控えを残しておきたい」と感じることがあります。目的によって、適した方法は違います。</p>
 <div class="note"><strong>結論：</strong>会話を見つけたいだけならChatGPT標準の検索を最初に使う。アカウントデータの控えには公式エクスポート。Project単位で継続的に整理したい人は、別途ローカル保存ツールを検討する、という順番が現実的です。</div>
+<p><strong>先に選び方を確認したい方へ：</strong> 下の<a href="#backup-comparison">バックアップ方法の比較表</a>で、ChatGPT標準の検索、無料の公式エクスポート、Project Vaultの用途を整理しています。ChatGPTのProjectだけを定期的に保存したい場合は、<a href="/project-vault">Project Vaultの具体的な機能・導入条件</a>も確認できます。</p>
 
 <h2>1．まず、Projectと会話を標準機能で確認する</h2>
 <p>ChatGPTのProjectは、関連するチャット・ファイル・指示をまとめる機能です。ログイン中のアカウントやワークスペースが合っているかを確認し、Project一覧や検索から必要な会話を探しましょう。</p>
@@ -72,15 +73,20 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 </div>
 <p>ローカル保存であっても、PC故障への備えには別の安全なバックアップ先が必要です。保存データに機密情報が含まれる場合は、端末の保護や保管方法も確認しましょう。</p>
 
-<h2>方法を比べると</h2>
+<h2 id="backup-comparison">ChatGPTのバックアップ方法を比較</h2>
+<p>会話を探すだけなら有料製品は不要です。手元に記録を残したい場合に限り、保存単位と運用方法で選びます。</p>
 <table>
-<thead><tr><th>目的</th><th>まず試す方法</th></tr></thead>
+<thead><tr><th>比較項目</th><th>ChatGPT標準の検索</th><th>OpenAI公式エクスポート</th><th>Project Vault</th></tr></thead>
 <tbody>
-<tr><th>過去の会話を探す</th><td>ChatGPT標準の検索・アーカイブ確認（無料）</td></tr>
-<tr><th>アカウントデータを控える</th><td>対象アカウントでの公式データエクスポート（無料）</td></tr>
-<tr><th>Projectごとに継続して整理</th><td>Project Vaultなどのローカル保存手段を検討（任意）</td></tr>
+<tr><th>主な目的</th><td>ChatGPT上で会話を見つける</td><td>提供対象のアカウントデータをまとめて取得</td><td>選んだProjectを手元に継続保存・検索</td></tr>
+<tr><th>保存単位</th><td>新しいバックアップは作らない</td><td>アカウントのエクスポートZIP</td><td>Full Vault、Delta ZIP、単体チャット</td></tr>
+<tr><th>差分更新</th><td>該当なし</td><td>通常は新しいエクスポートを再取得</td><td>Full Vaultを基準に新規・更新分を保存</td></tr>
+<tr><th>使う場所</th><td>ChatGPT内</td><td>ダウンロード先のPCなど</td><td>Chrome拡張とPC上のVault</td></tr>
+<tr><th>費用</th><td>追加費用なし</td><td>公式機能の対象者は無料</td><td>US$10買い切り、ライセンスキーが必要</td></tr>
 </tbody>
 </table>
+<p class="small">表は用途の比較です。Project VaultはOpenAI公式製品ではなく、削除済みの会話が必ず復元できることを保証するものでもありません。</p>
+<p><a class="cta" href="/project-vault">Project Vaultの機能・購入前の注意点を見る</a></p>
 
 <h2>よくある質問</h2>
 <h3>Q．公式エクスポートがあればProject Vaultは不要？</h3>
@@ -96,7 +102,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 <li><a href="https://help.openai.com/ja-jp/articles/10056348-finding-your-chats-projects-and-files-in-chatgpt">チャット、プロジェクト、ファイルを探す</a></li>
 <li><a href="https://help.openai.com/ja-jp/articles/7260999-exporting-your-chatgpt-history-and-data">データのエクスポート</a></li>
 </ul>
-<p>この記事は2026年10月28日時点の一般向け情報です。製品・サービスの提供範囲や画面表示は変わることがあります。</p>
+<p>この記事は2026年11月11日時点の一般向け情報です。製品・サービスの提供範囲や画面表示は変わることがあります。</p>
 </article></main>
 <footer><div class="wrap">Silent Coast Asset株式会社 / Project Tanuki</div></footer>
 </body>
