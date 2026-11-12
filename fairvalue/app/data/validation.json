@@ -1,0 +1,167 @@
+{
+  "protocol": "rolling_quarterly_4_latest_research_v02",
+  "model": "ridge_age_walk_station_time_lambda3_v0.2_candidate",
+  "dataCount": 17156,
+  "sourcePeriodMax": "2026Q1",
+  "sourceFingerprint": "c932a5c6acf1cc09520091d160e4c80ae3628e6ba3d68fa4ed613b0582fc5550",
+  "normalizerVersion": "0.4.1",
+  "holdoutQuarters": {
+    "2025Q2": {
+      "holdout": 1317
+    },
+    "2025Q3": {
+      "holdout": 1436
+    },
+    "2025Q4": {
+      "holdout": 1383
+    },
+    "2026Q1": {
+      "holdout": 604
+    }
+  },
+  "evaluated": 4738,
+  "notEvaluated": 2,
+  "fallback": 0,
+  "medianAbsoluteErrorMan": 409,
+  "medianAbsolutePctError": 15.2,
+  "medianSignedPctError": -2.4,
+  "overpricedDirectionFraction": 0.457,
+  "byMunicipality": {
+    "兵庫県 神戸市中央区": {
+      "evaluated": 440,
+      "notEvaluated": 0,
+      "fallback": 0,
+      "medianAbsolutePctError": 13.7,
+      "medianSignedPctError": 0.4,
+      "p90AbsolutePctError": 37.1,
+      "sufficientForDisplay": true
+    },
+    "北海道 札幌市中央区": {
+      "evaluated": 387,
+      "notEvaluated": 1,
+      "fallback": 0,
+      "medianAbsolutePctError": 18.8,
+      "medianSignedPctError": -4.3,
+      "p90AbsolutePctError": 51.1,
+      "sufficientForDisplay": true
+    },
+    "埼玉県 川口市": {
+      "evaluated": 440,
+      "notEvaluated": 0,
+      "fallback": 0,
+      "medianAbsolutePctError": 15.6,
+      "medianSignedPctError": -7.2,
+      "p90AbsolutePctError": 39.8,
+      "sufficientForDisplay": true
+    },
+    "大阪府 大阪市中央区": {
+      "evaluated": 622,
+      "notEvaluated": 0,
+      "fallback": 0,
+      "medianAbsolutePctError": 13.5,
+      "medianSignedPctError": -1.2,
+      "p90AbsolutePctError": 35.9,
+      "sufficientForDisplay": true
+    },
+    "宮城県 仙台市青葉区": {
+      "evaluated": 278,
+      "notEvaluated": 0,
+      "fallback": 0,
+      "medianAbsolutePctError": 20.9,
+      "medianSignedPctError": -5.6,
+      "p90AbsolutePctError": 52.1,
+      "sufficientForDisplay": true
+    },
+    "広島県 広島市中区": {
+      "evaluated": 68,
+      "notEvaluated": 0,
+      "fallback": 0,
+      "medianAbsolutePctError": 23.2,
+      "medianSignedPctError": -3.7,
+      "p90AbsolutePctError": 48.2,
+      "sufficientForDisplay": true
+    },
+    "愛知県 名古屋市中区": {
+      "evaluated": 331,
+      "notEvaluated": 0,
+      "fallback": 0,
+      "medianAbsolutePctError": 14.8,
+      "medianSignedPctError": -1.9,
+      "p90AbsolutePctError": 43.1,
+      "sufficientForDisplay": true
+    },
+    "東京都 世田谷区": {
+      "evaluated": 604,
+      "notEvaluated": 1,
+      "fallback": 0,
+      "medianAbsolutePctError": 15.3,
+      "medianSignedPctError": -0.4,
+      "p90AbsolutePctError": 42.5,
+      "sufficientForDisplay": true
+    },
+    "東京都 文京区": {
+      "evaluated": 428,
+      "notEvaluated": 0,
+      "fallback": 0,
+      "medianAbsolutePctError": 12.8,
+      "medianSignedPctError": -4.6,
+      "p90AbsolutePctError": 32.1,
+      "sufficientForDisplay": true
+    },
+    "神奈川県 横浜市中区": {
+      "evaluated": 335,
+      "notEvaluated": 0,
+      "fallback": 0,
+      "medianAbsolutePctError": 16.6,
+      "medianSignedPctError": -0.7,
+      "p90AbsolutePctError": 44.1,
+      "sufficientForDisplay": true
+    },
+    "神奈川県 藤沢市": {
+      "evaluated": 240,
+      "notEvaluated": 0,
+      "fallback": 0,
+      "medianAbsolutePctError": 16.6,
+      "medianSignedPctError": -4.2,
+      "p90AbsolutePctError": 47.5,
+      "sufficientForDisplay": true
+    },
+    "神奈川県 鎌倉市": {
+      "evaluated": 73,
+      "notEvaluated": 0,
+      "fallback": 0,
+      "medianAbsolutePctError": 17.3,
+      "medianSignedPctError": -1.4,
+      "p90AbsolutePctError": 40.2,
+      "sufficientForDisplay": true
+    },
+    "福岡県 福岡市博多区": {
+      "evaluated": 423,
+      "notEvaluated": 0,
+      "fallback": 0,
+      "medianAbsolutePctError": 13.6,
+      "medianSignedPctError": -1.9,
+      "p90AbsolutePctError": 42.8,
+      "sufficientForDisplay": true
+    },
+    "長野県 松本市": {
+      "evaluated": 31,
+      "notEvaluated": 0,
+      "fallback": 0,
+      "medianAbsolutePctError": 14.3,
+      "medianSignedPctError": -5.2,
+      "p90AbsolutePctError": 47.5,
+      "sufficientForDisplay": true
+    },
+    "長野県 長野市": {
+      "evaluated": 38,
+      "notEvaluated": 0,
+      "fallback": 0,
+      "medianAbsolutePctError": 17.4,
+      "medianSignedPctError": -9.7,
+      "p90AbsolutePctError": 47.2,
+      "sufficientForDisplay": true
+    }
+  },
+  "note": "最新4四半期を各四半期以前のデータだけで後追い評価した研究版の指標。モデル開発にこれらの地域・期間を参照済みであり、完全独立テストではありません。将来の実売額の精度保証ではありません。"
+}

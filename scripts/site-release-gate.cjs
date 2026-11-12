@@ -4,11 +4,11 @@
 // Usage: node scripts/site-release-gate.cjs seal|build|verify [STAGE_PATH]
 const fs=require('fs'),path=require('path'),crypto=require('crypto');
 const root=path.resolve(__dirname,'..'),manifestFile=path.join(root,'release','protected-files.json');
-const allowedDirs=['assets','blog','commerce','core-proof','media'];
-const rootFiles=new Set(['.nojekyll','index.html','robots.txt','sitemap.xml','pages-health.txt']);
+const allowedDirs=['assets','blog','commerce','core-proof','media','fairvalue'];
+const rootFiles=new Set(['.nojekyll','_headers','_redirects','index.html','robots.txt','sitemap.xml','pages-health.txt']);
 function publicName(s){return rootFiles.has(s)||allowedDirs.includes(s)||/\.(html|txt|xml|webmanifest)$/.test(s)&&!s.startsWith('WORK_');}
 function fileHash(buf){return crypto.createHash('sha256').update(buf).digest('hex')}
-function normalized(rel,buf){return (/\.(html|txt|xml|js|css|json|md|webmanifest)$/i.test(rel)||rel==='.nojekyll')?Buffer.from(buf.toString('utf8').replace(/\r\n?/g,'\n'),'utf8'):buf}
+function normalized(rel,buf){return (/\.(html|txt|xml|js|mjs|cjs|css|json|md|webmanifest)$/i.test(rel)||rel==='.nojekyll'||rel==='_headers'||rel==='_redirects')?Buffer.from(buf.toString('utf8').replace(/\r\n?/g,'\n'),'utf8'):buf}
 function files(base,rel=''){
  let out=[];
  for(const item of fs.readdirSync(path.join(base,rel),{withFileTypes:true})){
@@ -23,6 +23,13 @@ function protect(p){return !(p==='sitemap.xml'||p.startsWith('blog/'))}
 function hashes(base){const result={};for(const f of files(base).filter(protect))result[f]=fileHash(normalized(f,fs.readFileSync(path.join(base,f))));return result}
 function fail(msg){console.error('BLOCKED: '+msg);process.exitCode=1;throw Error(msg)}
 function validate(base){
+ const preserve=['_headers','_redirects','fairvalue/index.html','fairvalue/app/index.html','fairvalue/app/data/transactions.json','assets/after-yattotte-cover.jpg','blog/after-yattotte-kindle.html','tanuki-site-support.html'];
+ for(const rel of preserve)if(!fs.existsSync(path.join(base,rel)))fail('Missing production parity file '+rel);
+ const shards=fs.readdirSync(path.join(base,'fairvalue/app/data/prefecture_shards')).filter(name=>/^\d\d\.json$/.test(name));
+ if(shards.length!==47)fail('FairValue 47-prefecture payload incomplete');
+ const homeText=fs.readFileSync(path.join(base,'index.html'),'utf8');
+ if(!homeText.includes('Tanuki Fair Value'))fail('FairValue product entry disappeared');
+
  const required=['index.html','media/index.html','media/story-0001/index.html','media/story-0002/index.html','media/story-0003/index.html',
  'media/comics/surfing-company/index.html','media/comics/bots-447/index.html','media/comics/newsletter-2043/index.html',
  'media/comics/aquarium-plants/index.html','media/assets/surfing-company.png','media/assets/bots-447.png',

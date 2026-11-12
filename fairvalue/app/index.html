@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102922">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23122820'/%3E%3Ctext x='32' y='44' text-anchor='middle' fill='%23daf1ba' font-size='42' font-family='Georgia'%3ET%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="中古マンションの過去の取引価格を無料で調べるTANUKI Fair Value。47都道府県の公表取引と地区別地図を閲覧。2026年Q2の実績は別表示、参考価格の研究βは21市区に限定。出典と集計の限界も明示。">
+  <meta name="robots" content="index,follow">
+<link rel="canonical" href="https://silentcoastasset.com/fairvalue/app/">
+  <title>中古マンションの過去の取引価格を地図で調べる｜TANUKI Fair Value</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="TANUKI FairValue ホーム">
+        <span class="brand-mark" aria-hidden="true">F/</span>
+        <span><b>FAIRVALUE</b><small>BY TANUKI</small></span>
+      </a>
+      <nav class="nav-actions" aria-label="メインナビゲーション">
+        <a class="nav-start" href="#calculator">取引価格を調べる</a>
+        <a href="#areaMapSection">地図で見る</a>
+        <a href="#sellerCalculator">売却手取りを比較</a>
+        <a href="#policy" class="nav-policy">データについて</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <div class="hero wrap">
+      <div class="hero-copy">
+        <p class="portal-breadcrumb">中古マンションの取引情報 <span aria-hidden="true">/</span> 地域から探す</p>
+        <h1>中古マンションの<br>取引価格を調べる</h1>
+        <p class="hero-desc">全国の公表取引を地域や条件から検索。地図と地区別の価格情報を無料で確認できます。</p>
+        <p class="portal-disclosure">※売出中の物件一覧ではありません。価格は過去の公表取引で、現在の査定額ではありません。</p>
+      </div>
+      <aside class="hero-graphic" aria-label="収録している取引情報">
+        <span class="portal-overview-label">全国の公表取引データ</span>
+        <div class="portal-overview-number"><strong id="overviewTransactions">—</strong><span>件</span></div>
+        <div class="portal-overview-meta">
+          <span>47都道府県の取引情報</span><span>参考価格研究版は21市区</span>
+        </div>
+        <span class="portal-overview-period">参考価格モデルの元データ（最終期） <b id="overviewPeriod">確認中</b></span>
+      </aside>
+    </div>
+
+    <section class="calculator-section" id="calculator">
+      <div class="wrap">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow dark">中古マンションの価格情報</p>
+            <h2>地域・条件から探す</h2>
+            <p>まず都道府県と市区町村、専有面積を指定してください。</p>
+          </div>
+          <div class="data-status" id="dataStatus" aria-live="polite">公開取引データを確認しています…</div>
+        </div>
+        <p id="regionCoverage" class="region-coverage" role="status" data-state="SELECT_CITY">47都道府県の地図は閲覧可能。参考価格はデータ収録済み地域だけで計算します。</p>
+        <div class="calc-card">
+          <form id="estimateForm" novalidate>
+            <div class="field-grid portal-field-grid">
+              <div class="field-grid-heading portal-main-title">
+                <span aria-hidden="true">1</span><strong>まず地域を選ぶ</strong>
+                <small>都道府県と市区町村を選択してください</small>
+              </div>
+              <label class="field field-pref">
+                <span>都道府県 <small>必須</small></span>
+                <select id="prefecture" required><option value="">データを読込中…</option></select>
+              </label>
+              <label class="field field-city">
+                <span>市区町村 <small>必須</small></span>
+                <select id="city" required><option value="">市区町村を選択</option></select>
+              </label>
+              <label class="field field-area">
+                <span>専有面積 <small>必須</small></span>
+                <span class="input-unit"><input id="area" type="number" min="15" max="300" step="0.1" inputmode="decimal" placeholder="例：70" required><b>㎡</b></span>
+              </label>
+            </div>
+            <div class="portal-primary-action">
+            <div class="form-footer">
+              <div class="private-note"><span class="lock-icon" aria-hidden="true">●</span><span>連絡先不要・価格計算は端末内。地理院地図への切替時は表示範囲のみ通信します。</span></div>
+              <button class="primary-btn" id="submitButton" type="submit">参考価格を確認する <span aria-hidden="true">↗</span></button>
+            </div>
+            </div>
+            <p class="result-update-hint" id="resultUpdateHint" role="status" hidden>条件が変わりました。新しい条件で再検索してください。</p>
+            <details class="portal-advanced" id="advancedFilters">
+              <summary class="portal-advanced-summary">
+                <span class="portal-advanced-caption">絞り込み条件を追加</span>
+                <span id="advancedFilterIndicator" class="portal-filter-indicator" aria-live="polite">未指定</span>
+                <span class="portal-chevron" aria-hidden="true"></span>
+              </summary>
+              <div class="portal-advanced-inner">
+                <p class="portal-advanced-hint">地区・駅・築年数など、分かる項目だけ選択できます。</p>
+                <div class="field-grid portal-extra-grid">
+              <label class="field field-district">
+                <span>地区名 <span class="optional">任意</span></span>
+                <select id="district"><option value="">指定しない（市区町村全体）</option></select>
+              </label>
+              <label class="field field-station">
+                <span>最寄り駅 <span class="optional">任意</span></span>
+                <select id="station"><option value="">指定しない</option></select>
+              </label>
+              <label class="field field-age">
+                <span>築年数 <span class="optional">任意</span></span>
+                <span class="input-unit"><input id="ageYears" type="number" min="0" max="100" step="1" inputmode="numeric" placeholder="不明なら空欄"><b>年</b></span>
+              </label>
+              <label class="field field-walk">
+                <span>駅からの徒歩 <span class="optional">任意</span></span>
+                <span class="input-unit"><input id="stationMinutes" type="number" min="0" max="120" step="1" inputmode="numeric" placeholder="不明なら空欄"><b>分</b></span>
+              </label>
+              <label class="field field-layout">
+                <span>間取り <span class="optional">任意・過去取引の絞り込み用</span></span>
+                <select id="layout">
+                  <option value="">指定しない</option>
+                  <option value="1R">1R</option>
+                  <option value="1K">1K</option>
+                  <option value="1DK">1DK</option>
+                  <option value="1LDK">1LDK</option>
+                  <option value="2DK">2DK</option>
+                  <option value="2LDK">2LDK</option>
+                  <option value="3LDK">3LDK</option>
+                  <option value="4LDK+">4LDK以上</option>
+                </select>
+              </label>
+              <label class="field field-structure">
+                <span>建物構造 <span class="optional">任意・過去取引の絞り込み用</span></span>
+                <select id="structure">
+                  <option value="">指定しない</option>
+                  <option value="RC">RC（鉄筋コンクリート造）</option>
+                  <option value="SRC">SRC（鉄骨鉄筋コンクリート造）</option>
+                </select>
+              </label>
+              <label class="field offer-field field-offer">
+                <span>すでに提示された査定額 <span class="optional">任意</span></span>
+                <span class="input-unit"><input id="offerMan" type="number" min="0" max="500000" step="10" inputmode="decimal" placeholder="例：2,800"><b>万円</b></span>
+              </label>
+            </div>
+                <button type="submit" class="portal-refine-search">この条件で再検索 <span aria-hidden="true">↗</span></button>
+              </div>
+            </details>
+          </form>
+          <p class="form-error" id="formError" role="alert" hidden></p>
+        </div>
+
+        <section id="areaMapSection" class="area-map-section" aria-labelledby="areaMapTitle">
+          <div class="area-map-header">
+            <div>
+              <p class="area-map-eyebrow">地図から探す</p>
+              <h2 id="areaMapTitle">地区別の価格情報</h2>
+              <p>過去取引の集計を町字の代表点に重ねた地図。個別の物件位置ではありません。</p>
+            </div>
+            <span id="areaMapCityName" class="area-map-city-name">地域を読み込んでいます…</span>
+          </div>
+          <div class="area-map-workspace">
+            <div class="area-map-left">
+              <div class="area-map-toolbar">
+                <span class="portal-map-tool-label">地図の表示</span>
+                <label>
+                  <span>重ねる指標</span>
+                  <select id="areaMapMetric" aria-label="地図の色の指標">
+                    <option value="unit">公表取引の㎡単価中央値</option>
+                    <option value="volume">公表取引件数</option>
+                  </select>
+                </label>
+                <button id="areaMapZoom" type="button" aria-label="表示範囲を切り替える">市区全体を見る</button>
+                <div class="area-map-navigation" role="group" aria-label="地図の移動と拡大縮小">
+                  <button id="areaMapZoomOut" type="button" aria-label="地図を縮小" title="縮小">−</button>
+                  <button id="areaMapZoomIn" type="button" aria-label="地図を拡大" title="拡大">＋</button>
+                  <button id="areaMapPanReset" type="button" aria-label="地図を元の位置に戻す">中心に戻す</button>
+                </div>
+                <button id="areaMapBasemap" type="button" aria-pressed="false" title="クリックした場合のみ国土地理院の地図タイルを読み込みます">道路・駅名が見える地図</button>
+              </div>
+              <div id="areaMapCanvas" class="area-map-canvas" role="region" tabindex="0" aria-label="地区の取引地図。ドラッグで移動、ホイールまたは拡大縮小ボタンで倍率変更。キーボードの矢印でも移動できます。">
+                <span class="map-interaction-hint map-hint-desktop" aria-hidden="true">ドラッグで移動・ホイールで拡大／丸印で地区を選択</span>
+                <span class="map-interaction-hint map-hint-mobile" aria-hidden="true">指で移動・2本指で拡大／丸印で地区を選択</span>
+                <svg id="areaMapSvg" viewBox="0 0 720 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+                <div id="areaMapMarkers" class="area-map-markers"></div>
+                <span class="area-map-canvas-note">国土交通省 N03 行政区域 / デジタル庁 ABR 町字代表点</span>
+              </div>
+              <div id="areaMapLegend" class="area-map-legend">地図データを読込中…</div>
+              <p id="areaMapNetworkInfo" class="area-map-network-info">地理院地図に切り替える場合、選択地域の地図範囲が国土地理院へ送信されます。</p>
+            </div>
+            <aside class="area-map-sidebar">
+              <div class="area-map-count-block">
+                <span class="area-map-overline">地図に表示した取引</span>
+                <strong id="areaMapTotal">—</strong>
+                <span id="areaMapStatus">公式公開取引データの地区分布を準備しています</span>
+              </div>
+              <div id="areaMapSelected" class="area-map-selected" aria-live="polite">
+                <span>地区を選ぶと、過去の件数や単価を確認できます。</span>
+              </div>
+              <button id="areaMapAnalyze" type="button" class="area-map-analyze" disabled hidden>地区を選択してください</button>
+              <div class="area-map-list-head">
+                <strong>地区ごとの取引価格</strong>
+                <label class="area-map-sort">
+                  <span>並び順</span>
+                  <select id="areaMapSort" aria-label="地区一覧の並び順">
+                    <option value="count">取引件数が多い順</option>
+                    <option value="unit-desc">㎡単価が高い順</option>
+                    <option value="unit-asc">㎡単価が低い順</option>
+                  </select>
+                </label>
+              </div>
+              <p id="areaMapListStatus" class="area-map-list-status" role="status">地区の取引を読み込み中</p>
+              <div id="areaMapDistrictList" class="area-map-district-list">
+                <p>地図データを読み込んでいます…</p>
+              </div>
+            </aside>
+          </div>
+          <p id="areaMapWarning" class="area-map-warning" role="status">町字の代表点は、売買された個々のマンションの位置ではありません。件数5未満の地区は地図に表示しません。</p>
+          <p id="mapApiAttribution" class="area-map-api-notice" hidden>このサービスは、国土交通省の不動産情報ライブラリのAPI機能を使用していますが、提供情報の最新性、正確性、完全性等が保証されたものではありません。表示は公表取引の独自集計であり、現在の査定額ではありません。</p>
+          <p class="area-map-attribution">
+            境界：<a href="https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html" target="_blank" rel="noopener noreferrer">国土交通省「国土数値情報（行政区域データ）2026」</a>を加工。
+            位置：<a href="https://dataset.address-br.digital.go.jp/" target="_blank" rel="noopener noreferrer">デジタル庁「アドレス・ベース・レジストリ」町字マスター／位置参照拡張</a>（代表点・試験公開データ）を加工。
+            道路と駅のローカル参考データ：© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>（ODbL）を加工。道路地図に切り替えた場合のタイル出典：<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener noreferrer">国土地理院「地理院タイル（淡色地図）」</a>。
+            価格：国土交通省「不動産情報ライブラリ」公表取引情報を集計。リアルタイム相場・物件所在地・個別の成約保証を示す地図ではありません。
+          </p>
+        </section>
+                <section id="q2Panel" class="comps-card" aria-labelledby="q2Title" style="margin:22px 0;padding:22px">
+          <p class="eyebrow dark">2026年第2四半期・追加公表取引</p>
+          <h2 id="q2Title">2026年4〜6月に取引された中古マンション</h2>
+          <p>全国の追加公表取引 <strong id="q2NationalCount">読込中</strong> 件から、この地域・条件に近い実績を表示します。参考価格の研究βは <strong>2026年第1四半期までの記録で凍結</strong>しており、2026年第2四半期の実績から現在の売却予想額を算出しているわけではありません。</p>
+          <p id="q2Status" role="status" aria-live="polite">新しい公表取引の照合を準備中です。</p>
+          <p id="q2Context" class="result-context" hidden></p>
+          <div id="q2Summary" hidden aria-label="2026年第2四半期の公表取引の集計">
+            <div class="matched-stats">
+              <div><span>似た取引の価格中央値（実績）</span><strong id="q2Median">—</strong></div>
+              <div><span>公表取引価格の中間50%範囲</span><strong id="q2Band">—</strong></div>
+              <div><span>比較した2026年Q2の取引件数</span><strong id="q2Count">—</strong></div>
+            </div>
+            <p class="historical-summary-note">この中央値と価格範囲は、専有面積が入力値の±25%に収まる取引などの記述統計であり、個別物件の査定額・予測区間ではありません。</p>
+            <div class="table-scroll"><table>
+              <thead><tr><th scope="col">地区</th><th scope="col">専有面積</th><th scope="col">取引時期</th><th scope="col">公表取引価格</th></tr></thead>
+              <tbody id="q2Rows"></tbody>
+            </table></div>
+          </div>
+          <p class="historical-summary-note">近い条件の取引が5件未満の場合は、プライバシーと根拠の少なさを考慮して価格を表示しません。地図の丸印は町字の代表点であり、取引された物件の所在地ではありません。公表される取引には漏れや価格の丸めがあり、現在の相場や不動産鑑定を保証しません。</p>
+          <p class="historical-summary-note"><strong>出典：</strong> <a href="https://www.reinfolib.mlit.go.jp/" target="_blank" rel="noopener noreferrer">国土交通省「不動産情報ライブラリ」</a>の不動産取引価格情報をもとに、<a href="https://silentcoastasset.com/" target="_blank" rel="noopener noreferrer">Silent Coast Asset株式会社</a>が抽出・加工・集計しました。国土交通省による監修・保証・推奨ではありません。</p>
+          <p class="historical-summary-note">過去期間に遡って追加された303件と、匿名取引の公表修正候補2組は研究用に別途保留しており、今回の追加5,763件には含みません。</p>
+        </section>
+
+        <div class="coverage-fineprint" aria-label="公表データの収録内訳">
+          <h3 class="coverage-information-title">データの収録範囲と注意点</h3>
+        <p id="sourceAgeNotice" class="source-age-notice" role="status">最終収録時期と国の公開状況を確認しています。</p>
+        <div class="coverage-guide" aria-label="地域による提供データの違い">
+          <div class="coverage-guide-item">
+            <span class="coverage-symbol symbol-research" aria-hidden="true">01</span>
+            <span><b>研究版の参考価格</b><small>過去データの検証に合格した対象地域のみ</small></span>
+          </div>
+          <div class="coverage-guide-item">
+            <span class="coverage-symbol symbol-history" aria-hidden="true">02</span>
+            <span><b>過去の取引実績</b><small>公表事例の集計。現在の査定額ではありません</small></span>
+          </div>
+          <div class="coverage-guide-item">
+            <span class="coverage-symbol symbol-map" aria-hidden="true">03</span>
+            <span><b>地図のみ</b><small>価格を推測せず、未収録と明示します</small></span>
+          </div>
+        </div>
+          <p id="nationalScope" class="national-scope">全国地図と収録取引価格の対応状況を読み込んでいます。</p>
+          <p id="prefCoverageSummary" class="pref-coverage-summary" role="status">都道府県ごとの価格データ収録地域を確認しています。</p>
+        </div>
+        <div id="resultPanel" aria-live="polite" hidden>
+          <div class="result-top">
+            <div>
+              <p class="eyebrow dark">参考価格（研究版）</p>
+              <h2>過去の取引から見る参考価格</h2>
+              <p class="result-context" id="resultContext" aria-label="検索対象"></p>
+            </div>
+            <span class="data-badge" id="resultBadge"></span>
+          </div>
+          <div class="result-grid">
+            <div class="price-panel">
+              <div class="price-label" id="priceLabel">属性・取引時期を補正した参考価格</div>
+              <div class="main-price" id="priceMedian">—</div>
+              <div class="reference-row"><span>類似取引の中間50%（別計算）</span><strong id="priceRange">—</strong></div>
+              <div class="range-track" aria-hidden="true"><div class="range-band" id="rangeBand"></div><div class="range-center" id="rangeCenter"></div></div>
+              <div class="scale-line"><span id="lowLabel">—</span><span id="highLabel">—</span></div>
+              <div class="range-key"><span class="range-key-dot">│</span> 推定参考価格　<span class="range-key-band">━</span> 過去取引の中間50%</div>
+              <p class="note" id="priceNote">推定参考価格と過去取引の分布は別々に計算しています。この価格帯は将来の成約価格の予測区間ではありません。</p>
+              <section class="calibrated-band" id="intervalPanel" hidden aria-label="過去の誤差に基づく予測帯">
+                <p class="band-eyebrow">過去の誤差を使った80%目標帯（研究版）</p>
+                <strong class="calibrated-range" id="intervalRange">—</strong>
+                <p class="band-note" id="intervalExplanation">—</p>
+              </section>
+            </div>
+            <div class="evidence-panel">
+              <p class="panel-head">分析に使った根拠</p>
+              <div class="fact-row"><span>比較した取引</span><strong id="factCount">—</strong></div>
+              <div class="fact-row"><span>比較範囲</span><strong id="factScope">—</strong></div>
+              <div class="fact-row"><span>面積の条件</span><strong id="factArea">—</strong></div>
+              <div class="fact-row"><span>最新の取引時期</span><strong id="factPeriod">—</strong></div>
+              <div class="fact-row"><span>比較事例の充実度</span><strong id="factConfidence">—</strong></div>
+              <div class="fact-row"><span>価格算出方式</span><strong id="factModel">—</strong></div>
+              <div class="fact-row"><span>過去の絶対誤差率（中央値）</span><strong id="factError">—</strong></div>
+              <div class="fact-row"><span>予測帯の過去的中率</span><strong id="intervalCoverage">—</strong></div>
+              <div class="fact-row"><span>価格帯の利用判定</span><strong id="intervalGrade">—</strong></div>
+              <p class="validation-note" id="validationNote">過去の取引を用いた検証情報を確認中です。</p>
+              <p class="validation-note" id="intervalWarning">予測帯の検証情報を読み込んでいます。</p>
+              <div class="offer-assessment" id="offerAssessment" hidden></div>
+            </div>
+          </div>
+          <div class="comps-card">
+            <div class="comps-title">
+              <div><h3>比較した取引の一部</h3><p>所在地は市区町村・地区まで。元データの表示範囲に準じます。</p></div>
+              <span id="compCount"></span>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead><tr><th>地区</th><th>専有面積</th><th>築年数</th><th>取引時期</th><th>取引価格</th></tr></thead>
+                <tbody id="comparableRows"></tbody>
+              </table>
+            </div>
+          </div>
+          <section id="matchedPanel" class="comps-card matched-panel" aria-label="指定条件に近い過去の取引" hidden>
+            <div class="comps-title">
+              <div>
+                <h3>間取り・構造で絞った過去の取引</h3>
+                <p>公表済みの実際の取引事例。上の推定参考価格にはこの絞り込みを反映していません。</p>
+              </div>
+            </div>
+            <p id="matchedFilters" class="matched-filter-note"></p>
+            <div id="matchedObservedSummary" hidden>
+              <div class="matched-stats">
+                <div><span>観測された取引価格の中央値</span><strong id="matchedMedian">—</strong></div>
+                <div><span>中間50%の価格範囲</span><strong id="matchedInterquartile">—</strong></div>
+                <div><span>比較件数</span><strong id="matchedCount">—</strong></div>
+              </div>
+              <p id="matchedPeriod" class="matched-filter-note"></p>
+              <div class="table-scroll">
+                <table>
+                  <thead><tr><th>地区</th><th>間取り</th><th>構造</th><th>専有面積</th><th>取引時期</th><th>実取引価格</th></tr></thead>
+                  <tbody id="matchedRows"></tbody>
+                </table>
+              </div>
+            </div>
+            <p id="matchedExplanation" class="matched-filter-note"></p>
+          </section>
+        </div>
+        <section id="historicalPanel" class="comps-card historical-panel" hidden aria-live="polite" aria-label="過去取引の実績だけを表示">
+          <p class="eyebrow dark">OBSERVED TRANSACTIONS / NO MODEL ESTIMATE</p>
+          <h2>この地域は、過去の取引実績だけを表示します。</h2>
+          <p class="result-context" id="historicalContext" aria-label="検索対象"></p>
+          <p class="historical-summary-note">この市区町村は、個別の予測モデルの精度を十分に検証できていません。以下は公開された過去の複数物件の実取引価格で、現在の売却査定額や80%予測帯ではありません。</p>
+          <div class="matched-stats">
+            <div><span>過去の実取引額の中央値</span><strong id="historicalMedian">—</strong></div>
+            <div><span>中間50%の観測取引額</span><strong id="historicalRange">—</strong></div>
+            <div><span>条件が近い取引件数</span><strong id="historicalCount">—</strong></div>
+          </div>
+          <p id="historicalUnits" class="matched-filter-note"></p>
+          <p id="historicalPeriod" class="matched-filter-note"></p>
+          <div class="table-scroll"><table>
+            <thead><tr><th>地区</th><th>面積</th><th>間取り</th><th>構造</th><th>取引時期</th><th>公表取引価格</th></tr></thead>
+            <tbody id="historicalRows"></tbody>
+          </table></div>
+          <p id="historicalWarning" class="validation-note">元の取引価格は全成約を網羅するものではありません。</p>
+          <p id="apiAttribution" class="validation-note" hidden>このサービスは、国土交通省の不動産情報ライブラリのAPI機能を使用していますが、提供情報の最新性、正確性、完全性等が保証されたものではありません。分析・編集表示の責任はTANUKI FairValueの運営者にあります。</p>
+        </section>
+        <div id="emptyState" class="empty-state" hidden aria-live="polite">
+          <span class="empty-icon">!</span>
+          <h3>十分な比較データがありません</h3>
+          <p id="emptyReason"></p>
+          <p>根拠のない価格を表示することはしません。地区・駅の条件を外すか、データが増えるまでお待ちください。</p>
+        </div>
+        <section class="seller-section" id="sellerCalculator" aria-labelledby="sellerTitle">
+          <div class="seller-heading">
+            <div>
+              <p class="seller-kicker">売却時の手取りを計算</p>
+              <h2 id="sellerTitle">売却価格ではなく、手取り額で比較する。</h2>
+              <p>仲介で売った場合と業者の直接買取。提示額、手数料、残債を自分で入力して比較できます。物件検索なしでも利用可能。</p>
+            </div>
+            <div class="seller-privacy">登録不要・入力内容は送信しません</div>
+          </div>
+          <form id="sellerForm" class="seller-card" novalidate>
+            <div class="seller-form-grid">
+              <fieldset class="seller-fieldset">
+                <legend>仲介で売る場合</legend>
+                <label class="field">
+                  <span>想定成約価格 <span class="optional">任意</span></span>
+                  <span class="input-unit"><input type="number" id="brokerPriceMan" min="0" step="0.01" max="500000" inputmode="decimal" placeholder="例：4,000"><b>万円</b></span>
+                </label>
+                <label class="field">
+                  <span>仲介手数料（税込）</span>
+                  <select id="brokerFeeMode">
+                    <option value="ceiling">法定上限で仮計算</option>
+                    <option value="manual">合意した金額を入力</option>
+                  </select>
+                </label>
+                <label class="field" id="manualBrokerFeeField" hidden>
+                  <span>実際に合意する手数料</span>
+                  <span class="input-unit"><input type="number" id="manualBrokerFeeMan" min="0" step="0.0001" max="500000" inputmode="decimal" placeholder="例：100"><b>万円</b></span>
+                </label>
+                <p class="seller-hint">手数料上限の計算は、売買代金に消費税等相当額が含まれる場合、それを除いた取引価格が基準。現在は個人の通常の住宅売却を主に想定しています。</p>
+                <label class="seller-check">
+                  <input type="checkbox" id="specialLowFee">
+                  <span>800万円以下の低廉な物件の報酬特例を使う想定（事前説明・合意がある場合のみ）</span>
+                </label>
+                <label class="field">
+                  <span>仲介売却のその他費用 <span class="optional">任意</span></span>
+                  <span class="input-unit"><input type="number" id="brokerOtherMan" min="0" step="0.01" max="500000" inputmode="decimal" placeholder="未入力なら0"><b>万円</b></span>
+                </label>
+              </fieldset>
+              <fieldset class="seller-fieldset">
+                <legend>業者に直接売る場合</legend>
+                <label class="field">
+                  <span>直接買取の提示額 <span class="optional">任意</span></span>
+                  <span class="input-unit"><input type="number" id="directPriceMan" min="0" step="0.01" max="500000" inputmode="decimal" placeholder="例：3,700"><b>万円</b></span>
+                </label>
+                <p class="seller-hint">業者が買主となる直接取引を想定。仲介手数料は計上しません。業者間接の媒介がある場合は、下の費用欄に見積額を入力してください。</p>
+                <label class="field">
+                  <span>直接買取のその他費用 <span class="optional">任意</span></span>
+                  <span class="input-unit"><input type="number" id="directOtherMan" min="0" step="0.01" max="500000" inputmode="decimal" placeholder="未入力なら0"><b>万円</b></span>
+                </label>
+                <div class="seller-divider"></div>
+                <label class="field">
+                  <span>売却時に返済するローン残債 <span class="optional">両方に共通</span></span>
+                  <span class="input-unit"><input type="number" id="sellerLoanMan" min="0" step="0.01" max="500000" inputmode="decimal" placeholder="未入力なら0"><b>万円</b></span>
+                </label>
+                <p class="seller-hint">売買契約による引渡し時点での返済残高を想定。譲渡所得税等は自動推計せず、この手取り額にも含みません。</p>
+              </fieldset>
+            </div>
+            <div class="seller-form-footer">
+              <div class="seller-actions">
+                <button type="submit" class="seller-submit">手取りを試算する</button>
+                <button type="button" id="exampleSeller" class="seller-button-secondary">架空の入力例を試す</button>
+                <button type="button" id="resetSeller" class="seller-button-plain">入力をクリア</button>
+              </div>
+              <p class="seller-hint">数字はすべて入力者の仮定または提示額です。TANUKIの過去取引参考価格を、そのまま成約価格として使用しません。</p>
+            </div>
+            <p class="seller-form-error" id="sellerError" role="alert" hidden></p>
+          </form>
+          <section class="seller-results" id="sellerResults" aria-live="polite" hidden>
+            <div class="seller-result-grid">
+              <article class="seller-outcome" id="brokerOutcome" hidden>
+                <span class="seller-meta">仲介売却の手取り（税金等は未計算）</span>
+                <strong id="brokerNet" class="seller-amount">—</strong>
+                <div class="seller-facts">
+                  <span>売却価格</span><b id="brokerGross">—</b>
+                  <span>仲介手数料</span><b id="brokerCommission">—</b>
+                  <span>その他費用</span><b id="brokerOther">—</b>
+                  <span>ローン返済</span><b id="brokerLoan">—</b>
+                </div>
+                <p id="brokerFeeExplanation" class="seller-hint"></p>
+              </article>
+              <article class="seller-outcome" id="directOutcome" hidden>
+                <span class="seller-meta">直接買取の手取り（税金等は未計算）</span>
+                <strong id="directNet" class="seller-amount">—</strong>
+                <div class="seller-facts">
+                  <span>提示された買取価格</span><b id="directGross">—</b>
+                  <span>仲介手数料</span><b>0円（業者本人が買主の想定）</b>
+                  <span>その他費用</span><b id="directOther">—</b>
+                  <span>ローン返済</span><b id="directLoan">—</b>
+                </div>
+              </article>
+            </div>
+            <div class="seller-comparison" id="sellerComparison" hidden>
+              <span class="seller-meta">条件に入力した金額だけで比較すると</span>
+              <strong id="winnerSummary"></strong>
+              <p id="sellerDifference"></p>
+              <p id="sellerBreakEven"></p>
+            </div>
+            <p class="seller-legal">
+              この試算は提示額と入力費用を基にした簡易比較です。譲渡所得税・取得費・契約印紙代・登記費用・抵当権抹消費用・固定資産税等の精算・売却までの保有費等、未入力分は差し引いていません。
+              売却に要する時間、瑕疵への対応、契約解除・減額条項も金額比較には含みません。
+              仲介報酬上限の計算基準価格は、消費税等相当額を含まない取引価額です。建物売買代金に消費税が含まれる課税取引では、本シミュレーターをそのまま使わず契約書の税区分を確認してください。
+              仲介報酬の上限の根拠：<a href="https://www.mlit.go.jp/totikensangyo/const/1_6_bf_000013.html" target="_blank" rel="noopener noreferrer">国土交通省・消費者向け案内</a>（令和6年7月1日改正後）。
+            </p>
+          </section>
+        </section>
+        <section class="offer-compare-section" id="offerComparison" aria-labelledby="offersTitle">
+          <header class="offer-compare-heading">
+            <p class="offer-compare-kicker">売却の提示条件を比較</p>
+            <h2 id="offersTitle">複数の提示条件を、同じ目線で比較する。</h2>
+            <p>会社名は任意。仲介の査定想定額と、業者が買主となる直接買取の提示額を区別して、金額・費用・契約条件を並べます。あなたの入力から計算するだけで、売却先を推奨する機能ではありません。</p>
+          </header>
+          <div class="offer-toolbar">
+            <label class="field offer-loan-field">
+              <span>ローン返済残高 <span class="optional">全候補に共通・任意</span></span>
+              <span class="input-unit"><input type="number" id="offersLoanMan" min="0" step="0.01" inputmode="decimal" placeholder="未入力なら0"><b>万円</b></span>
+            </label>
+            <div class="offer-toolbar-actions">
+              <button type="button" id="offersAdd" class="offer-button-minimal">＋ 比較候補を追加</button>
+              <button type="button" id="offersExample" class="offer-button-minimal">架空の入力例</button>
+              <button type="button" id="offersReset" class="offer-button-minimal">入力をすべて消去</button>
+            </div>
+          </div>
+          <div id="offersRows" class="offers-input-rows" aria-live="polite"></div>
+          <div class="offers-submit-line">
+            <button type="button" id="offersCalculate" class="offer-primary">入力条件で比較レポートを作成</button>
+            <span>最大8件。計算・比較はこのブラウザ内で完結し、再読み込みすると入力は消えます。</span>
+          </div>
+          <p id="offersError" class="seller-form-error" role="alert" hidden></p>
+          <section id="offersReport" class="offers-report" aria-live="polite" aria-label="入力に基づく交渉用比較レポート" hidden>
+            <div class="offers-report-head">
+              <div>
+                <p class="offers-report-kicker">TANUKI FairValue / PRIVATE COMPARISON</p>
+                <h3>売却条件の比較レポート</h3>
+                <p id="offersReportMeta"></p>
+              </div>
+              <span class="offers-report-mark">参考計算・契約条件未確定</span>
+            </div>
+            <p class="offers-report-alert">仲介の査定・売出想定額は、実際にその価格で成約する確約ではありません。金額の順番は「入力した条件だけでの手取り試算順」であり、契約の優劣や安全性ではありません。</p>
+            <div class="table-scroll offer-report-scroll">
+              <table class="offers-report-table">
+                <thead>
+                  <tr>
+                    <th>候補</th><th>取引方法・根拠</th><th>入力価格</th>
+                    <th>手数料</th><th>その他費用</th><th>手取り試算</th>
+                  </tr>
+                </thead>
+                <tbody id="offersRankingBody"></tbody>
+              </table>
+            </div>
+            <p id="offersReportDifference" class="offers-report-difference"></p>
+            <h4 class="offers-report-subhead">金額以外に確認すべき条件</h4>
+            <div id="offersTerms" class="offers-report-terms"></div>
+            <p class="offers-report-legal" id="offersReportDisclaimer"></p>
+            <div class="offers-report-actions">
+              <button type="button" id="offersPrint" class="offer-primary">印刷・PDFとして保存</button>
+              <button type="button" id="offersCopy" class="offer-button-minimal">比較内容をテキストでコピー</button>
+            </div>
+            <p id="offersCopyStatus" class="offers-copy-status" role="status"></p>
+          </section>
+
+          <template id="offerRowTemplate">
+            <article class="offer-entry">
+              <div class="offer-entry-heading">
+                <h3 class="offer-entry-title">候補</h3>
+                <button type="button" class="offer-remove">この候補を削除</button>
+              </div>
+              <div class="offer-entry-grid">
+                <label class="field">
+                  <span>識別用の名前 <span class="optional">任意・40文字以内</span></span>
+                  <input type="text" class="offer-name" maxlength="40" placeholder="例：不動産会社A">
+                </label>
+                <label class="field">
+                  <span>取引方法</span>
+                  <select class="offer-kind">
+                    <option value="brokerage">仲介（査定・売出想定）</option>
+                    <option value="direct">業者本人が買主の直接買取</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span class="offer-price-label">査定・想定成約価格</span>
+                  <span class="input-unit"><input class="offer-price" type="number" min="0" step="0.01" inputmode="decimal" placeholder="未入力なら除外"><b>万円</b></span>
+                </label>
+                <label class="field">
+                  <span>提示の確認状況</span>
+                  <select class="offer-evidence">
+                    <option value="unknown">未確認</option>
+                    <option value="written">書面で提示された</option>
+                    <option value="oral">口頭で伝えられた</option>
+                    <option value="scenario">比較のための仮定額</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>その他の費用 <span class="optional">任意・未入力なら0</span></span>
+                  <span class="input-unit"><input class="offer-other" type="number" min="0" step="0.01" inputmode="decimal" placeholder="例：10"><b>万円</b></span>
+                </label>
+                <label class="field offer-broker-field">
+                  <span>仲介手数料（税込）</span>
+                  <select class="offer-fee-mode">
+                    <option value="ceiling">法定上限で仮計算</option>
+                    <option value="manual">合意額を入力</option>
+                  </select>
+                </label>
+                <label class="field offer-broker-field offer-manual-field" hidden>
+                  <span>合意した仲介手数料（税込）</span>
+                  <span class="input-unit"><input class="offer-manual-fee" type="number" min="0" step="0.0001" inputmode="decimal" placeholder="例：90"><b>万円</b></span>
+                </label>
+                <label class="offer-special-wrapper offer-broker-field">
+                  <input class="offer-special" type="checkbox">
+                  <span>800万円以下の報酬特例を事前に合意した想定</span>
+                </label>
+                <label class="field">
+                  <span>引渡し時期</span>
+                  <select class="offer-timing">
+                    <option value="unknown">未確認</option>
+                    <option value="within_month">1か月以内（見込み）</option>
+                    <option value="one_to_three">1〜3か月（見込み）</option>
+                    <option value="after_three">3か月超（見込み）</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>減額・解除に関する条件</span>
+                  <select class="offer-reduction">
+                    <option value="unknown">未確認</option>
+                    <option value="none_reported">条件なしと説明された</option>
+                    <option value="conditions">条件あり・要確認</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>提示額の有効期限 <span class="optional">任意・入力者確認</span></span>
+                  <input class="offer-expiry" type="date">
+                </label>
+                <label class="field offer-notes-field">
+                  <span>契約条件のメモ <span class="optional">任意・250文字以内</span></span>
+                  <input class="offer-notes" type="text" maxlength="250" placeholder="例：契約後の再査定・解除条項を確認する">
+                </label>
+              </div>
+            </article>
+          </template>
+        </section>
+      </div>
+    </section>
+
+    <section class="promise-section" id="policy">
+      <div class="wrap">
+        <div class="section-title"><div><p class="eyebrow">データの取扱い</p><h2>データの出所と、分析の限界。</h2><p>何が分かり、何が分からないか。判断に必要な前提を隠しません。</p></div></div>
+        <div class="promise-grid">
+          <article><span>01</span><h3>匿名で調べられる</h3><p>営業電話につながる氏名・電話番号・メールの入力を求めません。査定申込も不要です。</p></article>
+          <article><span>02</span><h3>データの出所を示す</h3><p>国土交通省の公開取引情報を使用。何件、どの時期の事例が根拠かを明示します。</p></article>
+          <article><span>03</span><h3>推定できないときは正直に</h3><p>比較事例が少ない地域では、もっともらしい参考価格を作りません。</p></article>
+        </div>
+        <div class="legal">
+          <strong>データの出典と限界</strong>
+          <p>出典：<a href="https://www.reinfolib.mlit.go.jp/" target="_blank" rel="noopener noreferrer">国土交通省「不動産情報ライブラリ」</a>（取引価格情報を加工）。この取引情報は全件網羅ではなく、価格は丸められる場合があります。公的機関がTANUKIの算定結果を保証・推奨するものではありません。表示は過去事例の参考分析であり、正式な不動産鑑定評価・売却価格の保証ではありません。</p>
+          <p id="sourceDetail">取得データの詳細を読込中…</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-inner"><span class="footer-brand">TANUKI <b>FairValue</b></span><span>公開取引を、根拠とともに。</span><a href='/fairvalue/data-sources'>データ出典・利用条件</a><a href="#top">ページ上部へ ↑</a></div>
+  </footer>
+  <script type="module" src="./app.mjs"></script>
+  <script type="module" src="./q2_preview.mjs"></script>
+  <script type="module" src="./seller_ui.mjs"></script>
+  <script type="module" src="./offer_ui.mjs"></script>
+</body>
+</html>

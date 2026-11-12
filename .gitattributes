@@ -1,0 +1,12 @@
+# Keep recovery source and release controls stable across Windows/Linux checkouts.
+/fairvalue/*.html text eol=lf
+/fairvalue/**/*.html text eol=lf
+/fairvalue/**/*.mjs text eol=lf
+/fairvalue/**/*.js text eol=lf
+/fairvalue/**/*.json text eol=lf
+/fairvalue/**/*.css text eol=lf
+/_headers text eol=lf
+/_redirects text eol=lf
+/scripts/site-release-gate.cjs text eol=lf
+/tests/site-http-smoke.cjs text eol=lf
+/release/protected-files.json text eol=lf

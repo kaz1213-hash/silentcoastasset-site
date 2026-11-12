@@ -1,0 +1,10 @@
+{
+  "source": "国土交通省 不動産情報ライブラリ・公式公開検索画面",
+  "sourceUrl": "https://www.reinfolib.mlit.go.jp/realEstatePrices/",
+  "checkedAtUtc": "2026-10-29T04:06:14.162Z",
+  "latestSelectablePeriod": "2026Q2",
+  "latestSelectableCode": "20262",
+  "latestSelectableLabel": "2026年第2四半期",
+  "observationScope": "公開された取引価格情報を検索する画面の四半期選択肢を確認",
+  "disclaimer": "現在の相場や次期の公開日を保証するものではない。公式で最新期が公開されていれば更新パイプラインで取り込む。"
+}

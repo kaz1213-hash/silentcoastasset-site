@@ -6,7 +6,7 @@ const urls=['/','/media/','/media/story-0001/','/media/story-0002/','/media/stor
 '/media/comics/aquarium-plants/','/blog/','/blog/447-visits-bots.html','/blog/got-it-x-spam-label.html',
 '/blog/approval-gate.html','/blog/butler-vs-dots.html','/blog/fx-university-to-tanuki-lab.html',
 '/blog/logs-to-content.html','/blog/mine-producer-publisher.html','/project-vault.html',
-'/tanuki-store.html','/tanuki-chronicle.html','/tanuki-fortune.html','/fx-university.html',
+'/tanuki-store.html','/tanuki-site-support.html','/blog/after-yattotte-kindle.html','/fairvalue/index.html','/fairvalue/app/index.html','/fairvalue/app/data/prefecture_shards/01.json','/fairvalue/app/data/prefecture_shards/13.json','/tanuki-chronicle.html','/tanuki-fortune.html','/fx-university.html',
 '/media/assets/surfing-company.png','/media/assets/bots-447.png','/media/assets/newsletter-2043.png','/media/assets/aquarium-plants.png'];
 const server=http.createServer((req,res)=>{let u=decodeURI(new URL(req.url,'http://localhost').pathname);
 if(u.endsWith('/'))u+='index.html';

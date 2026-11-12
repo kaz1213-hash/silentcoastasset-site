@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://silentcoastasset.com/fairvalue/data-sources.html">
+<meta name="description" content="TANUKI Fair Valueに使われている国土交通省の公表取引価格、国土数値情報N03、デジタル庁ABR、OpenStreetMapの出典、加工・再利用条件を説明します。">
+<title>データ出典・地図ライセンス｜TANUKI Fair Value</title>
+<style>
+:root{color-scheme:light}*{box-sizing:border-box}
+body{margin:0;font:16px/1.9 system-ui,-apple-system,"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;background:#fff;color:#213b34}
+header,footer{background:#123d34;color:#fff;padding:20px}
+header a,footer a{color:#fff}
+main{width:min(930px,calc(100% - 34px));margin:45px auto 65px}
+h1{font-size:clamp(26px,4vw,38px);line-height:1.4}
+h2{margin-top:35px;font-size:21px;border-top:1px solid #dae4df;padding-top:18px}
+p,li{max-width:850px}ul{padding-left:1.6em}
+a{color:#145c4e;overflow-wrap:anywhere}
+a:focus-visible{outline:3px solid #106a4b;outline-offset:3px}
+.note{background:#f0f7f3;padding:16px;border-left:3px solid #237358}
+code{font-size:13px;background:#f4f4f4;padding:1px 4px;overflow-wrap:anywhere}
+footer{font-size:13px}
+</style>
+</head>
+<body>
+<header><a href="/fairvalue/">← TANUKI Fair Value</a>　／　<a href="/">Silent Coast Asset</a></header>
+<main>
+<p>Silent Coast Asset株式会社 / Project Tanuki</p>
+<h1>データの出典・利用条件</h1>
+<p>無料研究サービス「TANUKI Fair Value」は、公開された情報をもとに当社が抽出、正規化、簡略化、加工、集計したものです。国土交通省・デジタル庁・OpenStreetMap Foundation・国土地理院が当社サービスを保証・推奨するものではありません。</p>
+<h2>中古マンションの公表取引価格</h2>
+<p>出典：<a href="https://www.reinfolib.mlit.go.jp/">国土交通省「不動産情報ライブラリ」</a>の「不動産取引価格情報」。国土交通省の情報をもとにSilent Coast Asset株式会社が抽出・加工・集計しました。<a href="https://www.reinfolib.mlit.go.jp/help/termsOfUse/">不動産情報ライブラリ利用規約</a>をご参照ください。</p>
+<p>過去取引の閲覧候補は2026年第1四半期まで167,559件、第2四半期の追加5,763件です。すべての成約を網羅するものではなく、アンケートに基づく匿名公表情報です。2026年第2四半期の中央値・価格帯は過去の実績の記述統計であり、現在の不動産査定額、買取価格、価格保証ではありません。研究版の参考価格モデルは21市区に限定し、2026年第2四半期の取引は学習対象に加えていません。</p>
+<h2>行政区域の境界地図（N03）</h2>
+<p>出典：<a href="https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2026.html">国土交通省「国土数値情報・行政区域データ（N03）2026年版」</a>。2026年1月1日時点、オープンデータ（CC BY 4.0）。第三者による簡略化済みGeoJSON（<a href="https://geo.maderaojen.me/en/">地理データカタログ</a>）をもとに、Silent Coast Asset株式会社が地域検索用の簡略地理データとして加工・作成しました。<a href="https://nlftp.mlit.go.jp/ksj/other/agreement.html">国土数値情報の利用規約</a>と地理院の測量成果利用に関する制度もご確認ください。</p>
+<p>境界線は参考表示であり、法的な境界、公共測量、地籍確認などの目的には使えません。地理院の原典データについては、利用方法によって申請・承認が必要な場合があります。</p>
+<h2>町字の代表点</h2>
+<p>出典：<a href="https://www.digital.go.jp/policies/base_registry_address">デジタル庁「アドレス・ベース・レジストリ」</a>の町字マスター・位置参照拡張。デジタル庁の公表データをもとに当社が加工・集計。<a href="https://www.digital.go.jp/policies/base_registry_address_tos">データ利用規約</a>（公共データ利用規約第1.0版）をご参照ください。</p>
+<p>地図の点は町字代表点であり、個別の取引物件の所在地ではありません。位置情報は誤差・欠測・更新差を含みます。</p>
+<h2>道路・駅の参考地図：OpenStreetMap</h2>
+<p><strong>© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a></strong>。道路と駅について、OpenStreetMap公開データから2026年10月24日に松本市中心部の道路・駅情報を抽出し、当社が変換・簡略化しました。出典元は<a href="https://www.openstreetmap.org/">OpenStreetMap</a>、ライセンスは <a href="https://opendatacommons.org/licenses/odbl/1-0/">Open Database License (ODbL) 1.0</a> です。</p>
+<p>当社の道路・駅の加工済みデータベース（1,807道路区間と10駅の参考座標）は、ODbL 1.0に基づき次のファイルからダウンロード・再利用できます。</p>
+<p><a href="/fairvalue/app/data/street_context.json" download>加工済みOpenStreetMap道路・駅データをダウンロード（JSON）</a></p>
+<p>これは過去の取引価格データと独立した道路・駅の参考データベースです。個別の取引の正確な位置は含みません。OpenStreetMapの完全性・最新性は保証しません。転載・再利用時にはODbLの条件を確認してください。</p>
+<h2>地理院地図のタイル（任意選択）</h2>
+<p>「地理院地図」へ利用者が明示的に切り替えた場合のみ、国土地理院「<a href="https://maps.gsi.go.jp/development/ichiran.html">地理院タイル（淡色地図）</a>」の配信元へ地図表示範囲が送信され、タイルが表示されます。常時の地理院タイル通信や外部広告・トラッキングを行う設計ではありません。地理院タイルの利用条件は国土地理院の案内をご確認ください。</p>
+<h2>運営と連絡先</h2>
+<p>運営・加工・集計：Silent Coast Asset株式会社。公開データの性質、取得時期、対象地域によって記録が不足する場合があります。学習用・調査用の参考資料として提供します。</p>
+<div class="note"><p>データや地図の出典・利用条件に関するお問い合わせ：<a href="mailto:support@silentcoastasset.com">support@silentcoastasset.com</a></p></div>
+<p><a href="/fairvalue/app/">地図と過去取引を調べる</a> ／ <a href="/fairvalue/">Fair Valueの紹介へ戻る</a></p>
+</main>
+<footer>© Silent Coast Asset株式会社 / Project Tanuki</footer>
+</body>
+</html>

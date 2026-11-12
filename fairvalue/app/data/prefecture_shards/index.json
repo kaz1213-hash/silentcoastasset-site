@@ -1,0 +1,5790 @@
+{
+  "schema": "tanuki-prefecture-shard-index-v1",
+  "legacySourceFingerprint": "c932a5c6acf1cc09520091d160e4c80ae3628e6ba3d68fa4ed613b0582fc5550",
+  "legacyCities": 15,
+  "legacyCount": 17156,
+  "eligibleCriteria": {
+    "min_observed": 5,
+    "min_backtest": 80,
+    "max_backtest_median_error_pct": 25.0,
+    "max_bias_abs_pct": 15.0
+  },
+  "source": "MLIT public CSV + XIT001 historical observations in otherwise uncovered municipalities (no model training)",
+  "scope": "旧15市区のモデルと取引を維持した県別分割。過去取引の記述統計と限定的な研究β参考価格を自治体別に区別する。",
+  "entries": {
+    "06": {
+      "prefecture": "山形県",
+      "file": "data/prefecture_shards/06.json",
+      "sourceFingerprint": "8ed76b40c23c34b57754ca215794c23d5a55f37a9dbdb4847bf43cfec24e5a50",
+      "additionalRows": 137,
+      "cityTiers": {
+        "山形市": {
+          "cityCode": "06201",
+          "rows": 117,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 36,
+          "medianAbsolutePctError": 12.3,
+          "observedBandCoverage": null
+        },
+        "酒田市": {
+          "cityCode": "06204",
+          "rows": 10,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 2,
+          "medianAbsolutePctError": 6.3,
+          "observedBandCoverage": null
+        },
+        "鶴岡市": {
+          "cityCode": "06203",
+          "rows": 10,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 2,
+          "medianAbsolutePctError": 7.7,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 3,
+      "insufficientCities": 0,
+      "fileBytes": 46597,
+      "sha256": "3adc2cc8b7f5deb23719de637c93411cfa81aa3be0ffa3daefa5c648be830fed",
+      "geoFile": "data/prefecture_shards/town_06.json",
+      "geoSha256": "61a22ad8aaf74838f1791ae0c969b04ba32a653a6ac9ab121472cbd2071d5af2"
+    },
+    "17": {
+      "prefecture": "石川県",
+      "file": "data/prefecture_shards/17.json",
+      "sourceFingerprint": "8ea06ce6a5b4068e130a473a6aa12098012f5f0d916e6987feee556eb4fd0dec",
+      "additionalRows": 410,
+      "cityTiers": {
+        "小松市": {
+          "cityCode": "17203",
+          "rows": 20,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 4,
+          "medianAbsolutePctError": 25.9,
+          "observedBandCoverage": null
+        },
+        "白山市": {
+          "cityCode": "17210",
+          "rows": 20,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 6,
+          "medianAbsolutePctError": 17.2,
+          "observedBandCoverage": null
+        },
+        "金沢市": {
+          "cityCode": "17201",
+          "rows": 370,
+          "tier": "RESEARCH_BETA",
+          "validated": true,
+          "backtestEvaluated": 110,
+          "medianAbsolutePctError": 23.3,
+          "observedBandCoverage": 0.791
+        }
+      },
+      "priceDataCities": 1,
+      "historicalOnlyCities": 2,
+      "insufficientCities": 0,
+      "fileBytes": 133630,
+      "sha256": "995afd4179913f3e5f92190db00f3bdec8b0a5dcb611ad1cf99092998055660f",
+      "geoFile": "data/prefecture_shards/town_17.json",
+      "geoSha256": "9bfa95c384df7977d255bbb12ff7aca6df78fee0cb1f59e5ae5c8878d4a5bdbb"
+    },
+    "20": {
+      "prefecture": "長野県",
+      "file": "data/prefecture_shards/20.json",
+      "sourceFingerprint": "2acbf88f0a6ef28d8a8993fb49fcaba49f2196eb1515e05f98e0cc5d407dc6ff",
+      "additionalRows": 41,
+      "cityTiers": {
+        "上田市": {
+          "cityCode": "20203",
+          "rows": 27,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 8,
+          "medianAbsolutePctError": 22.3,
+          "observedBandCoverage": null
+        },
+        "佐久市": {
+          "cityCode": "20217",
+          "rows": 13,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 5,
+          "medianAbsolutePctError": 26.5,
+          "observedBandCoverage": null
+        },
+        "飯田市": {
+          "cityCode": "20205",
+          "rows": 1,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 2,
+      "insufficientCities": 1,
+      "fileBytes": 14681,
+      "sha256": "31fc5b95a55412d9a7cfcb53300803e919e3461e21f62ecd5f5c17a99f90b217",
+      "geoFile": "data/prefecture_shards/town_20.json",
+      "geoSha256": "58bb125e856265934d9ac287f6c075730223395c51743aad67098b92964b6c34"
+    },
+    "22": {
+      "prefecture": "静岡県",
+      "file": "data/prefecture_shards/22.json",
+      "sourceFingerprint": "d65074b54099cef5abf115c4c348497e0338c3b99860cbb5960dc46773aea7fb",
+      "additionalRows": 1540,
+      "cityTiers": {
+        "三島市": {
+          "cityCode": "22206",
+          "rows": 87,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 29,
+          "medianAbsolutePctError": 20.8,
+          "observedBandCoverage": null
+        },
+        "富士宮市": {
+          "cityCode": "22207",
+          "rows": 17,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 4,
+          "medianAbsolutePctError": 18.2,
+          "observedBandCoverage": null
+        },
+        "富士市": {
+          "cityCode": "22210",
+          "rows": 109,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 32,
+          "medianAbsolutePctError": 20.2,
+          "observedBandCoverage": null
+        },
+        "島田市": {
+          "cityCode": "22209",
+          "rows": 4,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "掛川市": {
+          "cityCode": "22213",
+          "rows": 14,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 4,
+          "medianAbsolutePctError": 11.1,
+          "observedBandCoverage": null
+        },
+        "沼津市": {
+          "cityCode": "22203",
+          "rows": 177,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 53,
+          "medianAbsolutePctError": 24.1,
+          "observedBandCoverage": 0.788
+        },
+        "浜松市中央区": {
+          "cityCode": "22138",
+          "rows": 545,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 158,
+          "medianAbsolutePctError": 21.1,
+          "observedBandCoverage": 0.753
+        },
+        "浜松市浜名区": {
+          "cityCode": "22139",
+          "rows": 44,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 7,
+          "medianAbsolutePctError": 14.9,
+          "observedBandCoverage": null
+        },
+        "焼津市": {
+          "cityCode": "22212",
+          "rows": 16,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 5,
+          "medianAbsolutePctError": 29.4,
+          "observedBandCoverage": null
+        },
+        "磐田市": {
+          "cityCode": "22211",
+          "rows": 29,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 12,
+          "medianAbsolutePctError": 23.5,
+          "observedBandCoverage": null
+        },
+        "藤枝市": {
+          "cityCode": "22214",
+          "rows": 35,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 4,
+          "medianAbsolutePctError": 20.2,
+          "observedBandCoverage": null
+        },
+        "静岡市清水区": {
+          "cityCode": "22103",
+          "rows": 85,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 28,
+          "medianAbsolutePctError": 21.9,
+          "observedBandCoverage": null
+        },
+        "静岡市葵区": {
+          "cityCode": "22101",
+          "rows": 212,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 54,
+          "medianAbsolutePctError": 19.2,
+          "observedBandCoverage": 0.852
+        },
+        "静岡市駿河区": {
+          "cityCode": "22102",
+          "rows": 166,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 49,
+          "medianAbsolutePctError": 15.4,
+          "observedBandCoverage": 0.875
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 13,
+      "insufficientCities": 1,
+      "fileBytes": 511205,
+      "sha256": "521db8a5ba4384e3cd2cede64794cc5c163215ed9db8d76ec2901335de75a8bc",
+      "geoFile": "data/prefecture_shards/town_22.json",
+      "geoSha256": "fae0a588c975245d0f8f16cb399e09d5c71185811882bf3b716abb9054aff9b5"
+    },
+    "26": {
+      "prefecture": "京都府",
+      "file": "data/prefecture_shards/26.json",
+      "sourceFingerprint": "743c70baa4aa81c5af67ab2f09f126b926147c03783155da8a1c366a0fc64e5c",
+      "additionalRows": 3931,
+      "cityTiers": {
+        "久御山町": {
+          "cityCode": "26322",
+          "rows": 4,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "亀岡市": {
+          "cityCode": "26206",
+          "rows": 11,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 1,
+          "medianAbsolutePctError": 25.8,
+          "observedBandCoverage": null
+        },
+        "井手町": {
+          "cityCode": "26343",
+          "rows": 1,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "京田辺市": {
+          "cityCode": "26211",
+          "rows": 51,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 10,
+          "medianAbsolutePctError": 10.7,
+          "observedBandCoverage": null
+        },
+        "京都市上京区": {
+          "cityCode": "26102",
+          "rows": 327,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 84,
+          "medianAbsolutePctError": 16.4,
+          "observedBandCoverage": 0.69
+        },
+        "京都市下京区": {
+          "cityCode": "26106",
+          "rows": 613,
+          "tier": "RESEARCH_BETA",
+          "validated": true,
+          "backtestEvaluated": 147,
+          "medianAbsolutePctError": 14.3,
+          "observedBandCoverage": 0.816
+        },
+        "京都市中京区": {
+          "cityCode": "26104",
+          "rows": 592,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 128,
+          "medianAbsolutePctError": 18.6,
+          "observedBandCoverage": 0.719
+        },
+        "京都市伏見区": {
+          "cityCode": "26109",
+          "rows": 395,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 115,
+          "medianAbsolutePctError": 19.8,
+          "observedBandCoverage": 0.774
+        },
+        "京都市北区": {
+          "cityCode": "26101",
+          "rows": 102,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 19,
+          "medianAbsolutePctError": 21,
+          "observedBandCoverage": null
+        },
+        "京都市南区": {
+          "cityCode": "26107",
+          "rows": 406,
+          "tier": "RESEARCH_BETA",
+          "validated": true,
+          "backtestEvaluated": 134,
+          "medianAbsolutePctError": 11.8,
+          "observedBandCoverage": 0.791
+        },
+        "京都市右京区": {
+          "cityCode": "26108",
+          "rows": 390,
+          "tier": "RESEARCH_BETA",
+          "validated": true,
+          "backtestEvaluated": 122,
+          "medianAbsolutePctError": 18.1,
+          "observedBandCoverage": 0.861
+        },
+        "京都市山科区": {
+          "cityCode": "26110",
+          "rows": 258,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 66,
+          "medianAbsolutePctError": 18.3,
+          "observedBandCoverage": 0.894
+        },
+        "京都市左京区": {
+          "cityCode": "26103",
+          "rows": 234,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 55,
+          "medianAbsolutePctError": 20.1,
+          "observedBandCoverage": 0.764
+        },
+        "京都市東山区": {
+          "cityCode": "26105",
+          "rows": 66,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 11,
+          "medianAbsolutePctError": 9.1,
+          "observedBandCoverage": null
+        },
+        "京都市西京区": {
+          "cityCode": "26111",
+          "rows": 62,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 10,
+          "medianAbsolutePctError": 18.5,
+          "observedBandCoverage": null
+        },
+        "八幡市": {
+          "cityCode": "26210",
+          "rows": 58,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 21,
+          "medianAbsolutePctError": 18.3,
+          "observedBandCoverage": null
+        },
+        "南丹市": {
+          "cityCode": "26213",
+          "rows": 2,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "向日市": {
+          "cityCode": "26208",
+          "rows": 60,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 8,
+          "medianAbsolutePctError": 8.9,
+          "observedBandCoverage": null
+        },
+        "城陽市": {
+          "cityCode": "26207",
+          "rows": 22,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 6,
+          "medianAbsolutePctError": 7.1,
+          "observedBandCoverage": null
+        },
+        "大山崎町": {
+          "cityCode": "26303",
+          "rows": 3,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "宇治市": {
+          "cityCode": "26204",
+          "rows": 161,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 54,
+          "medianAbsolutePctError": 17.7,
+          "observedBandCoverage": null
+        },
+        "木津川市": {
+          "cityCode": "26214",
+          "rows": 41,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 15,
+          "medianAbsolutePctError": 30.1,
+          "observedBandCoverage": null
+        },
+        "精華町": {
+          "cityCode": "26366",
+          "rows": 24,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 5,
+          "medianAbsolutePctError": 22,
+          "observedBandCoverage": null
+        },
+        "長岡京市": {
+          "cityCode": "26209",
+          "rows": 48,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 13,
+          "medianAbsolutePctError": 13.4,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 3,
+      "historicalOnlyCities": 17,
+      "insufficientCities": 4,
+      "fileBytes": 1338291,
+      "sha256": "8187254d6cf5e0aee663938e4c9dac5cb92a5b3a5002bfc2ff849ccbbe6bca62",
+      "geoFile": "data/prefecture_shards/town_26.json",
+      "geoSha256": "b8308e869d584517638046ae6b8288985ad2c7e10d4ea337e027265a8e19d448"
+    },
+    "38": {
+      "prefecture": "愛媛県",
+      "file": "data/prefecture_shards/38.json",
+      "sourceFingerprint": "bf4ef381ccc4e4cfd5e4b3ce2fa181cfba8f1c12a8505d3d55f1b4d4db5a29e5",
+      "additionalRows": 458,
+      "cityTiers": {
+        "今治市": {
+          "cityCode": "38202",
+          "rows": 38,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 11,
+          "medianAbsolutePctError": 14.4,
+          "observedBandCoverage": null
+        },
+        "新居浜市": {
+          "cityCode": "38205",
+          "rows": 27,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 7,
+          "medianAbsolutePctError": 35.2,
+          "observedBandCoverage": null
+        },
+        "松山市": {
+          "cityCode": "38201",
+          "rows": 377,
+          "tier": "RESEARCH_BETA",
+          "validated": true,
+          "backtestEvaluated": 128,
+          "medianAbsolutePctError": 16.3,
+          "observedBandCoverage": 0.828
+        },
+        "西条市": {
+          "cityCode": "38206",
+          "rows": 16,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 2,
+          "medianAbsolutePctError": 6.3,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 1,
+      "historicalOnlyCities": 3,
+      "insufficientCities": 0,
+      "fileBytes": 150929,
+      "sha256": "c9555ce7907cda0f0bb2230ae925598dd8a9897b8a873cc1c33a1a7bc38900f5",
+      "geoFile": "data/prefecture_shards/town_38.json",
+      "geoSha256": "9584143a0ba277f7804eb50a1cc88f7512467f6645a2682b6e44d26ace26d88f"
+    },
+    "46": {
+      "prefecture": "鹿児島県",
+      "file": "data/prefecture_shards/46.json",
+      "sourceFingerprint": "4a0c8e5c2c0edf53322a7b5ace83c44d8718d9405400432d778ad374cafdb954",
+      "additionalRows": 507,
+      "cityTiers": {
+        "薩摩川内市": {
+          "cityCode": "46215",
+          "rows": 11,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 1,
+          "medianAbsolutePctError": 15.4,
+          "observedBandCoverage": null
+        },
+        "霧島市": {
+          "cityCode": "46218",
+          "rows": 34,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 5,
+          "medianAbsolutePctError": 15.5,
+          "observedBandCoverage": null
+        },
+        "鹿児島市": {
+          "cityCode": "46201",
+          "rows": 462,
+          "tier": "RESEARCH_BETA",
+          "validated": true,
+          "backtestEvaluated": 119,
+          "medianAbsolutePctError": 16.1,
+          "observedBandCoverage": 0.815
+        }
+      },
+      "priceDataCities": 1,
+      "historicalOnlyCities": 2,
+      "insufficientCities": 0,
+      "fileBytes": 170495,
+      "sha256": "858300481ca9f5c7a7fb837e72d9cddbaf0e3d11b67a009807bd3d1f341fd733",
+      "geoFile": "data/prefecture_shards/town_46.json",
+      "geoSha256": "6bc1fa15a7b8f5ba71b5539c505336719e50444e806b8040090aeb4009d08e58"
+    },
+    "47": {
+      "prefecture": "沖縄県",
+      "file": "data/prefecture_shards/47.json",
+      "sourceFingerprint": "e0a3eed1ea9c8761c689e1e94b3077af539c265a9687d0bdf6788cfa20b7d635",
+      "additionalRows": 510,
+      "cityTiers": {
+        "うるま市": {
+          "cityCode": "47213",
+          "rows": 6,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "沖縄市": {
+          "cityCode": "47211",
+          "rows": 52,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 7,
+          "medianAbsolutePctError": 10,
+          "observedBandCoverage": null
+        },
+        "浦添市": {
+          "cityCode": "47208",
+          "rows": 82,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 22,
+          "medianAbsolutePctError": 6.9,
+          "observedBandCoverage": null
+        },
+        "那覇市": {
+          "cityCode": "47201",
+          "rows": 370,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 80,
+          "medianAbsolutePctError": 16.4,
+          "observedBandCoverage": 0.713
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 4,
+      "insufficientCities": 0,
+      "fileBytes": 164728,
+      "sha256": "5d0d9f618ace0ef6b54888e2324995c14540c1f31ba76c6bd1784885113b3bd0",
+      "geoFile": "data/prefecture_shards/town_47.json",
+      "geoSha256": "bbaca78949c013f3e01dd523786a94b7a10c781d3bc19e67d5d2d2839c172090"
+    },
+    "45": {
+      "prefecture": "宮崎県",
+      "file": "data/prefecture_shards/45.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "638e7188c94443f8d9ce709857a32033b797d52f8e8250c0aae15b93e677b85d",
+      "additionalRows": 265,
+      "cityTiers": {
+        "宮崎市": {
+          "cityCode": "45201",
+          "rows": 248,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "延岡市": {
+          "cityCode": "45203",
+          "rows": 12,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "都城市": {
+          "cityCode": "45202",
+          "rows": 5,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 3,
+      "insufficientCities": 0,
+      "fileBytes": 83303,
+      "sha256": "1394e3b7c7754c815989aae8bfdb6993784d230b836d0710b65933de627739dc",
+      "geoFile": "data/prefecture_shards/town_45.json",
+      "geoSha256": "74cd490b760abaa4b74f8300f7c741b8e6a49670e286c4f9d2c6aeda4b1fe68c"
+    },
+    "02": {
+      "prefecture": "青森県",
+      "file": "data/prefecture_shards/02.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "a549b4606284e4f12be5fb45b1acc41b905e06a60258ec8817ee6d88f33a943b",
+      "additionalRows": 152,
+      "cityTiers": {
+        "八戸市": {
+          "cityCode": "02203",
+          "rows": 17,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "弘前市": {
+          "cityCode": "02202",
+          "rows": 67,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "青森市": {
+          "cityCode": "02201",
+          "rows": 68,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 3,
+      "insufficientCities": 0,
+      "fileBytes": 48573,
+      "sha256": "0fa9e799ecb213492c78693b9d9e3eb75634c012933e302a7394a2ccb66640e6",
+      "geoFile": "data/prefecture_shards/town_02.json",
+      "geoSha256": "49b470857cb21bd61594f61e452402ba83cb3a0030f66d53126c2e4829e13344"
+    },
+    "03": {
+      "prefecture": "岩手県",
+      "file": "data/prefecture_shards/03.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "a6c993f65c77749456562a1c57858352833333c8e2d9766764c2dd62c5e48c16",
+      "additionalRows": 291,
+      "cityTiers": {
+        "一関市": {
+          "cityCode": "03209",
+          "rows": 7,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "奥州市": {
+          "cityCode": "03215",
+          "rows": 8,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "盛岡市": {
+          "cityCode": "03201",
+          "rows": 272,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "花巻市": {
+          "cityCode": "03205",
+          "rows": 4,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 3,
+      "insufficientCities": 1,
+      "fileBytes": 91828,
+      "sha256": "92a294bdefe2f269ff0213351b2679fb3bf8d74e1b57b9fb557d15ffe7c1cad1",
+      "geoFile": "data/prefecture_shards/town_03.json",
+      "geoSha256": "638b324b3853edaa481b1697fb668288e14055adf3c630c91f03c249caff2a6d"
+    },
+    "05": {
+      "prefecture": "秋田県",
+      "file": "data/prefecture_shards/05.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "f58251b951060f71dd703c700839537ab6abbe0dc0914d102892d8527575c2b1",
+      "additionalRows": 166,
+      "cityTiers": {
+        "秋田市": {
+          "cityCode": "05201",
+          "rows": 166,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 1,
+      "insufficientCities": 0,
+      "fileBytes": 52384,
+      "sha256": "ad2ea1c6cc1d53a6b63443ff5d87faf0d33fb4197fee81928523985fd53f1184",
+      "geoFile": "data/prefecture_shards/town_05.json",
+      "geoSha256": "90bddcc7df0c16eb0323fa57feb1b7e403755e00bba571cab134f612238937d5"
+    },
+    "07": {
+      "prefecture": "福島県",
+      "file": "data/prefecture_shards/07.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "bf4d20f38ead7be257ae9e40213fe723f68c39e396dadadef0b7249908d707eb",
+      "additionalRows": 351,
+      "cityTiers": {
+        "いわき市": {
+          "cityCode": "07204",
+          "rows": 48,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "会津若松市": {
+          "cityCode": "07202",
+          "rows": 21,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "福島市": {
+          "cityCode": "07201",
+          "rows": 112,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "郡山市": {
+          "cityCode": "07203",
+          "rows": 170,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 4,
+      "insufficientCities": 0,
+      "fileBytes": 110092,
+      "sha256": "48ca2334e2b29d15976427981f1cdd7bd53ccb8dd8275abf4414b1a832203640",
+      "geoFile": "data/prefecture_shards/town_07.json",
+      "geoSha256": "aa2661c8ff1229a7b7f7f46bda71660b2122e438dbd8920016e1a2315c4db5b5"
+    },
+    "08": {
+      "prefecture": "茨城県",
+      "file": "data/prefecture_shards/08.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "f1df61cfd3ee822bdd286d030af688d0362398a4c9fc872967ece810001f2103",
+      "additionalRows": 706,
+      "cityTiers": {
+        "つくばみらい市": {
+          "cityCode": "08235",
+          "rows": 33,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "つくば市": {
+          "cityCode": "08220",
+          "rows": 168,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "ひたちなか市": {
+          "cityCode": "08221",
+          "rows": 14,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "取手市": {
+          "cityCode": "08217",
+          "rows": 109,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "土浦市": {
+          "cityCode": "08203",
+          "rows": 92,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "守谷市": {
+          "cityCode": "08224",
+          "rows": 43,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "日立市": {
+          "cityCode": "08202",
+          "rows": 10,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "水戸市": {
+          "cityCode": "08201",
+          "rows": 132,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "牛久市": {
+          "cityCode": "08219",
+          "rows": 61,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "筑西市": {
+          "cityCode": "08227",
+          "rows": 2,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "龍ケ崎市": {
+          "cityCode": "08208",
+          "rows": 42,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 10,
+      "insufficientCities": 1,
+      "fileBytes": 222362,
+      "sha256": "7ced27b3dd048f306b560710201ab274f80d7c7693f213d27fe217f9f6246233",
+      "geoFile": "data/prefecture_shards/town_08.json",
+      "geoSha256": "df2b0a20568cd7efbbcefc38efc1c34acef229223a55186ef3c3c52ff630c252"
+    },
+    "09": {
+      "prefecture": "栃木県",
+      "file": "data/prefecture_shards/09.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "7997d48ab3f98944e700a0bc448b47432be1413c609d141ba2a36c0a99307ea8",
+      "additionalRows": 415,
+      "cityTiers": {
+        "佐野市": {
+          "cityCode": "09204",
+          "rows": 2,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "宇都宮市": {
+          "cityCode": "09201",
+          "rows": 307,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "小山市": {
+          "cityCode": "09208",
+          "rows": 50,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "栃木市": {
+          "cityCode": "09203",
+          "rows": 4,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "足利市": {
+          "cityCode": "09202",
+          "rows": 17,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "那須塩原市": {
+          "cityCode": "09213",
+          "rows": 32,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "鹿沼市": {
+          "cityCode": "09205",
+          "rows": 3,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 4,
+      "insufficientCities": 3,
+      "fileBytes": 131544,
+      "sha256": "e19d5442e91756ae53495579f0526d58955c5f3465216caaee5339541bda4517",
+      "geoFile": "data/prefecture_shards/town_09.json",
+      "geoSha256": "d353305d9ad77655cd941b43a9644d2119ded7ee6b3e174a72b834aafe75e2ec"
+    },
+    "10": {
+      "prefecture": "群馬県",
+      "file": "data/prefecture_shards/10.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "3ceca344177fbe3a99ad09df8d30590ab503d03f9d05abf2cc21787c9d1ea43c",
+      "additionalRows": 332,
+      "cityTiers": {
+        "伊勢崎市": {
+          "cityCode": "10204",
+          "rows": 9,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "前橋市": {
+          "cityCode": "10201",
+          "rows": 95,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "太田市": {
+          "cityCode": "10205",
+          "rows": 30,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "桐生市": {
+          "cityCode": "10203",
+          "rows": 12,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "高崎市": {
+          "cityCode": "10202",
+          "rows": 186,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 5,
+      "insufficientCities": 0,
+      "fileBytes": 104581,
+      "sha256": "cdf1d31bd198d39ddc1c42e32d6740a6020b6861c44e0c7654a9732891957469",
+      "geoFile": "data/prefecture_shards/town_10.json",
+      "geoSha256": "514941aaade9b0c9e9139f4d20590d6b873f32f0a70996a0d2ffdef7557846ff"
+    },
+    "12": {
+      "prefecture": "千葉県",
+      "file": "data/prefecture_shards/12.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "cea376b7969d9747c4bcd2f19b82a8e830026702cd5dc789b678a12cbdaa0176",
+      "additionalRows": 8106,
+      "cityTiers": {
+        "佐倉市": {
+          "cityCode": "12212",
+          "rows": 182,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "八千代市": {
+          "cityCode": "12221",
+          "rows": 307,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "千葉市中央区": {
+          "cityCode": "12101",
+          "rows": 460,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "千葉市稲毛区": {
+          "cityCode": "12103",
+          "rows": 431,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "千葉市緑区": {
+          "cityCode": "12105",
+          "rows": 106,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "千葉市美浜区": {
+          "cityCode": "12106",
+          "rows": 645,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "千葉市花見川区": {
+          "cityCode": "12102",
+          "rows": 275,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "千葉市若葉区": {
+          "cityCode": "12104",
+          "rows": 87,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "印西市": {
+          "cityCode": "12231",
+          "rows": 205,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "君津市": {
+          "cityCode": "12225",
+          "rows": 8,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "四街道市": {
+          "cityCode": "12228",
+          "rows": 42,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "富津市": {
+          "cityCode": "12226",
+          "rows": 3,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "富里市": {
+          "cityCode": "12233",
+          "rows": 17,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "市原市": {
+          "cityCode": "12219",
+          "rows": 137,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "市川市": {
+          "cityCode": "12203",
+          "rows": 857,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "成田市": {
+          "cityCode": "12211",
+          "rows": 96,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "我孫子市": {
+          "cityCode": "12222",
+          "rows": 155,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "木更津市": {
+          "cityCode": "12206",
+          "rows": 16,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "松戸市": {
+          "cityCode": "12207",
+          "rows": 779,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "柏市": {
+          "cityCode": "12217",
+          "rows": 552,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "流山市": {
+          "cityCode": "12220",
+          "rows": 245,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "浦安市": {
+          "cityCode": "12227",
+          "rows": 472,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "白井市": {
+          "cityCode": "12232",
+          "rows": 126,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "習志野市": {
+          "cityCode": "12216",
+          "rows": 400,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "船橋市": {
+          "cityCode": "12204",
+          "rows": 1309,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "袖ケ浦市": {
+          "cityCode": "12229",
+          "rows": 24,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "酒々井町": {
+          "cityCode": "12322",
+          "rows": 10,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "野田市": {
+          "cityCode": "12208",
+          "rows": 50,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "鎌ケ谷市": {
+          "cityCode": "12224",
+          "rows": 110,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 28,
+      "insufficientCities": 1,
+      "fileBytes": 2533822,
+      "sha256": "1f95bac916c2802a2b0ec819028997ab969fea0fffb2a9b2cd24317ddd0fd7b5",
+      "geoFile": "data/prefecture_shards/town_12.json",
+      "geoSha256": "c22039229c1b0fcf1e67b3aac988b348f7f3945cce784644d9587ea6228f8f2e"
+    },
+    "15": {
+      "prefecture": "新潟県",
+      "file": "data/prefecture_shards/15.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "a58ccbf3d773c87380fc444b5856d064e8446643f815493e3f513dd3e07f5ba3",
+      "additionalRows": 744,
+      "cityTiers": {
+        "三条市": {
+          "cityCode": "15204",
+          "rows": 11,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "上越市": {
+          "cityCode": "15222",
+          "rows": 9,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "新潟市中央区": {
+          "cityCode": "15103",
+          "rows": 520,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "新潟市東区": {
+          "cityCode": "15102",
+          "rows": 28,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "新潟市江南区": {
+          "cityCode": "15104",
+          "rows": 5,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "新潟市秋葉区": {
+          "cityCode": "15105",
+          "rows": 2,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "新潟市西区": {
+          "cityCode": "15107",
+          "rows": 45,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "新発田市": {
+          "cityCode": "15206",
+          "rows": 3,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "長岡市": {
+          "cityCode": "15202",
+          "rows": 121,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 7,
+      "insufficientCities": 2,
+      "fileBytes": 237384,
+      "sha256": "046b6f8c91b9cad0185ba2c39e792ff12738576ee62a4eaf9dd74680994dc9fe",
+      "geoFile": "data/prefecture_shards/town_15.json",
+      "geoSha256": "2ceee95ff380bdb38049a177527c3ba82ef10368b7fe6cd3767ce64bfe39ae69"
+    },
+    "16": {
+      "prefecture": "富山県",
+      "file": "data/prefecture_shards/16.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "a2a81749df089c175212a03c65556c7f790958602f5124cdb1e3ee4b9037fe7d",
+      "additionalRows": 227,
+      "cityTiers": {
+        "富山市": {
+          "cityCode": "16201",
+          "rows": 187,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "高岡市": {
+          "cityCode": "16202",
+          "rows": 40,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 2,
+      "insufficientCities": 0,
+      "fileBytes": 71488,
+      "sha256": "c4b7ae3003268dea2350c9d32e5aa7f31d8e97344df976f1f7f0e8c76702c49e",
+      "geoFile": "data/prefecture_shards/town_16.json",
+      "geoSha256": "fb0c024dbe57a72d1ed68bcfb09503a67f621e2f1b15dc13b0d082f6f8ad9531"
+    },
+    "18": {
+      "prefecture": "福井県",
+      "file": "data/prefecture_shards/18.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "978e04eacd053b39d673e67246fbcbf18dac213eae9464d4497884c72d72268d",
+      "additionalRows": 91,
+      "cityTiers": {
+        "福井市": {
+          "cityCode": "18201",
+          "rows": 91,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 1,
+      "insufficientCities": 0,
+      "fileBytes": 28869,
+      "sha256": "ebf4044dcbd4101fef279f87bc2667aa5ad5f17d835532818982ee11b131def7",
+      "geoFile": "data/prefecture_shards/town_18.json",
+      "geoSha256": "f2d6a5f1f0a52a4c37da88bd72b7e32d4cbd177f2607eff88e747b4f69abc338"
+    },
+    "19": {
+      "prefecture": "山梨県",
+      "file": "data/prefecture_shards/19.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "79d20f31ebd4d1a3a137e868333a9d49837429aaa13f9ddd243e1582e19b5ba9",
+      "additionalRows": 146,
+      "cityTiers": {
+        "甲府市": {
+          "cityCode": "19201",
+          "rows": 146,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 1,
+      "insufficientCities": 0,
+      "fileBytes": 45787,
+      "sha256": "4206595d4af9f28cf6754fa59d80695210cbbcb8353e5700221bd70835147f98",
+      "geoFile": "data/prefecture_shards/town_19.json",
+      "geoSha256": "48c3a578ea72f1bebd7b45618459587320e5ddd8324b11298a7d688113ba4844"
+    },
+    "21": {
+      "prefecture": "岐阜県",
+      "file": "data/prefecture_shards/21.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "f1b7a29ec2c00185a0d18b8587129b959ead5f4029b3a77d915f56cbd764a050",
+      "additionalRows": 359,
+      "cityTiers": {
+        "各務原市": {
+          "cityCode": "21213",
+          "rows": 50,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "多治見市": {
+          "cityCode": "21204",
+          "rows": 29,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大垣市": {
+          "cityCode": "21202",
+          "rows": 41,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "岐阜市": {
+          "cityCode": "21201",
+          "rows": 239,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 4,
+      "insufficientCities": 0,
+      "fileBytes": 113257,
+      "sha256": "028005ebacbab1d41a448d3000cc0f7e9ca6a431d24c113a320d55fc55ff7b83",
+      "geoFile": "data/prefecture_shards/town_21.json",
+      "geoSha256": "c68a513872041d197771167ff9326922b97144508f490b6a7b2ce633b5824a90"
+    },
+    "24": {
+      "prefecture": "三重県",
+      "file": "data/prefecture_shards/24.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "2165876e05b31ec9d79e9c6d326d522e0c73edc1dab32e8043e232a981cfa33e",
+      "additionalRows": 390,
+      "cityTiers": {
+        "伊勢市": {
+          "cityCode": "24203",
+          "rows": 26,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "四日市市": {
+          "cityCode": "24202",
+          "rows": 143,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "川越町": {
+          "cityCode": "24344",
+          "rows": 2,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "松阪市": {
+          "cityCode": "24204",
+          "rows": 31,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "桑名市": {
+          "cityCode": "24205",
+          "rows": 63,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "津市": {
+          "cityCode": "24201",
+          "rows": 68,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "鈴鹿市": {
+          "cityCode": "24207",
+          "rows": 57,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 6,
+      "insufficientCities": 1,
+      "fileBytes": 123620,
+      "sha256": "72f69a6fedfdd9881cb7705cae7e223acedcb28be97d92264179888889846032",
+      "geoFile": "data/prefecture_shards/town_24.json",
+      "geoSha256": "791dca57c16fff14a4296d5b16fba8682763739a6b1f73737ab508e712f5b9af"
+    },
+    "25": {
+      "prefecture": "滋賀県",
+      "file": "data/prefecture_shards/25.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "c0fbd7026b0399b76445ab2ff60f22e050e42f126d63f4d8e3924b7589d05ad6",
+      "additionalRows": 879,
+      "cityTiers": {
+        "大津市": {
+          "cityCode": "25201",
+          "rows": 576,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "彦根市": {
+          "cityCode": "25202",
+          "rows": 46,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "東近江市": {
+          "cityCode": "25213",
+          "rows": 6,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "草津市": {
+          "cityCode": "25206",
+          "rows": 239,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "長浜市": {
+          "cityCode": "25203",
+          "rows": 12,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 5,
+      "insufficientCities": 0,
+      "fileBytes": 273517,
+      "sha256": "fed6da124ce6d82034bdd7813d196f23cc6bde339559785e77074fe40d598ae7",
+      "geoFile": "data/prefecture_shards/town_25.json",
+      "geoSha256": "7a22f6414f070708ef17d3637ffb2a9f59c5ccbe70b0995a2436b6dc8522ec9d"
+    },
+    "29": {
+      "prefecture": "奈良県",
+      "file": "data/prefecture_shards/29.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "c2064d85a41ff545a441583155013b104d7ae68bd9fe43056127964b9ff68fb2",
+      "additionalRows": 1149,
+      "cityTiers": {
+        "三郷町": {
+          "cityCode": "29343",
+          "rows": 4,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "上牧町": {
+          "cityCode": "29424",
+          "rows": 12,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大和郡山市": {
+          "cityCode": "29203",
+          "rows": 51,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大和高田市": {
+          "cityCode": "29202",
+          "rows": 88,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "天理市": {
+          "cityCode": "29204",
+          "rows": 17,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "奈良市": {
+          "cityCode": "29201",
+          "rows": 561,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "宇陀市": {
+          "cityCode": "29212",
+          "rows": 9,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "広陵町": {
+          "cityCode": "29426",
+          "rows": 6,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "斑鳩町": {
+          "cityCode": "29344",
+          "rows": 6,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "桜井市": {
+          "cityCode": "29206",
+          "rows": 30,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "橿原市": {
+          "cityCode": "29205",
+          "rows": 101,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "河合町": {
+          "cityCode": "29427",
+          "rows": 2,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "王寺町": {
+          "cityCode": "29425",
+          "rows": 30,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "生駒市": {
+          "cityCode": "29209",
+          "rows": 187,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "田原本町": {
+          "cityCode": "29363",
+          "rows": 3,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "葛城市": {
+          "cityCode": "29211",
+          "rows": 12,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "香芝市": {
+          "cityCode": "29210",
+          "rows": 30,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 14,
+      "insufficientCities": 3,
+      "fileBytes": 366185,
+      "sha256": "8ef9ee37255b1b853c9a87153d7a040a5cf149636a3c9c8caec7817f3d0c106d",
+      "geoFile": "data/prefecture_shards/town_29.json",
+      "geoSha256": "68a666d61794c328c5e3a39379056ba8dcb175afd7839bd6693ef8c41c10b533"
+    },
+    "30": {
+      "prefecture": "和歌山県",
+      "file": "data/prefecture_shards/30.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "a9c90cb728fa5a286e837237f489375a768707b181f3424703961f107c24ce05",
+      "additionalRows": 194,
+      "cityTiers": {
+        "和歌山市": {
+          "cityCode": "30201",
+          "rows": 194,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 1,
+      "insufficientCities": 0,
+      "fileBytes": 61934,
+      "sha256": "aef7af0dee264e12b221d8cb3624938f3f0d685e6eb7eac7c0d335a35faabff0",
+      "geoFile": "data/prefecture_shards/town_30.json",
+      "geoSha256": "bd74c7491dc0658ab70e852c8c3d3b66d636f1de5f5d1a20803fa3a8acbac6b5"
+    },
+    "31": {
+      "prefecture": "鳥取県",
+      "file": "data/prefecture_shards/31.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "c63d068f95ce81ab3269afb520783d80046ae78466f156f7c4fa99a00a684b5e",
+      "additionalRows": 125,
+      "cityTiers": {
+        "米子市": {
+          "cityCode": "31202",
+          "rows": 68,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "鳥取市": {
+          "cityCode": "31201",
+          "rows": 57,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 2,
+      "insufficientCities": 0,
+      "fileBytes": 39702,
+      "sha256": "21e65dbbc00eb0b5f3feee72a856e69d8de2d21d84f3f4eebe699add95f34391",
+      "geoFile": "data/prefecture_shards/town_31.json",
+      "geoSha256": "4d1600c8e7948d6025ce19b704c56822744ad866e7561d5b273f58986d7bca9f"
+    },
+    "32": {
+      "prefecture": "島根県",
+      "file": "data/prefecture_shards/32.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "bf6530848c6802ddff05bb6108625a412e1fbb92d5563bf646c40914eb08d674",
+      "additionalRows": 105,
+      "cityTiers": {
+        "出雲市": {
+          "cityCode": "32203",
+          "rows": 11,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "松江市": {
+          "cityCode": "32201",
+          "rows": 94,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 2,
+      "insufficientCities": 0,
+      "fileBytes": 33659,
+      "sha256": "3e7a32bcf3790e2f6b4e2b18dee9e57503528e29c63262d6f2f010052311c7ea",
+      "geoFile": "data/prefecture_shards/town_32.json",
+      "geoSha256": "ed57bf039e7e9f5a94eb0af311957f881d725876e6a02e148ea2b2f4f006a56a"
+    },
+    "33": {
+      "prefecture": "岡山県",
+      "file": "data/prefecture_shards/33.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "1193edd7753dd5c7bd0e18447f3e59bffb2464a45fed160bb0dc623eb3228bcc",
+      "additionalRows": 676,
+      "cityTiers": {
+        "倉敷市": {
+          "cityCode": "33202",
+          "rows": 146,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "岡山市中区": {
+          "cityCode": "33102",
+          "rows": 58,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "岡山市北区": {
+          "cityCode": "33101",
+          "rows": 409,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "岡山市南区": {
+          "cityCode": "33104",
+          "rows": 51,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "岡山市東区": {
+          "cityCode": "33103",
+          "rows": 2,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "津山市": {
+          "cityCode": "33203",
+          "rows": 10,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 5,
+      "insufficientCities": 1,
+      "fileBytes": 214172,
+      "sha256": "d716bdcf6360e2ab68e2d7642686bbf6f7851d57a8da7845c403f6c04da95f4e",
+      "geoFile": "data/prefecture_shards/town_33.json",
+      "geoSha256": "d5c5b40df19d938584554095d8d7b2781a60bf6022e51562fd82eed129b7d2ad"
+    },
+    "35": {
+      "prefecture": "山口県",
+      "file": "data/prefecture_shards/35.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "c02c19791b22d10180b869367291abfcfee52b443cdde01f3862163d5161ab54",
+      "additionalRows": 495,
+      "cityTiers": {
+        "下関市": {
+          "cityCode": "35201",
+          "rows": 167,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "周南市": {
+          "cityCode": "35215",
+          "rows": 65,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "宇部市": {
+          "cityCode": "35202",
+          "rows": 82,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "山口市": {
+          "cityCode": "35203",
+          "rows": 119,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "岩国市": {
+          "cityCode": "35208",
+          "rows": 44,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "防府市": {
+          "cityCode": "35206",
+          "rows": 18,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 6,
+      "insufficientCities": 0,
+      "fileBytes": 156213,
+      "sha256": "ded50b2226e588cfd949b894ee318d6ee38c92b4ce7db425378fd49b11799812",
+      "geoFile": "data/prefecture_shards/town_35.json",
+      "geoSha256": "31dd697601adafa833ad4094e9489b811ae6f556be61240cdffe1c59450ebf57"
+    },
+    "36": {
+      "prefecture": "徳島県",
+      "file": "data/prefecture_shards/36.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "e6e99385cb0a2481fc74f7c829eaaa737e8947c1fdedd31b3646eebee4bb50af",
+      "additionalRows": 197,
+      "cityTiers": {
+        "徳島市": {
+          "cityCode": "36201",
+          "rows": 197,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 1,
+      "insufficientCities": 0,
+      "fileBytes": 62229,
+      "sha256": "59a5d1db34f08e26492f92e4dcdd1e7e06531aec70ae0dfde19668a3b62304c3",
+      "geoFile": "data/prefecture_shards/town_36.json",
+      "geoSha256": "d2411ac760662940520387b8c4c13c1cb989ed2956ddc4c4582bebed96bdb003"
+    },
+    "37": {
+      "prefecture": "香川県",
+      "file": "data/prefecture_shards/37.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "b8b147b1c76d26c815b81cebe40fc910e32c77a03870b87fd2cbf11d656d21b3",
+      "additionalRows": 414,
+      "cityTiers": {
+        "丸亀市": {
+          "cityCode": "37202",
+          "rows": 50,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "高松市": {
+          "cityCode": "37201",
+          "rows": 364,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 2,
+      "insufficientCities": 0,
+      "fileBytes": 129387,
+      "sha256": "6c20521e43133921f4c6a85cb83b5d491362147b0daef6ef2cef491e7241e79c",
+      "geoFile": "data/prefecture_shards/town_37.json",
+      "geoSha256": "0986887cf75117332f6dc6cbb36ed39e2507eb93d1260d805678e232fa3608e4"
+    },
+    "39": {
+      "prefecture": "高知県",
+      "file": "data/prefecture_shards/39.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "55de6dc32b60b77b94e2844d3f3df64de1d23c383b2ce296e01ca94dd4a9501f",
+      "additionalRows": 93,
+      "cityTiers": {
+        "高知市": {
+          "cityCode": "39201",
+          "rows": 93,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 1,
+      "insufficientCities": 0,
+      "fileBytes": 29643,
+      "sha256": "1de3ae5bfbd6a2208abd2d425d15b46fc81a858b53bc18ca34ef599195da13d8",
+      "geoFile": "data/prefecture_shards/town_39.json",
+      "geoSha256": "5d5c1762d64c73c4ae23d3334cb213457af0b8a771416d51e26c75bbdc767922"
+    },
+    "41": {
+      "prefecture": "佐賀県",
+      "file": "data/prefecture_shards/41.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "080f3441774102d87f161b5b69eefc937da09e24479522ad7f6b610bd4ed65c0",
+      "additionalRows": 169,
+      "cityTiers": {
+        "佐賀市": {
+          "cityCode": "41201",
+          "rows": 145,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "唐津市": {
+          "cityCode": "41202",
+          "rows": 24,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 2,
+      "insufficientCities": 0,
+      "fileBytes": 53394,
+      "sha256": "3b210295ef33cd794407d9d0f105e190b438814411a994db39ceb7908ac501b8",
+      "geoFile": "data/prefecture_shards/town_41.json",
+      "geoSha256": "793cc78e8247d044ef8fce2301292f809e517fd1fac5c5a597346d8e90aeb059"
+    },
+    "42": {
+      "prefecture": "長崎県",
+      "file": "data/prefecture_shards/42.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "78344458f958bc3ede48029d918037273aa3c2e67ca1aaed35d61dd9c87459f3",
+      "additionalRows": 455,
+      "cityTiers": {
+        "佐世保市": {
+          "cityCode": "42202",
+          "rows": 86,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "諫早市": {
+          "cityCode": "42204",
+          "rows": 25,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "長崎市": {
+          "cityCode": "42201",
+          "rows": 344,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 3,
+      "insufficientCities": 0,
+      "fileBytes": 142788,
+      "sha256": "649cc1946dd02943d9846c3bd2508a242c302b590ded4a3ba50167cfd058010b",
+      "geoFile": "data/prefecture_shards/town_42.json",
+      "geoSha256": "e21e42a8782a709924b8dd6f93cc56cee5ce156ca49a3644a051e6f5ae3390af"
+    },
+    "43": {
+      "prefecture": "熊本県",
+      "file": "data/prefecture_shards/43.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "250f158740218c04b8c53e4035c76987d25f9cf591f0a7a74dee78d6e2f53f57",
+      "additionalRows": 591,
+      "cityTiers": {
+        "八代市": {
+          "cityCode": "43202",
+          "rows": 6,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "熊本市中央区": {
+          "cityCode": "43101",
+          "rows": 382,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "熊本市北区": {
+          "cityCode": "43105",
+          "rows": 30,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "熊本市南区": {
+          "cityCode": "43104",
+          "rows": 24,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "熊本市東区": {
+          "cityCode": "43102",
+          "rows": 92,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "熊本市西区": {
+          "cityCode": "43103",
+          "rows": 57,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 6,
+      "insufficientCities": 0,
+      "fileBytes": 188901,
+      "sha256": "13fdd0bd1d8568c9b57d4728ce4ca87f19eec9de07340469e3d0f8ef30936c8f",
+      "geoFile": "data/prefecture_shards/town_43.json",
+      "geoSha256": "26ba7ef58186dc4ae2b129958df97fc0ef54df61e2bba5394574acbd75b61ed8"
+    },
+    "44": {
+      "prefecture": "大分県",
+      "file": "data/prefecture_shards/44.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "sourceFingerprint": "3b822974ecc6b217563e34e570e58497a7c61984419ba06ea0dff4c406e8ef99",
+      "additionalRows": 574,
+      "cityTiers": {
+        "別府市": {
+          "cityCode": "44202",
+          "rows": 152,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大分市": {
+          "cityCode": "44201",
+          "rows": 422,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 2,
+      "insufficientCities": 0,
+      "fileBytes": 179062,
+      "sha256": "f2b5a385d83dfc8c897a4db8afdbfc9a641e374d053125b9a7afa6dfa1678875",
+      "geoFile": "data/prefecture_shards/town_44.json",
+      "geoSha256": "dd522914e882fffa5379a8b3f876cfa6ca9007ec06a564f23fc9836be9cd0a50"
+    },
+    "04": {
+      "prefecture": "宮城県",
+      "file": "data/prefecture_shards/04.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "supplementScope": "UNPRICED_MUNICIPALITIES_ONLY",
+      "excludedCoreMunicipalityCodes": [
+        "04101"
+      ],
+      "excludedCoreApiObservations": 985,
+      "sourceFingerprint": "82175362aae9bd21fb2172cd441a9739472a5f20a62d87e9b0a3ac0913f2b78d",
+      "additionalRows": 1230,
+      "cityTiers": {
+        "仙台市太白区": {
+          "cityCode": "04104",
+          "rows": 386,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "仙台市宮城野区": {
+          "cityCode": "04102",
+          "rows": 345,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "仙台市泉区": {
+          "cityCode": "04105",
+          "rows": 225,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "仙台市若林区": {
+          "cityCode": "04103",
+          "rows": 236,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大崎市": {
+          "cityCode": "04215",
+          "rows": 18,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "石巻市": {
+          "cityCode": "04202",
+          "rows": 20,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 6,
+      "insufficientCities": 0,
+      "fileBytes": 393818,
+      "sha256": "1ee35447d06151ca133127bc614e75a840cf2c7270d7728094fa6cd57d4e8994",
+      "geoFile": "data/prefecture_shards/town_04.json",
+      "geoSha256": "7da0b610357cbdb8232cd3bf4efe19bdedcf502af4ad08853e4dfa10235111c2"
+    },
+    "01": {
+      "prefecture": "北海道",
+      "file": "data/prefecture_shards/01.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "supplementScope": "UNPRICED_MUNICIPALITIES_ONLY",
+      "excludedCoreMunicipalityCodes": [
+        "01101"
+      ],
+      "excludedCoreApiObservations": 1374,
+      "sourceFingerprint": "2ddd8201dc9c5d9ac820cc056f84ecf4f9716f983d0b44723852f1644efd22d0",
+      "additionalRows": 3436,
+      "cityTiers": {
+        "函館市": {
+          "cityCode": "01202",
+          "rows": 159,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "北見市": {
+          "cityCode": "01208",
+          "rows": 9,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "小樽市": {
+          "cityCode": "01203",
+          "rows": 85,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "帯広市": {
+          "cityCode": "01207",
+          "rows": 28,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "旭川市": {
+          "cityCode": "01204",
+          "rows": 94,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "札幌市北区": {
+          "cityCode": "01102",
+          "rows": 462,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "札幌市南区": {
+          "cityCode": "01106",
+          "rows": 194,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "札幌市厚別区": {
+          "cityCode": "01108",
+          "rows": 275,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "札幌市手稲区": {
+          "cityCode": "01109",
+          "rows": 101,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "札幌市東区": {
+          "cityCode": "01103",
+          "rows": 324,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "札幌市清田区": {
+          "cityCode": "01110",
+          "rows": 86,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "札幌市白石区": {
+          "cityCode": "01104",
+          "rows": 336,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "札幌市西区": {
+          "cityCode": "01107",
+          "rows": 476,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "札幌市豊平区": {
+          "cityCode": "01105",
+          "rows": 635,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "江別市": {
+          "cityCode": "01217",
+          "rows": 82,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "苫小牧市": {
+          "cityCode": "01213",
+          "rows": 57,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "釧路市": {
+          "cityCode": "01206",
+          "rows": 33,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 17,
+      "insufficientCities": 0,
+      "fileBytes": 1097323,
+      "sha256": "e7e78f8e6b6a54bfaab0a44d432bf32cfc26a7eb2ffebe9769bccf4178cd7424",
+      "geoFile": "data/prefecture_shards/town_01.json",
+      "geoSha256": "9c5ede58715dffabdf6461126ed675b7458ffd2c848b2581332fadc853ef5636"
+    },
+    "11": {
+      "prefecture": "埼玉県",
+      "file": "data/prefecture_shards/11.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "supplementScope": "UNPRICED_MUNICIPALITIES_ONLY",
+      "excludedCoreMunicipalityCodes": [
+        "11203"
+      ],
+      "excludedCoreApiObservations": 1389,
+      "sourceFingerprint": "e7b019d9d68baa17196a16f040cc770d49936d6046f9ab11990d4cdbb1bff001",
+      "additionalRows": 7806,
+      "cityTiers": {
+        "さいたま市中央区": {
+          "cityCode": "11105",
+          "rows": 239,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "さいたま市北区": {
+          "cityCode": "11102",
+          "rows": 352,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "さいたま市南区": {
+          "cityCode": "11108",
+          "rows": 502,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "さいたま市大宮区": {
+          "cityCode": "11103",
+          "rows": 335,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "さいたま市岩槻区": {
+          "cityCode": "11110",
+          "rows": 63,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "さいたま市桜区": {
+          "cityCode": "11106",
+          "rows": 125,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "さいたま市浦和区": {
+          "cityCode": "11107",
+          "rows": 511,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "さいたま市緑区": {
+          "cityCode": "11109",
+          "rows": 124,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "さいたま市西区": {
+          "cityCode": "11101",
+          "rows": 68,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "さいたま市見沼区": {
+          "cityCode": "11104",
+          "rows": 124,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "ふじみ野市": {
+          "cityCode": "11245",
+          "rows": 133,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "三芳町": {
+          "cityCode": "11324",
+          "rows": 61,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "三郷市": {
+          "cityCode": "11237",
+          "rows": 267,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "上尾市": {
+          "cityCode": "11219",
+          "rows": 130,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "久喜市": {
+          "cityCode": "11232",
+          "rows": 107,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "伊奈町": {
+          "cityCode": "11301",
+          "rows": 21,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "入間市": {
+          "cityCode": "11225",
+          "rows": 199,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "八潮市": {
+          "cityCode": "11234",
+          "rows": 115,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "加須市": {
+          "cityCode": "11210",
+          "rows": 15,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "北本市": {
+          "cityCode": "11233",
+          "rows": 2,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "吉川市": {
+          "cityCode": "11243",
+          "rows": 65,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "和光市": {
+          "cityCode": "11229",
+          "rows": 224,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "坂戸市": {
+          "cityCode": "11239",
+          "rows": 93,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "宮代町": {
+          "cityCode": "11442",
+          "rows": 1,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "富士見市": {
+          "cityCode": "11235",
+          "rows": 102,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "川越市": {
+          "cityCode": "11201",
+          "rows": 436,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "幸手市": {
+          "cityCode": "11240",
+          "rows": 16,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "志木市": {
+          "cityCode": "11228",
+          "rows": 192,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "戸田市": {
+          "cityCode": "11224",
+          "rows": 325,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "所沢市": {
+          "cityCode": "11208",
+          "rows": 424,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "新座市": {
+          "cityCode": "11230",
+          "rows": 202,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "春日部市": {
+          "cityCode": "11214",
+          "rows": 185,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "朝霞市": {
+          "cityCode": "11227",
+          "rows": 333,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "杉戸町": {
+          "cityCode": "11464",
+          "rows": 23,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "東松山市": {
+          "cityCode": "11212",
+          "rows": 55,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "桶川市": {
+          "cityCode": "11231",
+          "rows": 44,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "毛呂山町": {
+          "cityCode": "11326",
+          "rows": 5,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "深谷市": {
+          "cityCode": "11218",
+          "rows": 32,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "熊谷市": {
+          "cityCode": "11202",
+          "rows": 120,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "狭山市": {
+          "cityCode": "11215",
+          "rows": 99,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "白岡市": {
+          "cityCode": "11246",
+          "rows": 29,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "羽生市": {
+          "cityCode": "11216",
+          "rows": 2,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "草加市": {
+          "cityCode": "11221",
+          "rows": 390,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "蓮田市": {
+          "cityCode": "11238",
+          "rows": 17,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "蕨市": {
+          "cityCode": "11223",
+          "rows": 157,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "行田市": {
+          "cityCode": "11206",
+          "rows": 8,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "越生町": {
+          "cityCode": "11327",
+          "rows": 4,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "越谷市": {
+          "cityCode": "11222",
+          "rows": 504,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "飯能市": {
+          "cityCode": "11209",
+          "rows": 60,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "鴻巣市": {
+          "cityCode": "11217",
+          "rows": 80,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "鶴ヶ島市": {
+          "cityCode": "11241",
+          "rows": 86,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 47,
+      "insufficientCities": 4,
+      "fileBytes": 2470461,
+      "sha256": "8925adfd8d3fda76d5a3e079e9ad4683c7f8375a4908d352566605dcf2b9afa4",
+      "geoFile": "data/prefecture_shards/town_11.json",
+      "geoSha256": "fcd3158aee7501c9905f375554d27290bebe21f738dcb304ecaa8a78031edf14"
+    },
+    "34": {
+      "prefecture": "広島県",
+      "file": "data/prefecture_shards/34.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "supplementScope": "UNPRICED_MUNICIPALITIES_ONLY",
+      "excludedCoreMunicipalityCodes": [
+        "34101"
+      ],
+      "excludedCoreApiObservations": 213,
+      "sourceFingerprint": "ac8de741f4409f39641fd0f2a69e610fa546fd0681fc6153abc59931762c93fe",
+      "additionalRows": 1144,
+      "cityTiers": {
+        "三原市": {
+          "cityCode": "34204",
+          "rows": 35,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "呉市": {
+          "cityCode": "34202",
+          "rows": 88,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "尾道市": {
+          "cityCode": "34205",
+          "rows": 34,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "広島市佐伯区": {
+          "cityCode": "34108",
+          "rows": 85,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "広島市南区": {
+          "cityCode": "34103",
+          "rows": 210,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "広島市安佐北区": {
+          "cityCode": "34106",
+          "rows": 29,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "広島市安佐南区": {
+          "cityCode": "34105",
+          "rows": 73,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "広島市安芸区": {
+          "cityCode": "34107",
+          "rows": 33,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "広島市東区": {
+          "cityCode": "34102",
+          "rows": 90,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "広島市西区": {
+          "cityCode": "34104",
+          "rows": 159,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "廿日市市": {
+          "cityCode": "34213",
+          "rows": 64,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "東広島市": {
+          "cityCode": "34212",
+          "rows": 55,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "福山市": {
+          "cityCode": "34207",
+          "rows": 189,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 13,
+      "insufficientCities": 0,
+      "fileBytes": 363201,
+      "sha256": "e57e4cc83bada5e5d858bee75c7c6a1326610f01b2e6a2b6c7b17529ed90d0e9",
+      "geoFile": "data/prefecture_shards/town_34.json",
+      "geoSha256": "b89ef72b29542557e43ca387a29345d97942bd21511e98fff0214011577983a3"
+    },
+    "40": {
+      "prefecture": "福岡県",
+      "file": "data/prefecture_shards/40.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "supplementScope": "UNPRICED_MUNICIPALITIES_ONLY",
+      "excludedCoreMunicipalityCodes": [
+        "40132"
+      ],
+      "excludedCoreApiObservations": 1688,
+      "sourceFingerprint": "c205f96e9bb6ef6baad68dad04b0961ada994972061c7a3d2adae3adb3fdade4",
+      "additionalRows": 6292,
+      "cityTiers": {
+        "久留米市": {
+          "cityCode": "40203",
+          "rows": 321,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "北九州市八幡東区": {
+          "cityCode": "40108",
+          "rows": 82,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "北九州市八幡西区": {
+          "cityCode": "40109",
+          "rows": 233,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "北九州市小倉北区": {
+          "cityCode": "40106",
+          "rows": 372,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "北九州市小倉南区": {
+          "cityCode": "40107",
+          "rows": 129,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "北九州市戸畑区": {
+          "cityCode": "40105",
+          "rows": 98,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "北九州市若松区": {
+          "cityCode": "40103",
+          "rows": 32,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "北九州市門司区": {
+          "cityCode": "40101",
+          "rows": 119,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大牟田市": {
+          "cityCode": "40202",
+          "rows": 39,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "春日市": {
+          "cityCode": "40218",
+          "rows": 169,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "福岡市中央区": {
+          "cityCode": "40133",
+          "rows": 1884,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "福岡市南区": {
+          "cityCode": "40134",
+          "rows": 753,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "福岡市城南区": {
+          "cityCode": "40136",
+          "rows": 265,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "福岡市早良区": {
+          "cityCode": "40137",
+          "rows": 448,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "福岡市東区": {
+          "cityCode": "40131",
+          "rows": 938,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "福岡市西区": {
+          "cityCode": "40135",
+          "rows": 373,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "飯塚市": {
+          "cityCode": "40205",
+          "rows": 37,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 17,
+      "insufficientCities": 0,
+      "fileBytes": 1992973,
+      "sha256": "bb98d09f2841cbfaba9dced296eb737104a17f339813b8fb64ae373ab69756ef",
+      "geoFile": "data/prefecture_shards/town_40.json",
+      "geoSha256": "eb5480d04075f673cc04497e7fe3e4d09223ba78c8743b639e7e96b34dd4d10c"
+    },
+    "23": {
+      "prefecture": "愛知県",
+      "file": "data/prefecture_shards/23.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "supplementScope": "UNPRICED_MUNICIPALITIES_ONLY",
+      "excludedCoreMunicipalityCodes": [
+        "23106"
+      ],
+      "excludedCoreApiObservations": 1112,
+      "sourceFingerprint": "cad33eee1243da942e6eda58ce485aae0dab3b02dc98fa4ba69e7d8db0ea7faf",
+      "additionalRows": 6528,
+      "cityTiers": {
+        "あま市": {
+          "cityCode": "23237",
+          "rows": 27,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "みよし市": {
+          "cityCode": "23236",
+          "rows": 21,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "一宮市": {
+          "cityCode": "23203",
+          "rows": 191,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "刈谷市": {
+          "cityCode": "23210",
+          "rows": 100,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "北名古屋市": {
+          "cityCode": "23234",
+          "rows": 36,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "半田市": {
+          "cityCode": "23205",
+          "rows": 64,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "南知多町": {
+          "cityCode": "23445",
+          "rows": 65,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市中川区": {
+          "cityCode": "23110",
+          "rows": 156,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市中村区": {
+          "cityCode": "23105",
+          "rows": 316,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市北区": {
+          "cityCode": "23103",
+          "rows": 234,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市千種区": {
+          "cityCode": "23101",
+          "rows": 592,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市南区": {
+          "cityCode": "23112",
+          "rows": 136,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市名東区": {
+          "cityCode": "23115",
+          "rows": 329,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市天白区": {
+          "cityCode": "23116",
+          "rows": 251,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市守山区": {
+          "cityCode": "23113",
+          "rows": 177,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市昭和区": {
+          "cityCode": "23107",
+          "rows": 380,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市東区": {
+          "cityCode": "23102",
+          "rows": 492,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市港区": {
+          "cityCode": "23111",
+          "rows": 175,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市熱田区": {
+          "cityCode": "23109",
+          "rows": 155,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市瑞穂区": {
+          "cityCode": "23108",
+          "rows": 207,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市緑区": {
+          "cityCode": "23114",
+          "rows": 221,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "名古屋市西区": {
+          "cityCode": "23104",
+          "rows": 329,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大口町": {
+          "cityCode": "23361",
+          "rows": 1,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大府市": {
+          "cityCode": "23223",
+          "rows": 43,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大治町": {
+          "cityCode": "23424",
+          "rows": 17,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "安城市": {
+          "cityCode": "23212",
+          "rows": 147,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "小牧市": {
+          "cityCode": "23219",
+          "rows": 73,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "尾張旭市": {
+          "cityCode": "23226",
+          "rows": 85,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "岡崎市": {
+          "cityCode": "23202",
+          "rows": 195,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "岩倉市": {
+          "cityCode": "23228",
+          "rows": 31,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "常滑市": {
+          "cityCode": "23216",
+          "rows": 12,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "幸田町": {
+          "cityCode": "23501",
+          "rows": 6,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "弥富市": {
+          "cityCode": "23235",
+          "rows": 5,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "愛西市": {
+          "cityCode": "23232",
+          "rows": 6,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "日進市": {
+          "cityCode": "23230",
+          "rows": 81,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "春日井市": {
+          "cityCode": "23206",
+          "rows": 165,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "東浦町": {
+          "cityCode": "23442",
+          "rows": 19,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "東海市": {
+          "cityCode": "23222",
+          "rows": 52,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "東郷町": {
+          "cityCode": "23302",
+          "rows": 23,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "武豊町": {
+          "cityCode": "23447",
+          "rows": 3,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "江南市": {
+          "cityCode": "23217",
+          "rows": 58,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "津島市": {
+          "cityCode": "23208",
+          "rows": 17,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "清須市": {
+          "cityCode": "23233",
+          "rows": 30,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "瀬戸市": {
+          "cityCode": "23204",
+          "rows": 60,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "犬山市": {
+          "cityCode": "23215",
+          "rows": 26,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "知多市": {
+          "cityCode": "23224",
+          "rows": 21,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "知立市": {
+          "cityCode": "23225",
+          "rows": 36,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "碧南市": {
+          "cityCode": "23209",
+          "rows": 1,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "稲沢市": {
+          "cityCode": "23220",
+          "rows": 66,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "蟹江町": {
+          "cityCode": "23425",
+          "rows": 36,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "西尾市": {
+          "cityCode": "23213",
+          "rows": 16,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "豊山町": {
+          "cityCode": "23342",
+          "rows": 9,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "豊川市": {
+          "cityCode": "23207",
+          "rows": 31,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "豊明市": {
+          "cityCode": "23229",
+          "rows": 34,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "豊橋市": {
+          "cityCode": "23201",
+          "rows": 170,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "豊田市": {
+          "cityCode": "23211",
+          "rows": 202,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "長久手市": {
+          "cityCode": "23238",
+          "rows": 87,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "阿久比町": {
+          "cityCode": "23441",
+          "rows": 4,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "高浜市": {
+          "cityCode": "23227",
+          "rows": 6,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 55,
+      "insufficientCities": 4,
+      "fileBytes": 2088964,
+      "sha256": "7d23f5961aca2da027d3d82bea4e0015b557ee7f93b896233ba71ffa3795a9e1",
+      "geoFile": "data/prefecture_shards/town_23.json",
+      "geoSha256": "783a4c1cba4fd8f0f3a2dd7945b01f5f03579011389eb9ede1df30e23084751a"
+    },
+    "14": {
+      "prefecture": "神奈川県",
+      "file": "data/prefecture_shards/14.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "supplementScope": "UNPRICED_MUNICIPALITIES_ONLY",
+      "excludedCoreMunicipalityCodes": [
+        "14104",
+        "14204",
+        "14205"
+      ],
+      "excludedCoreApiObservations": 2378,
+      "sourceFingerprint": "ba436139eec5b6c0737a390d8002922da6ac6b58501c78795bbb3917c73db685",
+      "additionalRows": 20714,
+      "cityTiers": {
+        "三浦市": {
+          "cityCode": "14210",
+          "rows": 69,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "二宮町": {
+          "cityCode": "14342",
+          "rows": 3,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "伊勢原市": {
+          "cityCode": "14214",
+          "rows": 101,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "南足柄市": {
+          "cityCode": "14217",
+          "rows": 1,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "厚木市": {
+          "cityCode": "14212",
+          "rows": 291,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大和市": {
+          "cityCode": "14213",
+          "rows": 520,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大磯町": {
+          "cityCode": "14341",
+          "rows": 32,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "寒川町": {
+          "cityCode": "14321",
+          "rows": 14,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "小田原市": {
+          "cityCode": "14206",
+          "rows": 132,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "川崎市中原区": {
+          "cityCode": "14133",
+          "rows": 1101,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "川崎市多摩区": {
+          "cityCode": "14135",
+          "rows": 411,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "川崎市宮前区": {
+          "cityCode": "14136",
+          "rows": 655,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "川崎市川崎区": {
+          "cityCode": "14131",
+          "rows": 1221,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "川崎市幸区": {
+          "cityCode": "14132",
+          "rows": 730,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "川崎市高津区": {
+          "cityCode": "14134",
+          "rows": 696,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "川崎市麻生区": {
+          "cityCode": "14137",
+          "rows": 352,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "平塚市": {
+          "cityCode": "14203",
+          "rows": 333,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "座間市": {
+          "cityCode": "14216",
+          "rows": 274,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "愛川町": {
+          "cityCode": "14401",
+          "rows": 6,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市保土ケ谷区": {
+          "cityCode": "14106",
+          "rows": 547,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市南区": {
+          "cityCode": "14105",
+          "rows": 1085,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市戸塚区": {
+          "cityCode": "14110",
+          "rows": 682,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市旭区": {
+          "cityCode": "14112",
+          "rows": 484,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市栄区": {
+          "cityCode": "14115",
+          "rows": 196,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市泉区": {
+          "cityCode": "14116",
+          "rows": 125,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市港北区": {
+          "cityCode": "14109",
+          "rows": 1386,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市港南区": {
+          "cityCode": "14111",
+          "rows": 492,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市瀬谷区": {
+          "cityCode": "14114",
+          "rows": 81,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市磯子区": {
+          "cityCode": "14107",
+          "rows": 520,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市神奈川区": {
+          "cityCode": "14102",
+          "rows": 1105,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市緑区": {
+          "cityCode": "14113",
+          "rows": 422,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市西区": {
+          "cityCode": "14103",
+          "rows": 1036,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市都筑区": {
+          "cityCode": "14118",
+          "rows": 493,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市金沢区": {
+          "cityCode": "14108",
+          "rows": 496,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市青葉区": {
+          "cityCode": "14117",
+          "rows": 601,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横浜市鶴見区": {
+          "cityCode": "14101",
+          "rows": 1046,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "横須賀市": {
+          "cityCode": "14201",
+          "rows": 674,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "海老名市": {
+          "cityCode": "14215",
+          "rows": 325,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "相模原市中央区": {
+          "cityCode": "14152",
+          "rows": 499,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "相模原市南区": {
+          "cityCode": "14153",
+          "rows": 594,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "相模原市緑区": {
+          "cityCode": "14151",
+          "rows": 179,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "秦野市": {
+          "cityCode": "14211",
+          "rows": 144,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "綾瀬市": {
+          "cityCode": "14218",
+          "rows": 38,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "茅ヶ崎市": {
+          "cityCode": "14207",
+          "rows": 357,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "葉山町": {
+          "cityCode": "14301",
+          "rows": 39,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "逗子市": {
+          "cityCode": "14208",
+          "rows": 106,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "開成町": {
+          "cityCode": "14366",
+          "rows": 20,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 45,
+      "insufficientCities": 2,
+      "fileBytes": 6637575,
+      "sha256": "47790645441e36060317318bbe9fd7e9f977f074e7b905da591ea282a3c3eb38",
+      "geoFile": "data/prefecture_shards/town_14.json",
+      "geoSha256": "23000e632436b4a6365d27f4c82ac4b425f40cd1aec48157ad46470c22729c9f"
+    },
+    "28": {
+      "prefecture": "兵庫県",
+      "file": "data/prefecture_shards/28.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "supplementScope": "UNPRICED_MUNICIPALITIES_ONLY",
+      "excludedCoreMunicipalityCodes": [
+        "28110"
+      ],
+      "excludedCoreApiObservations": 1581,
+      "sourceFingerprint": "f49807d6df504369042f62ad9d9710bac9f75db29af61e005048dcfc442830a6",
+      "additionalRows": 8600,
+      "cityTiers": {
+        "三田市": {
+          "cityCode": "28219",
+          "rows": 172,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "伊丹市": {
+          "cityCode": "28207",
+          "rows": 355,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "加古川市": {
+          "cityCode": "28210",
+          "rows": 226,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "姫路市": {
+          "cityCode": "28201",
+          "rows": 418,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "宝塚市": {
+          "cityCode": "28214",
+          "rows": 654,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "尼崎市": {
+          "cityCode": "28202",
+          "rows": 907,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "川西市": {
+          "cityCode": "28217",
+          "rows": 168,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "明石市": {
+          "cityCode": "28203",
+          "rows": 530,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "猪名川町": {
+          "cityCode": "28301",
+          "rows": 13,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "神戸市兵庫区": {
+          "cityCode": "28105",
+          "rows": 587,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "神戸市北区": {
+          "cityCode": "28109",
+          "rows": 223,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "神戸市垂水区": {
+          "cityCode": "28108",
+          "rows": 398,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "神戸市東灘区": {
+          "cityCode": "28101",
+          "rows": 917,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "神戸市灘区": {
+          "cityCode": "28102",
+          "rows": 421,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "神戸市西区": {
+          "cityCode": "28111",
+          "rows": 381,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "神戸市長田区": {
+          "cityCode": "28106",
+          "rows": 181,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "神戸市須磨区": {
+          "cityCode": "28107",
+          "rows": 343,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "芦屋市": {
+          "cityCode": "28206",
+          "rows": 469,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "西宮市": {
+          "cityCode": "28204",
+          "rows": 1237,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 19,
+      "insufficientCities": 0,
+      "fileBytes": 2706431,
+      "sha256": "287888c929afc78d9e4d3027972e433ad1a67d9e27d0e4ee0e0ad9f8e7951a16",
+      "geoFile": "data/prefecture_shards/town_28.json",
+      "geoSha256": "2fae64a63d7099a04d8c02c2d3ed339626b30aa802183182e96d93e8d5b0ac36"
+    },
+    "27": {
+      "prefecture": "大阪府",
+      "file": "data/prefecture_shards/27.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "supplementScope": "UNPRICED_MUNICIPALITIES_ONLY",
+      "excludedCoreMunicipalityCodes": [
+        "27128"
+      ],
+      "excludedCoreApiObservations": 2055,
+      "sourceFingerprint": "eabf768debb05d7ab3b9a2a3101065fb452f24208ea63da129784dfe75cbbd47",
+      "additionalRows": 20983,
+      "cityTiers": {
+        "交野市": {
+          "cityCode": "27230",
+          "rows": 37,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "八尾市": {
+          "cityCode": "27212",
+          "rows": 248,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "吹田市": {
+          "cityCode": "27205",
+          "rows": 1278,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "和泉市": {
+          "cityCode": "27219",
+          "rows": 287,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "四條畷市": {
+          "cityCode": "27229",
+          "rows": 44,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "堺市中区": {
+          "cityCode": "27142",
+          "rows": 62,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "堺市北区": {
+          "cityCode": "27146",
+          "rows": 287,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "堺市南区": {
+          "cityCode": "27145",
+          "rows": 222,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "堺市堺区": {
+          "cityCode": "27141",
+          "rows": 382,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "堺市東区": {
+          "cityCode": "27143",
+          "rows": 77,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "堺市美原区": {
+          "cityCode": "27147",
+          "rows": 1,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "堺市西区": {
+          "cityCode": "27144",
+          "rows": 168,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大東市": {
+          "cityCode": "27218",
+          "rows": 83,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市住之江区": {
+          "cityCode": "27125",
+          "rows": 306,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市住吉区": {
+          "cityCode": "27120",
+          "rows": 244,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市北区": {
+          "cityCode": "27127",
+          "rows": 1637,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市城東区": {
+          "cityCode": "27118",
+          "rows": 732,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市大正区": {
+          "cityCode": "27108",
+          "rows": 141,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市天王寺区": {
+          "cityCode": "27109",
+          "rows": 630,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市平野区": {
+          "cityCode": "27126",
+          "rows": 226,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市旭区": {
+          "cityCode": "27117",
+          "rows": 202,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市東住吉区": {
+          "cityCode": "27121",
+          "rows": 241,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市東成区": {
+          "cityCode": "27115",
+          "rows": 412,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市東淀川区": {
+          "cityCode": "27114",
+          "rows": 553,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市此花区": {
+          "cityCode": "27104",
+          "rows": 163,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市浪速区": {
+          "cityCode": "27111",
+          "rows": 917,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市淀川区": {
+          "cityCode": "27123",
+          "rows": 1438,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市港区": {
+          "cityCode": "27107",
+          "rows": 402,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市生野区": {
+          "cityCode": "27116",
+          "rows": 135,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市福島区": {
+          "cityCode": "27103",
+          "rows": 733,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市西区": {
+          "cityCode": "27106",
+          "rows": 1494,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市西成区": {
+          "cityCode": "27122",
+          "rows": 106,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市西淀川区": {
+          "cityCode": "27113",
+          "rows": 387,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市都島区": {
+          "cityCode": "27102",
+          "rows": 714,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市阿倍野区": {
+          "cityCode": "27119",
+          "rows": 420,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪市鶴見区": {
+          "cityCode": "27124",
+          "rows": 255,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大阪狭山市": {
+          "cityCode": "27231",
+          "rows": 110,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "守口市": {
+          "cityCode": "27209",
+          "rows": 240,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "富田林市": {
+          "cityCode": "27214",
+          "rows": 104,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "寝屋川市": {
+          "cityCode": "27215",
+          "rows": 264,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "岬町": {
+          "cityCode": "27366",
+          "rows": 11,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "岸和田市": {
+          "cityCode": "27202",
+          "rows": 122,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "島本町": {
+          "cityCode": "27301",
+          "rows": 94,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "忠岡町": {
+          "cityCode": "27341",
+          "rows": 8,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "摂津市": {
+          "cityCode": "27224",
+          "rows": 109,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "東大阪市": {
+          "cityCode": "27227",
+          "rows": 540,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "松原市": {
+          "cityCode": "27217",
+          "rows": 113,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "枚方市": {
+          "cityCode": "27210",
+          "rows": 538,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "柏原市": {
+          "cityCode": "27221",
+          "rows": 36,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "池田市": {
+          "cityCode": "27204",
+          "rows": 181,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "河内長野市": {
+          "cityCode": "27216",
+          "rows": 81,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "泉佐野市": {
+          "cityCode": "27213",
+          "rows": 102,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "泉南市": {
+          "cityCode": "27228",
+          "rows": 25,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "泉大津市": {
+          "cityCode": "27206",
+          "rows": 85,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "熊取町": {
+          "cityCode": "27361",
+          "rows": 35,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "箕面市": {
+          "cityCode": "27220",
+          "rows": 189,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "羽曳野市": {
+          "cityCode": "27222",
+          "rows": 54,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "茨木市": {
+          "cityCode": "27211",
+          "rows": 514,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "藤井寺市": {
+          "cityCode": "27226",
+          "rows": 35,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "豊中市": {
+          "cityCode": "27203",
+          "rows": 1024,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "豊能町": {
+          "cityCode": "27321",
+          "rows": 7,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "貝塚市": {
+          "cityCode": "27208",
+          "rows": 79,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "門真市": {
+          "cityCode": "27223",
+          "rows": 90,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "阪南市": {
+          "cityCode": "27232",
+          "rows": 15,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "高槻市": {
+          "cityCode": "27207",
+          "rows": 426,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "高石市": {
+          "cityCode": "27225",
+          "rows": 88,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 65,
+      "insufficientCities": 1,
+      "fileBytes": 6626481,
+      "sha256": "34d06e823c46d73d4fd3740e299dbc2ba53d7f5c18d60ec93fc9f33c758888d4",
+      "geoFile": "data/prefecture_shards/town_27.json",
+      "geoSha256": "b0cf439414a84c7f3bdcfdc8815e981bd33ab015bc27efa230013dab6a759d10"
+    },
+    "13": {
+      "prefecture": "東京都",
+      "file": "data/prefecture_shards/13.json",
+      "dataOrigin": "MLIT_XIT001_API",
+      "supplementScope": "UNPRICED_MUNICIPALITIES_ONLY",
+      "excludedCoreMunicipalityCodes": [
+        "13105",
+        "13112"
+      ],
+      "excludedCoreApiObservations": 4123,
+      "sourceFingerprint": "cee275edd066b3a8c47b85d6fdc7e1c26f25ae30cf4e7d5d25131c3b6daf9917",
+      "additionalRows": 47279,
+      "cityTiers": {
+        "あきる野市": {
+          "cityCode": "13228",
+          "rows": 7,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "三鷹市": {
+          "cityCode": "13204",
+          "rows": 287,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "中央区": {
+          "cityCode": "13102",
+          "rows": 2056,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "中野区": {
+          "cityCode": "13114",
+          "rows": 1316,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "八王子市": {
+          "cityCode": "13201",
+          "rows": 1005,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "北区": {
+          "cityCode": "13117",
+          "rows": 1425,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "千代田区": {
+          "cityCode": "13101",
+          "rows": 740,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "台東区": {
+          "cityCode": "13106",
+          "rows": 1701,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "品川区": {
+          "cityCode": "13109",
+          "rows": 2473,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "国分寺市": {
+          "cityCode": "13214",
+          "rows": 240,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "国立市": {
+          "cityCode": "13215",
+          "rows": 160,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "墨田区": {
+          "cityCode": "13107",
+          "rows": 2108,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "多摩市": {
+          "cityCode": "13224",
+          "rows": 402,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "大田区": {
+          "cityCode": "13111",
+          "rows": 3645,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "小平市": {
+          "cityCode": "13211",
+          "rows": 225,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "小金井市": {
+          "cityCode": "13210",
+          "rows": 217,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "府中市": {
+          "cityCode": "13206",
+          "rows": 659,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "新宿区": {
+          "cityCode": "13104",
+          "rows": 2567,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "日野市": {
+          "cityCode": "13212",
+          "rows": 232,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "昭島市": {
+          "cityCode": "13207",
+          "rows": 194,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "杉並区": {
+          "cityCode": "13115",
+          "rows": 1859,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "東久留米市": {
+          "cityCode": "13222",
+          "rows": 137,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "東大和市": {
+          "cityCode": "13220",
+          "rows": 91,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "東村山市": {
+          "cityCode": "13213",
+          "rows": 232,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "板橋区": {
+          "cityCode": "13119",
+          "rows": 2841,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "武蔵村山市": {
+          "cityCode": "13223",
+          "rows": 19,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "武蔵野市": {
+          "cityCode": "13203",
+          "rows": 318,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "江戸川区": {
+          "cityCode": "13123",
+          "rows": 1131,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "江東区": {
+          "cityCode": "13108",
+          "rows": 3590,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "清瀬市": {
+          "cityCode": "13221",
+          "rows": 87,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "渋谷区": {
+          "cityCode": "13113",
+          "rows": 1479,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "港区": {
+          "cityCode": "13103",
+          "rows": 2351,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "狛江市": {
+          "cityCode": "13219",
+          "rows": 147,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "瑞穂町": {
+          "cityCode": "13303",
+          "rows": 4,
+          "tier": "SPARSE_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "町田市": {
+          "cityCode": "13209",
+          "rows": 463,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "目黒区": {
+          "cityCode": "13110",
+          "rows": 1050,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "福生市": {
+          "cityCode": "13218",
+          "rows": 96,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "稲城市": {
+          "cityCode": "13225",
+          "rows": 177,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "立川市": {
+          "cityCode": "13202",
+          "rows": 460,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "練馬区": {
+          "cityCode": "13120",
+          "rows": 2286,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "羽村市": {
+          "cityCode": "13227",
+          "rows": 54,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "荒川区": {
+          "cityCode": "13118",
+          "rows": 861,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "葛飾区": {
+          "cityCode": "13122",
+          "rows": 1252,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "西東京市": {
+          "cityCode": "13229",
+          "rows": 364,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "調布市": {
+          "cityCode": "13208",
+          "rows": 541,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "豊島区": {
+          "cityCode": "13116",
+          "rows": 1592,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "足立区": {
+          "cityCode": "13121",
+          "rows": 1902,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        },
+        "青梅市": {
+          "cityCode": "13205",
+          "rows": 236,
+          "tier": "OBSERVED_ONLY",
+          "validated": false,
+          "backtestEvaluated": 0,
+          "medianAbsolutePctError": null,
+          "observedBandCoverage": null
+        }
+      },
+      "priceDataCities": 0,
+      "historicalOnlyCities": 47,
+      "insufficientCities": 1,
+      "fileBytes": 14597962,
+      "sha256": "61468c57970a9fc6edeb4a5a34ff6abd0d6539da388c6f47d0e9c26493c6a659",
+      "geoFile": "data/prefecture_shards/town_13.json",
+      "geoSha256": "017c98ce7b507889c4e36697f25c5c56afb90716d1787d16eda1a185df703794"
+    }
+  },
+  "additionalRows": 150403,
+  "newUsableCities": 517,
+  "apiOnlyObservedPrefectures": [
+    "02",
+    "03",
+    "05",
+    "07",
+    "08",
+    "09",
+    "10",
+    "12",
+    "15",
+    "16",
+    "18",
+    "19",
+    "21",
+    "24",
+    "25",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "35",
+    "36",
+    "37",
+    "39",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45"
+  ],
+  "coreGapApiPrefectures": [
+    "01",
+    "04",
+    "11",
+    "13",
+    "14",
+    "23",
+    "27",
+    "28",
+    "34",
+    "40"
+  ]
+}

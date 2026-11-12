@@ -1,0 +1,740 @@
+{
+  "protocol": "walk_forward_city_conformal_absolute_log_residual_v03",
+  "targetCoverage": 0.8,
+  "calibrationLookbackQuarters": 8,
+  "model": "ridge_age_walk_station_time_lambda3_v0.2_candidate",
+  "byMunicipality": {
+    "兵庫県 神戸市中央区": {
+      "records": 1581,
+      "rollingScoreCount": 1445,
+      "evaluationCount": 440,
+      "evaluationEligible": 440,
+      "evaluationCoverage": 0.816,
+      "evaluationCoverageWilsonLower": 0.777,
+      "medianWidthOverCenter": 0.587,
+      "currentIntervalCalibration": {
+        "count": 976,
+        "radiusLog": 0.275274,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": true,
+        "reason": null
+      },
+      "dataSupport": {
+        "areaP05": 15,
+        "areaP95": 85,
+        "ageKnownShare": 0.986,
+        "stationCounts": {
+          "三ノ宮(JR)": 459,
+          "新神戸": 181,
+          "春日野道(阪急)": 127,
+          "西元町": 114,
+          "花隈": 107,
+          "県庁前(兵庫)": 104,
+          "神戸(兵庫)": 100,
+          "春日野道(阪神)": 97,
+          "元町(JR)": 89,
+          "高速神戸": 47,
+          "みなとじま": 36,
+          "大倉山(兵庫)": 35,
+          "中公園": 26,
+          "灘": 19,
+          "中埠頭": 13,
+          "南公園": 9,
+          "市民広場": 9,
+          "王子公園": 4,
+          "北埠頭": 3,
+          "岩屋(兵庫)": 2
+        }
+      },
+      "researchGate": "OBSERVED_COVERAGE_PASS",
+      "skipped": {
+        "noComparable": 1,
+        "regression": 0
+      }
+    },
+    "北海道 札幌市中央区": {
+      "records": 1374,
+      "rollingScoreCount": 1274,
+      "evaluationCount": 387,
+      "evaluationEligible": 387,
+      "evaluationCoverage": 0.827,
+      "evaluationCoverageWilsonLower": 0.786,
+      "medianWidthOverCenter": 0.849,
+      "currentIntervalCalibration": {
+        "count": 840,
+        "radiusLog": 0.39883,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": true,
+        "reason": null
+      },
+      "dataSupport": {
+        "areaP05": 20,
+        "areaP95": 100,
+        "ageKnownShare": 0.996,
+        "stationCounts": {
+          "円山公園": 186,
+          "西18丁目": 180,
+          "幌平橋": 160,
+          "西28丁目": 144,
+          "西11丁目": 138,
+          "バスセンター前": 111,
+          "中島公園": 98,
+          "桑園": 84,
+          "苗穂": 55,
+          "札幌(JR)": 43,
+          "すすきの(市営)": 31,
+          "豊水すすきの": 29,
+          "大通": 20,
+          "西線16条": 15,
+          "さっぽろ(札幌市営)": 14,
+          "西線11条": 11,
+          "中央図書館前": 10,
+          "西線14条": 9,
+          "ロープウェイ入口": 7,
+          "西線9条旭山公園通": 6,
+          "西線6条": 5,
+          "静修学園前": 4,
+          "二十四軒": 3,
+          "石山通": 3,
+          "東屯田通": 3,
+          "幌南小学校前": 1,
+          "八軒": 1,
+          "電車事業所前": 1,
+          "行啓通": 1,
+          "山鼻19条": 1
+        }
+      },
+      "researchGate": "OBSERVED_COVERAGE_PASS",
+      "skipped": {
+        "noComparable": 1,
+        "regression": 0
+      }
+    },
+    "埼玉県 川口市": {
+      "records": 1389,
+      "rollingScoreCount": 1289,
+      "evaluationCount": 440,
+      "evaluationEligible": 440,
+      "evaluationCoverage": 0.809,
+      "evaluationCoverageWilsonLower": 0.77,
+      "medianWidthOverCenter": 0.651,
+      "currentIntervalCalibration": {
+        "count": 866,
+        "radiusLog": 0.307831,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": true,
+        "reason": null
+      },
+      "dataSupport": {
+        "areaP05": 20,
+        "areaP95": 80,
+        "ageKnownShare": 0.993,
+        "stationCounts": {
+          "川口": 488,
+          "西川口": 411,
+          "川口元郷": 152,
+          "東川口": 99,
+          "蕨": 76,
+          "南鳩ケ谷": 57,
+          "鳩ケ谷": 40,
+          "新井宿": 24,
+          "東浦和": 24,
+          "草加": 11,
+          "南浦和": 5,
+          "戸塚安行": 2
+        }
+      },
+      "researchGate": "OBSERVED_COVERAGE_PASS",
+      "skipped": {
+        "noComparable": 2,
+        "regression": 0
+      }
+    },
+    "大阪府 大阪市中央区": {
+      "records": 2055,
+      "rollingScoreCount": 1893,
+      "evaluationCount": 622,
+      "evaluationEligible": 622,
+      "evaluationCoverage": 0.733,
+      "evaluationCoverageWilsonLower": 0.697,
+      "medianWidthOverCenter": 0.454,
+      "currentIntervalCalibration": {
+        "count": 1266,
+        "radiusLog": 0.246034,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": true,
+        "reason": null
+      },
+      "dataSupport": {
+        "areaP05": 20,
+        "areaP95": 80,
+        "ageKnownShare": 0.999,
+        "stationCounts": {
+          "谷町四丁目": 324,
+          "堺筋本町": 293,
+          "谷町六丁目": 249,
+          "松屋町": 231,
+          "北浜(大阪)": 200,
+          "天満橋": 183,
+          "長堀橋": 153,
+          "本町": 105,
+          "日本橋(大阪)": 81,
+          "谷町九丁目": 68,
+          "淀屋橋": 43,
+          "森ノ宮": 34,
+          "心斎橋": 31,
+          "玉造(大阪メトロ)": 24,
+          "近鉄日本橋": 18,
+          "玉造(JR)": 4,
+          "大阪上本町": 4,
+          "四ツ橋": 3,
+          "四天王寺前夕陽ケ丘": 3,
+          "なんば(大阪メトロ)": 2,
+          "大阪天満宮": 1,
+          "天神橋筋六丁目": 1
+        }
+      },
+      "researchGate": "LOW_HISTORICAL_COVERAGE",
+      "skipped": {
+        "noComparable": 2,
+        "regression": 0
+      }
+    },
+    "宮城県 仙台市青葉区": {
+      "records": 985,
+      "rollingScoreCount": 916,
+      "evaluationCount": 278,
+      "evaluationEligible": 278,
+      "evaluationCoverage": 0.766,
+      "evaluationCoverageWilsonLower": 0.713,
+      "medianWidthOverCenter": 0.837,
+      "currentIntervalCalibration": {
+        "count": 613,
+        "radiusLog": 0.41818,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": true,
+        "reason": null
+      },
+      "dataSupport": {
+        "areaP05": 20,
+        "areaP95": 90,
+        "ageKnownShare": 0.919,
+        "stationCounts": {
+          "北四番丁": 229,
+          "勾当台公園": 118,
+          "北仙台": 88,
+          "五橋": 87,
+          "仙台": 72,
+          "大町西公園": 61,
+          "台原": 56,
+          "青葉通一番町": 46,
+          "東照宮": 43,
+          "北山(宮城)": 35,
+          "広瀬通": 27,
+          "国見(宮城)": 23,
+          "葛岡": 16,
+          "東北福祉大前": 16,
+          "愛宕橋": 15,
+          "黒松(宮城)": 11,
+          "旭ケ丘(宮城)": 10,
+          "愛子": 9,
+          "国際センター(宮城)": 8,
+          "陸前落合": 7,
+          "川内(宮城)": 5,
+          "榴ケ岡": 2,
+          "青葉山": 1
+        }
+      },
+      "researchGate": "OBSERVED_COVERAGE_PASS",
+      "skipped": {
+        "noComparable": 0,
+        "regression": 0
+      }
+    },
+    "広島県 広島市中区": {
+      "records": 213,
+      "rollingScoreCount": 173,
+      "evaluationCount": 68,
+      "evaluationEligible": 68,
+      "evaluationCoverage": 0.779,
+      "evaluationCoverageWilsonLower": 0.667,
+      "medianWidthOverCenter": 0.738,
+      "currentIntervalCalibration": {
+        "count": 148,
+        "radiusLog": 0.383249,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": true,
+        "reason": null
+      },
+      "dataSupport": {
+        "areaP05": 20,
+        "areaP95": 95,
+        "ageKnownShare": 0.977,
+        "stationCounts": {
+          "広島": 204,
+          "横川(広島)": 4,
+          "城北": 3,
+          "新白島(JR)": 2
+        }
+      },
+      "researchGate": "INSUFFICIENT_EVALUATION",
+      "skipped": {
+        "noComparable": 0,
+        "regression": 0
+      }
+    },
+    "愛知県 名古屋市中区": {
+      "records": 1112,
+      "rollingScoreCount": 1022,
+      "evaluationCount": 331,
+      "evaluationEligible": 331,
+      "evaluationCoverage": 0.773,
+      "evaluationCoverageWilsonLower": 0.725,
+      "medianWidthOverCenter": 0.634,
+      "currentIntervalCalibration": {
+        "count": 697,
+        "radiusLog": 0.315188,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": true,
+        "reason": null
+      },
+      "dataSupport": {
+        "areaP05": 20,
+        "areaP95": 80,
+        "ageKnownShare": 0.975,
+        "stationCounts": {
+          "新栄町(愛知)": 149,
+          "丸の内(愛知)": 141,
+          "東別院": 129,
+          "矢場町": 117,
+          "大須観音": 112,
+          "上前津": 104,
+          "伏見(愛知)": 102,
+          "鶴舞": 100,
+          "久屋大通": 52,
+          "金山(愛知)": 34,
+          "千種": 24,
+          "栄(名古屋)": 20,
+          "名古屋城": 14,
+          "尾頭橋": 6,
+          "山王(愛知)": 5,
+          "国際センター(愛知)": 3
+        }
+      },
+      "researchGate": "OBSERVED_COVERAGE_PASS",
+      "skipped": {
+        "noComparable": 1,
+        "regression": 0
+      }
+    },
+    "東京都 世田谷区": {
+      "records": 2577,
+      "rollingScoreCount": 2359,
+      "evaluationCount": 604,
+      "evaluationEligible": 604,
+      "evaluationCoverage": 0.767,
+      "evaluationCoverageWilsonLower": 0.731,
+      "medianWidthOverCenter": 0.546,
+      "currentIntervalCalibration": {
+        "count": 1462,
+        "radiusLog": 0.283391,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": true,
+        "reason": null
+      },
+      "dataSupport": {
+        "areaP05": 15,
+        "areaP95": 90,
+        "ageKnownShare": 0.984,
+        "stationCounts": {
+          "三軒茶屋": 233,
+          "千歳烏山": 176,
+          "用賀": 168,
+          "千歳船橋": 168,
+          "駒沢大学": 166,
+          "桜新町": 149,
+          "二子玉川": 114,
+          "尾山台": 92,
+          "池尻大橋": 84,
+          "上野毛": 81,
+          "成城学園前": 79,
+          "芦花公園": 75,
+          "経堂": 74,
+          "祖師ケ谷大蔵": 65,
+          "明大前": 65,
+          "上町": 58,
+          "学芸大学": 53,
+          "八幡山": 52,
+          "等々力": 50,
+          "下高井戸": 40,
+          "代田橋": 37,
+          "桜上水": 35,
+          "上北沢": 34,
+          "若林(東京)": 34,
+          "豪徳寺": 33,
+          "梅ケ丘": 31,
+          "世田谷": 28,
+          "下北沢": 24,
+          "世田谷代田": 23,
+          "祐天寺": 21,
+          "池ノ上": 21,
+          "松陰神社前": 21,
+          "奥沢": 20,
+          "自由が丘(東京)": 19,
+          "九品仏": 18,
+          "都立大学": 16,
+          "仙川": 15,
+          "田園調布": 15,
+          "新代田": 13,
+          "東北沢": 12,
+          "久我山": 12,
+          "松原(東京)": 12,
+          "喜多見": 10,
+          "東松原": 7,
+          "駒場東大前": 7,
+          "笹塚": 3,
+          "緑が丘(東京)": 3,
+          "富士見ケ丘": 3,
+          "大井町": 2,
+          "西太子堂": 2,
+          "宮の坂": 2,
+          "山下(東京)": 1,
+          "石川台": 1
+        }
+      },
+      "researchGate": "OBSERVED_COVERAGE_PASS",
+      "skipped": {
+        "noComparable": 1,
+        "regression": 0
+      }
+    },
+    "東京都 文京区": {
+      "records": 1546,
+      "rollingScoreCount": 1420,
+      "evaluationCount": 428,
+      "evaluationEligible": 428,
+      "evaluationCoverage": 0.722,
+      "evaluationCoverageWilsonLower": 0.678,
+      "medianWidthOverCenter": 0.464,
+      "currentIntervalCalibration": {
+        "count": 905,
+        "radiusLog": 0.256131,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": true,
+        "reason": null
+      },
+      "dataSupport": {
+        "areaP05": 15,
+        "areaP95": 75,
+        "ageKnownShare": 0.995,
+        "stationCounts": {
+          "春日(東京)": 195,
+          "江戸川橋": 155,
+          "茗荷谷": 135,
+          "護国寺": 123,
+          "千石": 108,
+          "千駄木": 102,
+          "本郷三丁目": 99,
+          "白山(東京)": 74,
+          "根津": 64,
+          "湯島": 64,
+          "本駒込": 59,
+          "駒込": 56,
+          "新大塚": 51,
+          "後楽園": 50,
+          "東大前": 48,
+          "御茶ノ水": 41,
+          "田端": 29,
+          "飯田橋": 25,
+          "水道橋": 21,
+          "西日暮里": 15,
+          "末広町(東京)": 9,
+          "巣鴨": 7,
+          "雑司が谷(東京メトロ)": 6,
+          "早稲田(メトロ)": 4,
+          "東池袋": 4,
+          "目白": 2
+        }
+      },
+      "researchGate": "LOW_HISTORICAL_COVERAGE",
+      "skipped": {
+        "noComparable": 0,
+        "regression": 0
+      }
+    },
+    "神奈川県 横浜市中区": {
+      "records": 1257,
+      "rollingScoreCount": 1132,
+      "evaluationCount": 335,
+      "evaluationEligible": 335,
+      "evaluationCoverage": 0.791,
+      "evaluationCoverageWilsonLower": 0.744,
+      "medianWidthOverCenter": 0.701,
+      "currentIntervalCalibration": {
+        "count": 724,
+        "radiusLog": 0.354647,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": true,
+        "reason": null
+      },
+      "dataSupport": {
+        "areaP05": 15,
+        "areaP95": 80,
+        "ageKnownShare": 0.999,
+        "stationCounts": {
+          "伊勢佐木長者町": 170,
+          "石川町": 163,
+          "関内": 150,
+          "元町・中華街": 150,
+          "山手": 117,
+          "日ノ出町": 114,
+          "黄金町": 96,
+          "桜木町": 78,
+          "根岸(神奈川)": 72,
+          "阪東橋": 66,
+          "日本大通り": 46,
+          "馬車道": 35
+        }
+      },
+      "researchGate": "OBSERVED_COVERAGE_PASS",
+      "skipped": {
+        "noComparable": 1,
+        "regression": 0
+      }
+    },
+    "神奈川県 藤沢市": {
+      "records": 861,
+      "rollingScoreCount": 789,
+      "evaluationCount": 240,
+      "evaluationEligible": 240,
+      "evaluationCoverage": 0.817,
+      "evaluationCoverageWilsonLower": 0.763,
+      "medianWidthOverCenter": 0.69,
+      "currentIntervalCalibration": {
+        "count": 537,
+        "radiusLog": 0.333844,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": true,
+        "reason": null
+      },
+      "dataSupport": {
+        "areaP05": 35,
+        "areaP95": 85,
+        "ageKnownShare": 0.997,
+        "stationCounts": {
+          "藤沢": 289,
+          "辻堂": 186,
+          "湘南台": 91,
+          "善行": 60,
+          "片瀬江ノ島": 47,
+          "鵠沼海岸": 47,
+          "藤沢本町": 46,
+          "湘南海岸公園": 15,
+          "長後": 14,
+          "柳小路": 14,
+          "鵠沼": 12,
+          "江ノ島": 12,
+          "六会日大前": 11,
+          "石上": 10,
+          "高座渋谷": 3,
+          "大船": 2,
+          "本鵠沼": 2
+        }
+      },
+      "researchGate": "OBSERVED_COVERAGE_PASS",
+      "skipped": {
+        "noComparable": 6,
+        "regression": 0
+      }
+    },
+    "神奈川県 鎌倉市": {
+      "records": 260,
+      "rollingScoreCount": 222,
+      "evaluationCount": 73,
+      "evaluationEligible": 73,
+      "evaluationCoverage": 0.849,
+      "evaluationCoverageWilsonLower": 0.75,
+      "medianWidthOverCenter": 0.841,
+      "currentIntervalCalibration": {
+        "count": 155,
+        "radiusLog": 0.352143,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": true,
+        "reason": null
+      },
+      "dataSupport": {
+        "areaP05": 55,
+        "areaP95": 105,
+        "ageKnownShare": 0.981,
+        "stationCounts": {
+          "大船": 123,
+          "鎌倉": 39,
+          "富士見町(神奈川)": 28,
+          "湘南深沢": 26,
+          "北鎌倉": 11,
+          "長谷(神奈川)": 10,
+          "由比ケ浜": 6,
+          "鎌倉高校前": 5,
+          "七里ケ浜": 4,
+          "西鎌倉": 3,
+          "湘南町屋": 2,
+          "和田塚": 2,
+          "極楽寺": 1
+        }
+      },
+      "researchGate": "INSUFFICIENT_EVALUATION",
+      "skipped": {
+        "noComparable": 1,
+        "regression": 0
+      }
+    },
+    "福岡県 福岡市博多区": {
+      "records": 1688,
+      "rollingScoreCount": 1561,
+      "evaluationCount": 423,
+      "evaluationEligible": 423,
+      "evaluationCoverage": 0.825,
+      "evaluationCoverageWilsonLower": 0.786,
+      "medianWidthOverCenter": 0.63,
+      "currentIntervalCalibration": {
+        "count": 948,
+        "radiusLog": 0.29012,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": true,
+        "reason": null
+      },
+      "dataSupport": {
+        "areaP05": 20,
+        "areaP95": 75,
+        "ageKnownShare": 0.991,
+        "stationCounts": {
+          "博多": 495,
+          "呉服町(福岡)": 218,
+          "中洲川端": 150,
+          "東比恵": 134,
+          "千代県庁口": 124,
+          "吉塚": 96,
+          "竹下": 96,
+          "祇園(福岡)": 86,
+          "南福岡": 53,
+          "渡辺通": 52,
+          "雑餉隈": 48,
+          "笹原": 46,
+          "櫛田神社前": 25,
+          "西鉄平尾": 22,
+          "福岡空港": 14,
+          "馬出九大病院前": 9,
+          "桜並木": 8,
+          "春日(福岡)": 4,
+          "薬院": 3,
+          "井尻": 2,
+          "天神": 1,
+          "春日原": 1,
+          "大濠公園": 1
+        }
+      },
+      "researchGate": "OBSERVED_COVERAGE_PASS",
+      "skipped": {
+        "noComparable": 1,
+        "regression": 0
+      }
+    },
+    "長野県 松本市": {
+      "records": 107,
+      "rollingScoreCount": 80,
+      "evaluationCount": 0,
+      "evaluationEligible": 31,
+      "evaluationCoverage": null,
+      "evaluationCoverageWilsonLower": null,
+      "medianWidthOverCenter": null,
+      "currentIntervalCalibration": {
+        "count": 63,
+        "radiusLog": null,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": false,
+        "reason": "有効な過去検証データが100件未満"
+      },
+      "dataSupport": {
+        "areaP05": 50,
+        "areaP95": 85,
+        "ageKnownShare": 0.907,
+        "stationCounts": {
+          "松本": 53,
+          "南松本": 26,
+          "北松本": 14,
+          "平田(長野)": 7,
+          "渚(長野)": 4,
+          "森口": 2,
+          "島内": 1
+        }
+      },
+      "researchGate": "INSUFFICIENT_CALIBRATION",
+      "skipped": {
+        "noComparable": 0,
+        "regression": 0
+      }
+    },
+    "長野県 長野市": {
+      "records": 151,
+      "rollingScoreCount": 121,
+      "evaluationCount": 0,
+      "evaluationEligible": 38,
+      "evaluationCoverage": null,
+      "evaluationCoverageWilsonLower": null,
+      "medianWidthOverCenter": null,
+      "currentIntervalCalibration": {
+        "count": 86,
+        "radiusLog": null,
+        "targetCoverage": 0.8,
+        "windowQuarters": 8,
+        "available": false,
+        "reason": "有効な過去検証データが100件未満"
+      },
+      "dataSupport": {
+        "areaP05": 20,
+        "areaP95": 85,
+        "ageKnownShare": 0.954,
+        "stationCounts": {
+          "長野(JR・しなの)": 61,
+          "権堂": 41,
+          "北長野": 13,
+          "本郷(長野)": 9,
+          "善光寺下": 9,
+          "市役所前(長野)": 5,
+          "信濃吉田": 4,
+          "桐原(長野)": 2,
+          "川中島": 2,
+          "今井": 2,
+          "篠ノ井": 2,
+          "安茂里": 1
+        }
+      },
+      "researchGate": "INSUFFICIENT_CALIBRATION",
+      "skipped": {
+        "noComparable": 4,
+        "regression": 0
+      }
+    }
+  },
+  "note": "80%は目標。ローリング過去取引の残差から算出するため非定常性・個別物件への条件付き被覆保証なし。検証段階の観測値。",
+  "sourceCount": 17156,
+  "sourcePeriod": "2026Q1",
+  "sourceFingerprint": "c932a5c6acf1cc09520091d160e4c80ae3628e6ba3d68fa4ed613b0582fc5550",
+  "normalizerVersion": "0.4.1",
+  "researchVersion": "0.3.0",
+  "computedFrom": "国土交通省 公開取引価格情報（取引価格・中古マンション）"
+}
