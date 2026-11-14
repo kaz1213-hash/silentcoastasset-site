@@ -6,7 +6,7 @@ const urls=['/','/media/','/media/story-0001/','/media/story-0002/','/media/stor
 '/media/comics/aquarium-plants/','/blog/','/blog/447-visits-bots.html','/blog/got-it-x-spam-label.html',
 '/blog/approval-gate.html','/blog/butler-vs-dots.html','/blog/fx-university-to-tanuki-lab.html',
 '/blog/logs-to-content.html','/blog/mine-producer-publisher.html','/project-vault.html',
-'/tanuki-store.html','/tanuki-site-support.html','/blog/after-yattotte-kindle.html','/fairvalue/index.html','/fairvalue/app/index.html','/fairvalue/app/data/prefecture_shards/01.json','/fairvalue/app/data/prefecture_shards/13.json','/tanuki-chronicle.html','/tanuki-fortune.html','/fx-university.html',
+'/tanuki-store.html','/support.html','/clinic-cockpit-lite-support.html','/tanuki-site-support.html','/blog/after-yattotte-kindle.html','/fairvalue/index.html','/fairvalue/app/index.html','/fairvalue/app/data/prefecture_shards/01.json','/fairvalue/app/data/prefecture_shards/13.json','/tanuki-chronicle.html','/tanuki-fortune.html','/fx-university.html',
 '/media/assets/surfing-company.png','/media/assets/bots-447.png','/media/assets/newsletter-2043.png','/media/assets/aquarium-plants.png'];
 const server=http.createServer((req,res)=>{let u=decodeURI(new URL(req.url,'http://localhost').pathname);
 if(u.endsWith('/'))u+='index.html';
@@ -20,6 +20,9 @@ server.listen(0,'127.0.0.1',async()=>{
  let ok=r.status===200;
  if(u==='/media/')ok&&=['サーフィンしたかっただけやのに','447人も来たと思ったら、ボットだった','ONE STORY, MANY EXPRESSIONS'].every(x=>body.includes(x))&&!body.includes('STORY MAP');
  if(u==='/')ok&&=body.includes('タヌキ研究所で最近起きたこと')&&body.includes('/media/');
+ if(u==='/')ok&&=body.includes('Clinic Cockpit Lite')&&body.includes('/support')&&body.includes('/fairvalue/');
+ if(u==='/support.html')ok&&=body.includes('Clinic Cockpit Lite')&&body.includes('support@silentcoastasset.com');
+ if(u==='/clinic-cockpit-lite-support.html')ok&&=body.includes('9PND94F9CJNF')&&body.includes('ORCA')&&body.includes('support@silentcoastasset.com');
  if(u==='/media/comics/surfing-company/')ok&&=body.includes('サーフィンしたかっただけやのに')&&!body.includes('447人も来たと思ったら');
  if(u==='/media/story-0003/')ok&&=body.includes('/media/assets/bots-447.png');
  console.log((ok?'PASS ':'FAIL ')+u);if(!ok)failures++;
