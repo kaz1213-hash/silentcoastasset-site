@@ -1,8 +1,24 @@
 {
   "schema_version": "tanuki-commerce-products-0.3",
   "storefront_owner": "Silent Coast Asset Co., Ltd.",
-  "updated_at": "2026-11-08",
+  "updated_at": "2026-11-14",
   "products": [
+    {
+      "id": "clinic-cockpit-lite",
+      "group": "available",
+      "name": "Clinic Cockpit Lite",
+      "tagline_ja": "ORCA・UKEの出力から眼科クリニックの経営指標を可視化。月次集計・前年同月比較。",
+      "tagline_en": "Ophthalmology clinic business analytics from ORCA/UKE exports.",
+      "price_label_ja": "日本 ¥29,800・買い切り",
+      "price_label_en": "Japan ¥29,800 · one-time",
+      "detail_url": "/clinic-cockpit-lite-support.html",
+      "checkout_provider": "MICROSOFT_STORE",
+      "checkout_url_ja": "https://apps.microsoft.com/detail/9PND94F9CJNF",
+      "checkout_url_en": "https://apps.microsoft.com/detail/9PND94F9CJNF",
+      "cta_ja": "Microsoft Storeで見る",
+      "cta_en": "View on Microsoft Store",
+      "enabled": true
+    },
     {
       "id": "tanuki-duns",
       "group": "free",
