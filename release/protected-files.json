@@ -1,18 +1,19 @@
 {
   "policy": "blog-only cannot modify protected files",
   "protected": {
-    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "56ceb05457503549051c1a5f6187e3bd.txt": "c643d90d0b929d1605d667c2a81a29f3de5f169577fa924b3c572e9f776284f6",
     "_headers": "05f0fafa4fbe2cd58966a12bd603f2c3a16239d88107dc345b63b7a6bce67884",
     "_redirects": "60fcd6a45ee15a0f74920979cd46e6fd34fd2c1c081185d12a57b64f0d1bccae",
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "56ceb05457503549051c1a5f6187e3bd.txt": "c643d90d0b929d1605d667c2a81a29f3de5f169577fa924b3c572e9f776284f6",
     "after-yattotte.html": "0c83e29496f20ca89ec7c41050b73f98f2ffd496e46cab7e44b4c210eda2f962",
     "assets/after-yattotte-cover.jpg": "ef67b68d6eac1226fde40347dda822941f329fd4af492e07459dad8665614fe0",
     "assets/sca-lang.js": "6e369423cccb61816949ca66856338e27a8131b40480502c2fba5de83a740129",
     "assets/tanuki-fortune-sleep.webp": "95f24dd9349d2a5346edb0dfebf68a386154c302a306c212cbeb8961a217a65d",
     "chatgpt-archive-story-ja.html": "80a9be1acd3655cacc88e2c838d98f9103ba3cc9cd7c58795e6ef08336cc0b59",
     "chatgpt-conversation-archive-story.html": "05fe95b099d0de4ef69d170637ab975769aa37fd9a93577972dbefd14634b398",
+    "clinic-cockpit-lite-support.html": "d34b5a537d82ac3e7770ed2142f7a9e20800ee2434cd68dd2d06da4496f57548",
     "commerce/commerce.js": "fff156169d52cbb50a68cd49831e8ce24b86601e018b6d8a9253cba54e5b7a45",
-    "commerce/products.json": "8d216699ddf8aec5494a2668d9fa0f5f506db277a93430d05cce1ce4763529fe",
+    "commerce/products.json": "4ac9839516a9b8de65f14ff2b1291d82c2545835513f489dccee02ed9a8b2e14",
     "core-proof/project-vault.html": "dcb37756939df94ff17b4a70d5a202f22bd60276554db32239a9f3122ee94604",
     "duns-number-free.html": "67db97a6448639f7f2f447827b9e4938c0dcdf08ffbe740e71c5e6f81585cb03",
     "fairvalue/app/app.mjs": "8b1d7d6862f0e9cf1f5c450b04b01649e06178cc09c33d5df4963d1e1f3fd50d",
@@ -239,7 +240,7 @@
     "fx-university-underwater.html": "3ba983f055c755bfdabdd72202e6ff4b7dbefbea510c19d517b0064b05f2896e",
     "fx-university.html": "325f16d39807df31911daa03f046cc297dbf826a6a21f207bd20fd4226e8f8bf",
     "google98ca9d5d4009a529.html": "c4a8fb1134358fc8e6dc94ad80683b97321d3587550785dbac98d62f5089784e",
-    "index.html": "f8d8ec4c79e7c25a7804cd7cb3537b538b75718798ad8b7cd902617db8e8ae8f",
+    "index.html": "2edb5e4edbefe5a701e8086c69cd41815282637eebcc4f81729e470a1b03a74a",
     "media/assets/aquarium-plants.png": "e331408cb5047a8f48489ae8ffeead5641517abdd583006f344e0f3ad76eba0c",
     "media/assets/bots-447.png": "b540ce9627f4bf215750812ac52bfb3e15a8edac12cb5dadaacca6128730863e",
     "media/assets/newsletter-2043.png": "4e6b6f895dc0c54b1242b9ec8be63aefece03f91d0e1c57c4f8a3419ab7b4c37",
@@ -255,12 +256,13 @@
     "pages-health.txt": "9a25843a9414e644111dae8bcd8fb43177a088f0b99f2b6b43a9106a97e65e03",
     "project-vault.html": "cb9721ebe831d739ea75ba79c0f6ef00c6734268154d509587f9329d7b0ce0ad",
     "robots.txt": "1ec91e3b98e72e71bafb3b13967cf9f622a0b785a46e1b45d9c8d029710815c1",
+    "support.html": "acf9e48802d0fe92deaad5cde17c1e7ea2d8c1bf3df14b47efa793f9fa06dffe",
     "tanuki-chronicle.html": "8be9f72b0c87373319941c071fa9becfb6a62e2c2f96cb9f680fe79662b16352",
     "tanuki-fortune.html": "a9c288a133224d38cb083480120d4ffbbc88fa5e231a895c088dd89bdf119c1b",
     "tanuki-security-android-privacy.html": "47cdfbb0798b2824c566fa3c7b9e4aceb8b918b09ca49cdfded57717c473e15e",
     "tanuki-security.html": "f0d06ac5c805c77fd8839a902afabec18243f0bd645a4b05c08461870b3c5e61",
     "tanuki-site-privacy.html": "d4f69ec164aa7f06488bd55135968927c86b582d0b2e3bcedb2eeb013f1e75f1",
     "tanuki-site-support.html": "1e81bd69f5943919561703cc34895b6f67b8fa44ce5d6d8f80b5ec359d19e739",
-    "tanuki-store.html": "bf46d93e3cda1fcb839235f763808dcb0cff603437c881193fe561394187a402"
+    "tanuki-store.html": "ab1850532a705d8ab50679208eb11c34daabf26ff1cea36dcc2cd82d6d186063"
   }
 }
