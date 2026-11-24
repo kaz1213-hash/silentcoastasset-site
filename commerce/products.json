@@ -1,7 +1,7 @@
 {
   "schema_version": "tanuki-commerce-products-0.3",
   "storefront_owner": "Silent Coast Asset Co., Ltd.",
-  "updated_at": "2026-11-14",
+  "updated_at": "2026-11-24",
   "products": [
     {
       "id": "clinic-cockpit-lite",
@@ -134,6 +134,22 @@
       "cta_ja": "Microsoft Storeで見る",
       "cta_en": "View on Microsoft Store",
       "detail_url": "/tanuki-security.html",
+      "enabled": true
+    },
+    {
+      "id": "tanuki-security-android",
+      "group": "available",
+      "name": "Tanuki Security for Android",
+      "tagline_ja": "画面ロック・更新状況など5項目をまとめて確認。ウイルス駆除アプリではありません。広告なし・会員登録不要。",
+      "tagline_en": "Check five Android protection signals, including screen lock and security patch status. No ads or in-app account. Not a malware removal app.",
+      "price_label_ja": "日本 ¥500・買い切り",
+      "price_label_en": "Japan ¥500 · one-time; check Google Play for local availability",
+      "detail_url": null,
+      "checkout_provider": "GOOGLE_PLAY",
+      "checkout_url_ja": "https://play.google.com/store/apps/details?id=jp.silentcoast.tanukisecurity&hl=ja&gl=JP",
+      "checkout_url_en": "https://play.google.com/store/apps/details?id=jp.silentcoast.tanukisecurity",
+      "cta_ja": "Google Playで見る",
+      "cta_en": "View on Google Play",
       "enabled": true
     },
     {

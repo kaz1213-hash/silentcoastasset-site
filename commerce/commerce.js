@@ -57,7 +57,13 @@
     if (!value) return false;
     try {
       const url = new URL(value);
-      return url.protocol === 'https:' && (SAFE_CHECKOUT_HOSTS.has(url.hostname) || (url.hostname === 'silentcoastasset.com' && url.pathname === '/tanuki-site-support.html'));
+      const isAndroidSecurity = url.hostname === 'play.google.com'
+        && url.pathname === '/store/apps/details'
+        && url.searchParams.getAll('id').length === 1
+        && url.searchParams.get('id') === 'jp.silentcoast.tanukisecurity'
+        && !url.username && !url.password && !url.port
+        && [...url.searchParams.keys()].every(key => ['id', 'hl', 'gl'].includes(key));
+      return url.protocol === 'https:' && (SAFE_CHECKOUT_HOSTS.has(url.hostname) || isAndroidSecurity || (url.hostname === 'silentcoastasset.com' && url.pathname === '/tanuki-site-support.html'));
     } catch (_) {
       return false;
     }
